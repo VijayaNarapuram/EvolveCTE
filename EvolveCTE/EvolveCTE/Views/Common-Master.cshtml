@@ -1,0 +1,643 @@
+﻿
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content=" ">
+    <meta name="keywords" content=" ">
+    <meta name="author" content=" ">
+    <!--Angular JS-->
+    @*  <script src="~/assets/js/angular.min.js"></script>*@
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <script src="~/assets/js/SiteScripts/SearchResults.js"></script>
+
+    <title>TRECA - SIS : Admin</title>
+
+
+    <!-- BOOTSTRAP CSS (REQUIRED ALL PAGE)-->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- PLUGINS CSS -->
+    <link href="../assets/plugins/weather-icon/css/weather-icons.min.css" rel="stylesheet">
+    <link href="../assets/plugins/prettify/prettify.min.css" rel="stylesheet">
+    <link href="../assets/plugins/magnific-popup/magnific-popup.min.css" rel="stylesheet">
+    <link href="../assets/plugins/owl-carousel/owl.carousel.min.css" rel="stylesheet">
+    <link href="../assets/plugins/owl-carousel/owl.theme.min.css" rel="stylesheet">
+    <link href="../assets/plugins/owl-carousel/owl.transitions.min.css" rel="stylesheet">
+    <link href="../assets/plugins/chosen/chosen.min.css" rel="stylesheet">
+    <link href="../assets/plugins/icheck/skins/all.css" rel="stylesheet">
+    <link href="../assets/plugins/datepicker/datepicker.min.css" rel="stylesheet">
+    <link href="../assets/plugins/timepicker/bootstrap-timepicker.min.css" rel="stylesheet">
+    <link href="../assets/plugins/validator/bootstrapValidator.min.css" rel="stylesheet">
+    <link href="../assets/plugins/summernote/summernote.min.css" rel="stylesheet">
+    <link href="../assets/plugins/markdown/bootstrap-markdown.min.css" rel="stylesheet">
+    <link href="../assets/plugins/datatable/css/bootstrap.datatable.min.css" rel="stylesheet">
+    <link href="../assets/plugins/morris-chart/morris.min.css" rel="stylesheet">
+    <link href="../assets/plugins/c3-chart/c3.min.css" rel="stylesheet">
+    <link href="../assets/plugins/slider/slider.min.css" rel="stylesheet">
+    <link href="../assets/plugins/salvattore/salvattore.css" rel="stylesheet">
+    <link href="../assets/plugins/toastr/toastr.css" rel="stylesheet">
+    @*<link href="../assets/plugins/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet">
+    <link href="../assets/plugins/fullcalendar/fullcalendar/fullcalendar.print.css" rel="stylesheet" media="print">*@
+
+    <!-- MAIN CSS (REQUIRED ALL PAGE)-->
+    <link href="../assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/style-responsive.css" rel="stylesheet">
+    <!-- Left Menu CSS-->
+    <link href="~/assets/css/mtree.css" rel="stylesheet" />
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-10334298-6', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+    <style type="text/css">
+        .modal1 {
+            position: fixed;
+            z-index: 999;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            background-color: Black;
+            filter: alpha(opacity=60);
+            opacity: 0.6;
+            -moz-opacity: 0.8;
+        }
+
+        .center {
+            z-index: 1000;
+            margin: 300px auto;
+            padding: 10px;
+            width: 130px;
+            background-color: White;
+            border-radius: 10px;
+            filter: alpha(opacity=100);
+            opacity: 1;
+            -moz-opacity: 1;
+        }
+
+            .center img {
+                height: 110px;
+                width: 110px;
+            }
+
+        .form-control {
+            padding: 2px 5px;
+        }
+    </style>
+
+    @RenderSection("PagespecificCss", required: false)
+
+</head>
+
+<body class="tooltips">
+
+    <!--
+        ===========================================================
+        BEGIN PAGE
+        ===========================================================
+        -->
+    <div class="wrapper">
+        <!-- BEGIN TOP NAV -->
+        @if (Session.Count > 0)
+        {
+            if (Session["LoggedIn"] != null && Session["LoggedIn"].ToString() != string.Empty)
+            {
+                if (Session["LoggedIn"].ToString().ToLower() == "false") //for super admin
+                {
+                    Response.Redirect("~/Home/Index");
+                }                
+            }
+        }
+        else
+        {
+            Response.Redirect("~/Home/Index");
+        }
+
+        <!--Dispaly Error details/ Alert Message start-->
+        <div id="displayMessage" style="display: none">
+            <!--Add the InnerText at runtime -->
+        </div>
+
+        <div id="displayMessageRed" style="display: none; color: red;">
+            <!--Add the InnerText at runtime -->
+        </div>
+        <!--Dispaly Error details/ Alert Message end-->
+
+        <div class="top-navbar">
+            <div class="top-navbar-inner">
+
+                <!-- Begin Logo brand -->
+                <div class="logo-brand">
+                    <a href="~/PortalUser/Dashboard">
+                        <img src="../assets/img/evolve-white.png" alt="logo">
+                    </a>
+                    <p>Version: <span id="Version"></span></p>
+                </div>
+                <!-- /.logo-brand -->
+                <!-- End Logo brand -->
+                <div class="top-nav-content">
+
+                    <!-- /.btn-collapse-sidebar-left -->
+                    <!-- End button sidebar left toggle -->
+                    <!-- Begin button nav toggle -->
+                    <div class="btn-collapse-nav plusToggle" data-toggle="collapse" data-target="#main-fixed-nav">
+                        <i class="fa fa-plus icon-plus"></i>
+                    </div>
+                    <!-- /.btn-collapse-sidebar-right -->
+                    <!-- End button nav toggle -->
+
+                    <ul class="nav navbar-nav navbar-left" style="display:none">
+                        <!-- Begin nav notification -->
+                        <li class="dropdown">
+                            <a id="MsgCount" href="#fakelink" class="dropdown-toggle blink" data-toggle="dropdown">
+                                <span class="badge badge-success icon-count msgcount"></span>
+                                <i id="MsgCount1" class="fa fa-envelope fa-2x" style="color:#8cc152;"></i>
+                            </a>
+                            <ul class="dropdown-menu square with-triangle">
+                                <li>
+                                    <div class="nav-dropdown-heading">
+                                        Bulletin
+                                    </div>
+                                    <!-- /.nav-dropdown-heading -->
+                                    <div class="nav-dropdown-content scroll-nav-dropdown" id="divMessages"></div>
+                                    <!-- /.nav-dropdown-content scroll-nav-dropdown -->
+                                    <button class="btn btn-primary btn-square btn-block" id="btnMessages">See all</button>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- End nav notification -->
+                    </ul>
+
+                    @*<ul class="nav navbar-nav version_ul" style="margin-left:10px; padding-top: 20px;">
+                        <p>Version: <span id="Version"></span></p>
+                    </ul>*@
+                    <h4 class="class_Name" id="schoolName"></h4>
+
+                    <!-- Begin user session nav -->
+                    <ul class="nav-user navbar-right portalRightDrop_menu">
+                        <li class="dropdown">
+                            <a href="#fakelink" class="dropdown-toggle" data-toggle="dropdown">
+                                <span ><strong class="username"></strong></span>
+                                @*<img src="data:image/png;base64,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" class="avatar img-circle" alt="Avatar">*@
+                                @*<img src="../assets/img/evolve-logo.png" alt="logo">*@
+                                <img src="../assets/img/Evolve_logo.png" alt="logo" class="avatar">
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu square primary margin-list-rounded with-triangle">
+                                <li><a href="#">My Profile</a></li>
+                                <li><a href="~/Home/ChangePasswordNew" id="ChangePWD">Change Password</a></li>
+                                @*<li><a href="~/Home/Index" id="logout">Logout</a></li>*@
+                                <li><a href="~/Home/Logout" id="logout">Log Out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- End user session nav -->
+                    <!-- Begin Collapse menu nav -->
+                    <!-- /.navbar-collapse -->
+                    <!-- End Collapse menu nav -->
+                </div>
+                <!--end top-->
+
+            </div>
+            <!-- /.top-navbar-inner -->
+        </div>
+        <!-- END TOP NAV -->
+        <!--left search bar-->
+        <!-- BEGIN SIDEBAR LEFT -->
+        <!-- /.sidebar-left -->
+        <!-- END SIDEBAR LEFT -->
+        <!--end left search bar-->
+        <!-- BEGIN PAGE CONTENT -->
+        <div class="page-content" style="margin:0;">
+            <!--render body-->
+            @RenderBody()
+            @*<div class="container-fluid">
+                <div class="the-box">
+                    <p>Hello</p>
+                </div>
+            </div>*@
+            <!--end render body-->
+            <!-- BEGIN FOOTER -->
+            <footer>
+                &copy; 2017 <a href="#fakelink">EVOLVE</a><br />
+                <a href="#">EULA</a> | <a href="#">Sitemap</a> | <a href="#">Contact</a> | Design by <a href="https://verudix.com" target="_blank">Verudix</a>.
+            </footer>
+            <!-- END FOOTER -->
+        </div>
+        <!-- /.page-content -->
+        <div class="page-content" style="margin:0 0 0 0;">
+            <!--render body-->
+
+            <div class="container-fluid" >
+                <div class="portalForm col-lg-5 col-sm-8" style="display:none">
+                    <form id="">
+                        <div class="modal-body">
+                            <div id="dialog-form">
+
+                                <div class="row ">
+
+                                    <div class="col-md-12 marginTop15">
+                                        <div class="form-group">
+                                            <label class="req col-sm-4">First Name</label>
+                                            <div class="col-sm-8">
+                                                <input class="form-control" data-val="true" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 marginTop15">
+                                        <div class="form-group">
+                                            <label class="req col-sm-4">Last Name:</label>
+                                            <div class="col-sm-8">
+                                                <input class="form-control" data-val="true" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 marginTop15">
+                                        <div class="form-group">
+                                            <label class="req col-sm-4">Email Address</label>
+                                            <div class="col-sm-8">
+                                                <input class="form-control" data-val="true" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 marginTop15">
+                                        <div class="form-group">
+                                            <label class="req col-sm-4">User Name</label>
+                                            <div class="col-sm-8">
+                                                <input class="form-control" data-val="true" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 marginTop15">
+                                        <div class="form-group">
+                                            <label class="req col-sm-4">Desired Password</label>
+                                            <div class="col-sm-8">
+                                                <input class="form-control" data-val="true" type="password">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 marginTop15">
+                                        <div class="form-group">
+                                            <label class="req col-sm-4">Confirm Password</label>
+                                            <div class="col-sm-8">
+                                                <input class="form-control" data-val="true" type="password">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group formFooter">
+                                        <button id="btnAdd" class="btn btn-success" type="submit">Cancel</button>
+                                        <a href="#" class="btn btn-warning btnmodalclose"><i></i>Creat</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div><span style="color: red" class="col-lg-offset-3 col-lg-10"></span></div>
+                    </form>
+                </div>
+            </div>
+            <!--end render body-->
+            <!-- BEGIN FOOTER -->
+            <!-- END FOOTER -->
+        </div>
+    </div>
+    <!--/. Wrapper-->
+    <!-- BEGIN BACK TO TOP BUTTON -->
+    <div id="back-top">
+        <a href="#top"><i class="fa fa-chevron-up"></i></a>
+    </div>
+    <!-- END BACK TO TOP -->
+
+    <input type="hidden" id="hdnDistrictId" title="" value="@Session["DistrictId"]" />
+    <input type="hidden" id="hdnSchoolId" title="" value="@Session["SchoolId"]" />
+    <input type="hidden" id="hdnUserId" title="" value="@Session["UserId"]" />
+
+    <div id="SessionPopup" style="display: none;" class="displayMessageLogout">
+        <p><b>Your session will expire in:</b></p>
+        <div id="sm-countdown">
+            <!-- Placeholder for dynamic countdown -->
+        </div>
+        <p><b>Click "Continue" to keep working, or "Logout" if you are finished.</b></p>
+        <input type="button" id="SessionContinue" value="Continue" />
+        <input type="button" id="SessionLogout" value="Logout" />
+    </div>
+
+    <!--
+        ===========================================================
+        END PAGE
+        ===========================================================
+        -->
+    <!--
+        ===========================================================
+        Placed at the end of the document so the pages load faster
+        ===========================================================
+        -->
+    <!-- MAIN JAVASRCIPT (REQUIRED ALL PAGE)-->
+    @*<script src="~/assets/js/jquery-1.9.1.min.js"></script>*@
+
+    @*<script src="~/assets/js/jquery.min.js"></script>*@
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.0.min.js"></script>
+    @* <script src="~/assets/js/jquery.url.js"></script>*@
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <script src="~/assets/plugins/retina/retina.min.js"></script>
+    <script src="~/assets/plugins/nicescroll/jquery.nicescroll.js"></script>
+    <script src="~/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="~/assets/plugins/backstretch/jquery.backstretch.min.js"></script>
+
+    <!-- PLUGINS -->
+    <script src="~/assets/plugins/skycons/skycons.js"></script>
+    <script src="~/assets/plugins/prettify/prettify.js"></script>
+    <script src="~/assets/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="~/assets/plugins/owl-carousel/owl.carousel.min.js"></script>
+    <script src="~/assets/plugins/chosen/chosen.jquery.min.js"></script>
+    <script src="~/assets/plugins/icheck/icheck.min.js"></script>
+    <script src="~/assets/js/jquery-ui-1.10.4.custom.min.js"></script>
+    @*<script src="~/assets/plugins/datepicker/bootstrap-datepicker.js"></script>*@
+    <script src="~/assets/plugins/timepicker/bootstrap-timepicker.js"></script>
+    <script src="~/assets/plugins/mask/jquery.mask.min.js"></script>
+    <script src="~/assets/plugins/validator/bootstrapValidator.min.js"></script>
+    <script src="~/assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
+    <script src="~/assets/plugins/datatable/js/bootstrap.datatable.js"></script>
+    <script src="~/assets/plugins/summernote/summernote.min.js"></script>
+    <script src="~/assets/plugins/markdown/markdown.js"></script>
+    <script src="~/assets/plugins/markdown/to-markdown.js"></script>
+    <script src="~/assets/plugins/markdown/bootstrap-markdown.js"></script>
+    <script src="~/assets/plugins/slider/bootstrap-slider.js"></script>
+    @*<link href="~/assets/css/TreeView/mtreefoundation.css" rel="stylesheet" />*@
+
+    <script src="~/assets/plugins/toastr/toastr.js"></script>
+
+    <!-- FULL CALENDAR JS -->
+    @*<script src="~/assets/plugins/fullcalendar/lib/jquery-ui.custom.min.js"></script>
+    <script src="~/assets/plugins/fullcalendar/fullcalendar/fullcalendar.min.js"></script>
+    <script src="~/assets/js/full-calendar.js"></script>*@
+
+    <!-- EASY PIE CHART JS -->
+    <script src="~/assets/plugins/easypie-chart/easypiechart.min.js"></script>
+    <script src="~/assets/plugins/easypie-chart/jquery.easypiechart.min.js"></script>
+
+    <!-- KNOB JS -->
+    <!--[if IE]>
+        <script type="text/javascript" src="assets/plugins/jquery-knob/excanvas.js"></script>
+        <![endif]-->
+    <script src="~/assets/plugins/jquery-knob/jquery.knob.js"></script>
+    <script src="~/assets/plugins/jquery-knob/knob.js"></script>
+
+    <!-- FLOT CHART JS -->
+    <script src="~/assets/plugins/flot-chart/jquery.flot.js"></script>
+    <script src="~/assets/plugins/flot-chart/jquery.flot.tooltip.js"></script>
+    <script src="~/assets/plugins/flot-chart/jquery.flot.resize.js"></script>
+    <script src="~/assets/plugins/flot-chart/jquery.flot.selection.js"></script>
+    <script src="~/assets/plugins/flot-chart/jquery.flot.stack.js"></script>
+    <script src="~/assets/plugins/flot-chart/jquery.flot.time.js"></script>
+
+    <!-- MORRIS JS -->
+    <script src="~/assets/plugins/morris-chart/raphael.min.js"></script>
+    <script src="~/assets/plugins/morris-chart/morris.min.js"></script>
+
+    <!-- C3 JS -->
+    <script src="~/assets/plugins/c3-chart/d3.v3.min.js" charset="utf-8"></script>
+    <script src="~/assets/plugins/c3-chart/c3.min.js"></script>
+
+    <!-- MAIN APPS JS -->
+    <script src="~/assets/js/apps.js"></script>
+    <script src="~/assets/js/demo-panel.js"></script>
+    <script src="~/assets/js/common-scripts-dev.js"></script>
+    <!--Left Menu Script-- added by vishnu on 20-may-2015 for 4 level menus-->
+    <script src="~/assets/js/jquery.velocity.min.js"></script>
+    <!--Left Menu Script End-->
+    <!-- Created By: Vishnu on  05-1-2014-->
+    <!-- top navigation script-->
+    <script src="~/assets/js/SessionState.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            LoadStudentBanner();
+
+            var username = window.localStorage.getItem('PortalAccountName');
+            $(".username").text(username);
+
+            blink();
+
+            $('[data-toggle="tooltip"]').tooltip();
+
+            //Loader start
+            function ajaxindicatorstart() {
+                if ($('body').find('#loadingDiv').attr('id') != 'loadingDiv') {
+                    var loadingString = '<div id="loadingDiv" class="modal1 loaderAssessment"><div id="loading-image" class="center"><img src="../assets/img/loader.gif" alt="Loading..." /></div></div>';
+                    $('body').append(loadingString);
+                    $('#loadingDiv .bg').height('100%');
+                    $('#loadingDiv').fadeIn(300);
+                    $('body').css('cursor', 'wait');
+                }
+            };
+
+            function ajaxindicatorstop() {
+                $('#loadingDiv .bg').height('100%');
+                $('#loadingDiv').remove();
+                $('body').css('cursor', 'default');
+            }
+
+            //LoadStudentBanner();
+
+            $(document).ajaxStart(function () {
+                //show ajax indicator 3
+                ajaxindicatorstart();
+            }).ajaxStop(function () {
+                //hide ajax indicator
+                ajaxindicatorstop();
+            });
+
+            //Loader End
+
+            RegisterPopupScript();//For Popup script
+            //bPopup script Added By Vishnu, to overwrite regular browser alerts
+            function RegisterPopupScript() {
+                (function (c) { c.fn.bPopup = function (A, E) { function L() { a.contentContainer = c(a.contentContainer || b); switch (a.content) { case "iframe": var d = c('<iframe class="b-iframe" ' + a.iframeAttr + "></iframe>"); d.appendTo(a.contentContainer); t = b.outerHeight(!0); u = b.outerWidth(!0); B(); d.attr("src", a.loadUrl); l(a.loadCallback); break; case "image": B(); c("<img />").load(function () { l(a.loadCallback); F(c(this)) }).attr("src", a.loadUrl).hide().appendTo(a.contentContainer); break; default: B(), c('<div class="b-ajax-wrapper"></div>').load(a.loadUrl, a.loadData, function (d, b, e) { l(a.loadCallback, b); F(c(this)) }).hide().appendTo(a.contentContainer) } } function B() { a.modal && c('<div class="b-modal ' + e + '"></div>').css({ backgroundColor: a.modalColor, position: "fixed", top: 0, right: 0, bottom: 0, left: 0, opacity: 0, zIndex: a.zIndex + v }).appendTo(a.appendTo).fadeTo(a.speed, a.opacity); C(); b.data("bPopup", a).data("id", e).css({ left: "slideIn" == a.transition || "slideBack" == a.transition ? "slideBack" == a.transition ? f.scrollLeft() + w : -1 * (x + u) : m(!(!a.follow[0] && n || g)), position: a.positionStyle || "absolute", top: "slideDown" == a.transition || "slideUp" == a.transition ? "slideUp" == a.transition ? f.scrollTop() + y : z + -1 * t : p(!(!a.follow[1] && q || g)), "z-index": 99999999 + v + 1 }).each(function () { a.appending && c(this).appendTo(a.appendTo) }); G(!0) } function r() { a.modal && c(".b-modal." + b.data("id")).fadeTo(a.speed, 0, function () { c(this).remove() }); a.scrollBar || c("html").css("overflow", "auto"); c(".b-modal." + e).unbind("click"); f.unbind("keydown." + e); k.unbind("." + e).data("bPopup", 0 < k.data("bPopup") - 1 ? k.data("bPopup") - 1 : null); b.undelegate(".bClose, ." + a.closeClass, "click." + e, r).data("bPopup", null); clearTimeout(H); G(); return !1 } function I(d) { y = k.height(); w = k.width(); h = D(); if (h.x || h.y) clearTimeout(J), J = setTimeout(function () { C(); d = d || a.followSpeed; var e = {}; h.x && (e.left = a.follow[0] ? m(!0) : "auto"); h.y && (e.top = a.follow[1] ? p(!0) : "auto"); b.dequeue().each(function () { g ? c(this).css({ left: x, top: z }) : c(this).animate(e, d, a.followEasing) }) }, 50) } function F(d) { var c = d.width(), e = d.height(), f = {}; a.contentContainer.css({ height: e, width: c }); e >= b.height() && (f.height = b.height()); c >= b.width() && (f.width = b.width()); t = b.outerHeight(!0); u = b.outerWidth(!0); C(); a.contentContainer.css({ height: "auto", width: "auto" }); f.left = m(!(!a.follow[0] && n || g)); f.top = p(!(!a.follow[1] && q || g)); b.animate(f, 250, function () { d.show(); h = D() }) } function M() { k.data("bPopup", v); b.delegate(".bClose, ." + a.closeClass, "click." + e, r); a.modalClose && c(".b-modal." + e).css("cursor", "pointer").bind("click", r); N || !a.follow[0] && !a.follow[1] || k.bind("scroll." + e, function () { if (h.x || h.y) { var d = {}; h.x && (d.left = a.follow[0] ? m(!g) : "auto"); h.y && (d.top = a.follow[1] ? p(!g) : "auto"); b.dequeue().animate(d, a.followSpeed, a.followEasing) } }).bind("resize." + e, function () { I() }); a.escClose && f.bind("keydown." + e, function (a) { 27 == a.which && r() }) } function G(d) { function c(e) { b.css({ display: "block", opacity: 1 }).animate(e, a.speed, a.easing, function () { K(d) }) } switch (d ? a.transition : a.transitionClose || a.transition) { case "slideIn": c({ left: d ? m(!(!a.follow[0] && n || g)) : f.scrollLeft() - (u || b.outerWidth(!0)) - 200 }); break; case "slideBack": c({ left: d ? m(!(!a.follow[0] && n || g)) : f.scrollLeft() + w + 200 }); break; case "slideDown": c({ top: d ? p(!(!a.follow[1] && q || g)) : f.scrollTop() - (t || b.outerHeight(!0)) - 200 }); break; case "slideUp": c({ top: d ? p(!(!a.follow[1] && q || g)) : f.scrollTop() + y + 200 }); break; default: b.stop().fadeTo(a.speed, d ? 1 : 0, function () { K(d) }) } } function K(d) { d ? (M(), l(E), a.autoClose && (H = setTimeout(r, a.autoClose))) : (b.hide(), l(a.onClose), a.loadUrl && (a.contentContainer.empty(), b.css({ height: "auto", width: "auto" }))) } function m(a) { return a ? x + f.scrollLeft() : x } function p(a) { return a ? z + f.scrollTop() : z } function l(a, e) { c.isFunction(a) && a.call(b, e) } function C() { z = q ? a.position[1] : Math.max(0, (y - b.outerHeight(!0)) / 2 - a.amsl); x = n ? a.position[0] : (w - b.outerWidth(!0)) / 2; h = D() } function D() { return { x: w > b.outerWidth(!0), y: y > b.outerHeight(!0) } } c.isFunction(A) && (E = A, A = null); var a = c.extend({}, c.fn.bPopup.defaults, A); a.scrollBar || c("html").css("overflow", "hidden"); var b = this, f = c(document), k = c(window), y = k.height(), w = k.width(), N = /OS 6(_\d)+/i.test(navigator.userAgent), v = 0, e, h, q, n, g, z, x, t, u, J, H; b.close = function () { r() }; b.reposition = function (a) { I(a) }; return b.each(function () { c(this).data("bPopup") || (l(a.onOpen), v = (k.data("bPopup") || 0) + 1, e = "__b-popup" + v + "__", q = "auto" !== a.position[1], n = "auto" !== a.position[0], g = "fixed" === a.positionStyle, t = b.outerHeight(!0), u = b.outerWidth(!0), a.loadUrl ? L() : B()) }) }; c.fn.bPopup.defaults = { amsl: 50, appending: !0, appendTo: "body", autoClose: !1, closeClass: "b-close", content: "ajax", contentContainer: !1, easing: "swing", escClose: !0, follow: [!0, !0], followEasing: "swing", followSpeed: 500, iframeAttr: 'scrolling="no" frameborder="0"', loadCallback: !1, loadData: !1, loadUrl: !1, modal: !0, modalClose: !0, modalColor: "transparent", onClose: !1, onOpen: !1, opacity: .7, position: ["auto", "auto"], positionStyle: "absolute", scrollBar: !0, speed: 250, transition: "fadeIn", transitionClose: !1, zIndex: 9997 } })(jQuery);
+            }
+
+            var versionObject = window.localStorage.getItem('versionObject');
+            if (versionObject == null) {
+                var url1 = '/PortalUser/GetLatestVersion/';
+                var responseData1 = SendRequestJSON(url1);
+                if (responseData1.length > 0) {
+                    $("#Version").html(responseData1);
+                    window.localStorage.setItem('versionObject', responseData1);
+                };
+            }
+            else {
+                $("#Version").html(versionObject);
+            }
+
+            //Clears the stored values from local storage
+            $('#logout').click(function () {//Added By: Vishnu
+                window.localStorage.removeItem('SelectedSchoolId');
+                window.localStorage.removeItem('SelectedSchoolName');
+                window.localStorage.removeItem('SelectedSchoolCalendarId');
+                window.localStorage.removeItem('SelectedDistrictId');
+                window.localStorage.removeItem('SelectedDistrictName');
+                window.localStorage.removeItem('menuObject');
+                window.localStorage.removeItem('menuObjectNew');
+                window.localStorage.removeItem('versionObject');
+                window.localStorage.removeItem('SelectedStudentID'); //used for Student Address,contacts navigation from studentsInformation page
+                // window.localStorage.removeItem('SelectedClassId');
+                window.localStorage.removeItem('pagesObject');
+                window.localStorage.removeItem('SelectedSchoolCalendarText');
+                window.localStorage.removeItem('SelectedUserID'); //for stud assessment page
+                window.localStorage.removeItem('PortalAccountName');
+
+                var url = "/Home/UpdatePortalUserLoginDetails";
+                var modelobj = {
+                    LoginUserID: window.localStorage.getItem('PortalLoginID'),
+                    UserRole: window.localStorage.getItem('userRole')
+                };
+                var loginresponse = SendRequestJSON(url, modelobj);
+            });
+
+            //GetPages
+            //var pagesObject = window.localStorage.getItem('pagesObject');
+
+            //if (pagesObject == null) {
+            //    var url12 = '/PrivilegeRole/GetAllPagesByRole/';
+            //    var modelObj12 = {
+            //        dummyUserRoleID: 1
+            //    };
+            //    var responseData12 = SendRequestJSON(url12, modelObj12);
+            //    if (responseData12.length > 0) {
+
+            //        window.localStorage.setItem('pagesObject', responseData12);
+            //    };
+            //}
+            //else {
+            //    //alert(pagesObject);
+            //}
+
+        });
+
+        function MenuClick() {
+            var menuHtml = $("#divMenu").html();
+            window.localStorage.setItem('menuObjectNew', menuHtml);
+        }
+
+        ////Created By: Vishnu ,To Blink the Image
+
+
+        //var masterDistrictId = window.localStorage.getItem('SelectedDistrictId');
+
+        //var masterDistrictName = window.localStorage.getItem('SelectedDistrictName');
+
+
+        //var masterSchoolId = window.localStorage.getItem('SelectedSchoolId');
+
+        //var masterSchoolName = window.localStorage.getItem('SelectedSchoolName');
+
+
+        //var masterSchoolCalendarid = window.localStorage.getItem('SelectedSchoolCalendarId');
+
+        //var masterSchoolCalendarText = window.localStorage.getItem('SelectedSchoolCalendarText');
+
+        //window.localStorage.setItem('SelectedUserID', $("#hdnUserId").val()); //using this var in student assessment page for loading districts and schools
+
+
+
+        //var url = '/Common/FillEvolveDistrictsByPersonID/';
+        //var modelobj = {
+        //    personid: $("#hdnUserId").val()
+        //};
+
+        //$.getJSON(url, modelobj,
+        //              function (optionsData) {
+        //                  var select = $("#ddlDistricts");
+        //                  select.empty();
+        //                  select.append($('<option/>', {
+        //                      value: 0,
+        //                      text: "Select District"
+        //                  }));
+        //                  $.each(optionsData, function (index, itemData) {
+        //                      select.append($('<option/>', {
+        //                          value: itemData.Value,
+        //                          text: itemData.Text
+        //                      }));
+        //                  });
+        //                  if (masterDistrictId == null) {
+        //                      $("#ddlDistricts").val($("#hdnDistrictId").val());
+        //                  } else { $("#ddlDistricts").val(masterDistrictId); }
+        //                  window.localStorage.setItem('SelectedDistrictId', $("#ddlDistricts").val());
+        //                  window.localStorage.setItem('SelectedDistrictName', $('#ddlDistricts :selected').text()); //already selected value
+        //                  loadSchool();
+
+        //              });
+
+        //start rammohan
+        //Displaying the messages based on logged user districtid and schoolid
+        var schoolID = window.localStorage.getItem('StudentSchoolId');
+        var personID = window.localStorage.getItem('PersonId');
+        if (schoolID == "" || schoolID == null || schoolID == undefined) {
+            // studentID = window.localStorage.getItem('SelectedStudentID');
+            schoolID = 0;
+        }
+         
+        var studentId = window.localStorage.getItem("StudentID");
+        //url = '/PortalUser/GetMessages/';
+        //var modelObj = {
+        //    type: 0,
+        //    districtid: schoolID,
+        //    schoolid: schoolID,
+        //    userid: personID
+        //};
+
+        //var responseData = SendRequestJSON(url, modelObj);
+        //if (responseData.result == 'Success') {
+        //    $("#divMessages").html(responseData.Content);
+        //    $(".msgcount").html(responseData.Count);
+        //}
+        //else {
+        //    $(".msgcount").html('0');
+        //    document.getElementById("displayMessage").innerHTML = 'Error Occured.';
+        //    ShowPopup();
+        //}
+
+        ////displaying blink and color for messages
+        //if (responseData.Count > 0) {
+
+        //    $("#MsgCount").addClass("blink");
+        //    $("#MsgCount1").css("color", "red");
+        //}
+        //else {
+        //    $("#MsgCount").removeClass("blink");
+        //    $("#MsgCount1").css("color", "#8CC152");
+        //}
+
+        //Displaying the all messages
+        $('#btnMessages').on('click', function () {
+            window.location = '/PortalUser/BulletinSummary';
+            window.localStorage.setItem('Master', 'true');
+        });
+        //end of rammohan
+
+    </script>
+
+    <!-- End top navigation script-->
+    <!--This section is to write page specific scripts in content pages-->
+    @RenderSection("PageSpecificScript", required: false)
+
+</body>
+</html>
+<!-- Localized -->
