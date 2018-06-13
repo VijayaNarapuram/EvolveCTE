@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="987c65f8224e477393d066b9c7da8942" Name="Diagram1">
+        <EntityTypeShape EntityType="NGSISModel.AbsenceNotice" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.Accommodation" Width="1.5" PointX="3" PointY="171.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.Address" Width="1.5" PointX="3" PointY="175.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.AlertLookup" Width="1.5" PointX="27.5" PointY="180.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.AssessmentAreaAccommodation" Width="1.5" PointX="3" PointY="206.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.AssessmentAssessmentArea" Width="1.5" PointX="0.75" PointY="191.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.AssessmentAssessmentArea_old" Width="1.5" PointX="3" PointY="187.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.Assignment" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.AssignmentStudent" Width="1.5" PointX="9.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.Attendance" Width="1.5" PointX="9.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.AttendancePatternExceptionManage" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.AttendanceSetting" Width="1.5" PointX="10.5" PointY="193.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.AttendanceSetup" Width="1.5" PointX="11.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.BellSchedule" Width="1.5" PointX="13.5" PointY="191.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.BellScheduleDay" Width="1.5" PointX="15.75" PointY="184.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.BellScheduleGrade" Width="1.5" PointX="23.75" PointY="214.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.BellSchedulePeriod" Width="1.5" PointX="15.75" PointY="180" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.BuildingAllotment" Width="1.5" PointX="5.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.BuildingAssignment" Width="1.5" PointX="10.5" PointY="182" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.Bulletin" Width="1.5" PointX="3" PointY="220.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.BulletinRead" Width="1.5" PointX="5.25" PointY="231.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.BulletinType" Width="1.5" PointX="11.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.Calendar" Width="1.5" PointX="11.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.CalendarEvent" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.ClassAssignment" Width="1.5" PointX="13.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.ClassAssignmentDocument" Width="1.5" PointX="13.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.ClassAssignmentStudent" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.ClassAssignmentTopic" Width="1.5" PointX="2.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.ClassCategory" Width="1.5" PointX="15.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.ClassGrade" Width="1.5" PointX="15.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.ClassGradePeriod" Width="1.5" PointX="4.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.ClassStudent" Width="1.5" PointX="6.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.ConfigVariable" Width="1.5" PointX="15.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.CourseGradeLevel" Width="1.5" PointX="8.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.CourseGradReq" Width="1.5" PointX="15.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.CourseSection" Width="1.5" PointX="15.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.CTESetup" Width="1.5" PointX="17.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.DataHistory" Width="1.5" PointX="17.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.District" Width="1.5" PointX="6" PointY="206.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.DistrictAddress" Width="1.5" PointX="5.25" PointY="177.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.DistrictApplicationSetup" Width="1.5" PointX="8.25" PointY="194.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.DistrictArea" Width="1.5" PointX="23.75" PointY="218.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.DistrictAssessment" Width="1.5" PointX="8.25" PointY="198.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.DistrictAttendancePattern" Width="1.5" PointX="8.25" PointY="204.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.DistrictAttendancePatternEvent" Width="1.5" PointX="10.5" PointY="210.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.DistrictCalendarEndSetup" Width="1.5" PointX="17.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.DistrictComment" Width="1.5" PointX="10.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.DistrictContact" Width="1.5" PointX="12.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.DistrictCourse" Width="1.5" PointX="13.25" PointY="209.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.DistrictCourseHistory" Width="1.5" PointX="15.5" PointY="222.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.DistrictCourseTerm" Width="1.5" PointX="17.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.DistrictGPASetup" Width="1.5" PointX="8.25" PointY="210.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.DistrictGradeBookPreference" Width="1.5" PointX="17.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.DistrictGradeScale" Width="1.5" PointX="8.25" PointY="235.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.DistrictGradeScaleDetail" Width="1.5" PointX="10.5" PointY="235.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.DistrictOrganizational" Width="1.5" PointX="8.25" PointY="214.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.DistrictPhone" Width="1.5" PointX="19.25" PointY="212.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.DistrictPortal" Width="1.5" PointX="0.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.DistrictRegion" Width="1.5" PointX="8.25" PointY="242.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.DistrictReportingPeriod" Width="1.5" PointX="19.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.DistrictSchoolYear" Width="1.5" PointX="2.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.DistrictSchoolYearTermType" Width="1.5" PointX="4.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.DistrictSocial" Width="1.5" PointX="19.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.DistrictStudentBanner" Width="1.5" PointX="6.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.DistrictTerm" Width="1.5" PointX="19.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.DocumentURL" Width="1.5" PointX="19.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.EMISMasterLookup" Width="1.5" PointX="19.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.EMISReportingFormat" Width="1.5" PointX="12.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.EMISReportPeriod" Width="1.5" PointX="14" PointY="230.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.EMISReportPeriodDistrict" Width="1.5" PointX="16.25" PointY="218.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.EMISReportPeriodLookup" Width="1.5" PointX="11.75" PointY="230.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.EMISReport" Width="1.5" PointX="14" PointY="234.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.Enrollment" Width="1.5" PointX="14.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.EnrollmentByYear" Width="1.5" PointX="21.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.EntityContact" Width="1.5" PointX="8.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.ExceptionLog" Width="1.5" PointX="21.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.ForgotPasswordKey" Width="1.5" PointX="21.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.GeoCode_Student" Width="1.5" PointX="21.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.GiftedStudentsInfo" Width="1.5" PointX="23.75" PointY="195.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.GPACalculationType" Width="1.5" PointX="21.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.GPADefinition" Width="1.5" PointX="16.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.GradeBook" Width="1.5" PointX="23.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.GradeLevelSubject" Width="1.5" PointX="23.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.GradeMethod" Width="1.5" PointX="4.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.GradePeriod" Width="1.5" PointX="23.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.GradeTopicDetail" Width="1.5" PointX="23.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.GradReq" Width="1.5" PointX="23.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.GradReqAssessment" Width="1.5" PointX="18.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.GradReqAssessmentArea" Width="1.5" PointX="23.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.GradReqDetail" Width="1.5" PointX="0.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.GradReqSubject" Width="1.5" PointX="20.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.History" Width="1.5" PointX="25.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.HomeRoom_06132016" Width="1.5" PointX="25.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.HomeroomHistory" Width="1.5" PointX="6.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.HomeroomStaff_06132016" Width="1.5" PointX="8.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.Incident" Width="1.5" PointX="25.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.LoginDetail" Width="1.5" PointX="10.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.MenuItem" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.MenuItems_NEW" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.MenuItemsChild" Width="1.5" PointX="25.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.MenuType" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.OAD_Fall2017" Width="1.5" PointX="25.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.OdysseywareCourseMapping" Width="1.5" PointX="25.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.Organization" Width="1.5" PointX="25.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.OrganizationContact" Width="1.5" PointX="12.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.Orientation" Width="1.5" PointX="13.5" PointY="198.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.OrientationSchedule" Width="1.5" PointX="26.75" PointY="205.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.Person" Width="1.5" PointX="3" PointY="229.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.PersonAddress" Width="1.5" PointX="3" PointY="225.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.PersonContact" Width="1.5" PointX="22.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.PersonContactPhone" Width="1.5" PointX="27.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.PersonDisability" Width="1.5" PointX="8.25" PointY="231.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.PersonDynamicContactPhone" Width="1.5" PointX="2.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.PersonPhone" Width="1.5" PointX="27.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.PersonPhoto" Width="1.5" PointX="27.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.PersonRace" Width="1.5" PointX="27.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.PersonSocial" Width="1.5" PointX="14.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.PickListCategory_Bak" Width="1.5" PointX="3.75" PointY="211.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.PickListDetails_Bak" Width="1.5" PointX="0.75" PointY="196.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.PortalContactAddress" Width="1.5" PointX="16.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.PortalStudentAddress" Width="1.5" PointX="27.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.PortalStudentPhone" Width="1.5" PointX="27.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.PortalVersion" Width="1.5" PointX="18.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.ProgramCode" Width="1.5" PointX="10.5" PointY="176.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.RequiredDocument" Width="1.5" PointX="23.75" PointY="200.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.Role" Width="1.5" PointX="5.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.RoleMenuAccess" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.Room" Width="1.5" PointX="10.5" PointY="188.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.RouteDetail" Width="1.5" PointX="29.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.Route" Width="1.5" PointX="29.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.RouteStudent" Width="1.5" PointX="4.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.RouteVehicle" Width="1.5" PointX="6.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.School" Width="1.5" PointX="8.25" PointY="172.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolAlert" Width="1.5" PointX="29.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolAttendancePattern" Width="1.5" PointX="13.5" PointY="185.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolAttendancePatternEvent" Width="1.5" PointX="24.75" PointY="190.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolBulletin" Width="1.5" PointX="5.25" PointY="221.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolComment" Width="1.5" PointX="8.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolContact" Width="1.5" PointX="10.5" PointY="200.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolCourse" Width="1.5" PointX="16.5" PointY="188.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolCourseSection" Width="1.5" PointX="18.75" PointY="196.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolCourseSectionStaffHistory" Width="1.5" PointX="21" PointY="217.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolCourseTerm" Width="1.5" PointX="10.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolDay" Width="1.5" PointX="10.5" PointY="225.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolEvent" Width="1.5" PointX="10.5" PointY="245.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolGPASetup" Width="1.5" PointX="10.5" PointY="249.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolGradeBookPreference" Width="1.5" PointX="29.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolGradeLevel" Width="1.5" PointX="19.5" PointY="189.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolGradeScale" Width="1.5" PointX="10.5" PointY="205" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolGradeScaleDetail" Width="1.5" PointX="12.75" PointY="223.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolLunchMenu" Width="1.5" PointX="29.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolPeriod" Width="1.5" PointX="20.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolPortal" Width="1.5" PointX="29.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolReportingPeriod" Width="1.5" PointX="22.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolSocial" Width="1.5" PointX="24.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolStaffType" Width="1.5" PointX="29.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolStandard" Width="1.5" PointX="31.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolStandardSet" Width="1.5" PointX="31.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolStudentBanner" Width="1.5" PointX="31.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolTerm" Width="1.5" PointX="16.5" PointY="202.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolYear" Width="1.5" PointX="13.5" PointY="203.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolYearTermType" Width="1.5" PointX="18.75" PointY="216.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SectionPeriodMapping" Width="1.5" PointX="21" PointY="221.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SectionStaffMapping" Width="1.5" PointX="26" PointY="217" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.Staff" Width="1.5" PointX="16.5" PointY="209.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StaffCertification" Width="1.5" PointX="31.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StaffDistrictMapping" Width="1.5" PointX="8.25" PointY="249.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StaffMapping" Width="1.5" PointX="31.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StaffSchoolDepartment" Width="1.5" PointX="31.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StaffSchoolMapping" Width="1.5" PointX="10.5" PointY="283.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.Standard" Width="1.5" PointX="31.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.Student" Width="1.5" PointX="21.5" PointY="195.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentAccommodation" Width="1.5" PointX="5.25" PointY="170.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentAlert" Width="1.5" PointX="29.75" PointY="201.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentAlternate" Width="1.5" PointX="26.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentApplication" Width="1.5" PointX="22.5" PointY="175.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentApplicationContact" Width="1.5" PointX="3" PointY="236.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentApplicationPhone" Width="1.5" PointX="26.75" PointY="196.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentAssessment" Width="1.5" PointX="27.75" PointY="189" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentAssessmentAccommodation" Width="1.5" PointX="26.75" PointY="212.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentAssignmentHistory" Width="1.5" PointX="28.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentAttendance" Width="1.5" PointX="32.75" PointY="204.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentBannerLookup" Width="1.5" PointX="31.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentContact" Width="1.5" PointX="5.25" PointY="198.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentCourseRequest" Width="1.5" PointX="26.75" PointY="200.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentCTE" Width="1.5" PointX="0.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentDayAttendance" Width="1.5" PointX="12.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentDayAttendance_03022016" Width="1.5" PointX="3" PointY="252.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentDiscipline" Width="1.5" PointX="33.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentETR" Width="1.5" PointX="3" PointY="257.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentExcessiveHabitualAb" Width="1.5" PointX="29.75" PointY="206.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentGPA" Width="1.5" PointX="23.75" PointY="223.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentGrad" Width="1.5" PointX="2.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentGradRequirement" Width="1.5" PointX="4.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentGraduation" Width="1.5" PointX="33.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentHealthInfo" Width="1.5" PointX="6.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentHomeroom_06132016" Width="1.5" PointX="8.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentIEP" Width="1.5" PointX="3" PointY="264.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentInterventionStaff" Width="1.5" PointX="33" PointY="199.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentNextYear" Width="1.5" PointX="23.75" PointY="227.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentNote" Width="1.5" PointX="3" PointY="271.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentOrientation" Width="1.5" PointX="30.75" PointY="194" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentOrientationSchedule" Width="1.5" PointX="35" PointY="204.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentPhone" Width="1.5" PointX="33.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentProgram" Width="1.5" PointX="24.75" PointY="183.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentProgramHistory" Width="1.5" PointX="27" PointY="184.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentRequiredDocument" Width="1.5" PointX="33.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentSchedule" Width="1.5" PointX="30.75" PointY="187.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentSectionSchedule" Width="1.5" PointX="33.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentSPEDGoal" Width="1.5" PointX="14.75" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentStandingRecord" Width="1.5" PointX="29.75" PointY="212.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentTime" Width="1.5" PointX="16.75" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentTransferOfRight" Width="1.5" PointX="23.75" PointY="243.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.TDA_BrightspaceProgress" Width="1.5" PointX="18.75" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.TechnologySurvey" Width="1.5" PointX="20.75" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.TestingRoom" Width="1.5" PointX="22.75" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.TestingRoster" Width="1.5" PointX="28.75" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.TestLocation" Width="1.5" PointX="30.75" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.Topic" Width="1.5" PointX="32.75" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.Vehicle" Width="1.5" PointX="34.75" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.Version" Width="1.5" PointX="35.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.Withdrawal" Width="1.5" PointX="3" PointY="277.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.Address01192017" Width="1.5" PointX="35.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.AssessmentDiagnostic" Width="1.5" PointX="35.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.AssessmentGradPerformance" Width="1.5" PointX="35.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.AssessmentScoreNotReported" Width="1.5" PointX="35.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.AssessmentSetup" Width="1.5" PointX="35.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.AssessmentTestAccommodationsType" Width="1.5" PointX="35.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.AssessmentTestGradeLevel" Width="1.5" PointX="24.75" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.AssessmentTestType" Width="1.5" PointX="36.75" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.AssessmentValidScore" Width="1.5" PointX="37.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.BrightspaceSessions_Test" Width="1.5" PointX="37.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.BrightspaceStaffSession" Width="1.5" PointX="6.75" PointY="37.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.datahistory_08162016" Width="1.5" PointX="8.75" PointY="37.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.DistrictAddress01192017" Width="1.5" PointX="37.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.DistrictAttendancePatternException" Width="1.5" PointX="37.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.DistrictRegionBackup" Width="1.5" PointX="37.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.EMISReportField" Width="1.5" PointX="16.25" PointY="234.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.EnrollmentByYear_08162016" Width="1.5" PointX="37.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.Homeroom" Width="1.5" PointX="10.75" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.Homeroom_BKP06062016" Width="1.5" PointX="12.75" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.HomeroomBAK_06102016" Width="1.5" PointX="26.75" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.HomeroomOld" Width="1.5" PointX="38.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.HomeroomStaff" Width="1.5" PointX="38.75" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.HomeroomStaffBAK_06102016" Width="1.5" PointX="39.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.Person07082016" Width="1.5" PointX="0.75" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.PickListCategory" Width="1.5" PointX="2.75" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.PickListDetail" Width="1.5" PointX="39.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.PortalAccount" Width="1.5" PointX="39.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.PortalAccountDashboard" Width="1.5" PointX="14.75" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.PortalLinkedStudent" Width="1.5" PointX="39.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.PortalLoginParent" Width="1.5" PointX="16.75" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.PortalLoginStudent" Width="1.5" PointX="18.75" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.PortalStudentContactPhone" Width="1.5" PointX="39.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.RoleMenuPrivilage" Width="1.5" PointX="20.75" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolAttendancePattern_02092016" Width="1.5" PointX="39.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolAttendancePatternBak_02182016" Width="1.5" PointX="28.75" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolAttendancePatternException" Width="1.5" PointX="30.75" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SchoolCourseSection_Bak_04042016" Width="1.5" PointX="32.75" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SCS_Bak1" Width="1.5" PointX="34.75" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SCS_Bak2" Width="1.5" PointX="36.75" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SCS_Bak3" Width="1.5" PointX="38.75" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.SectionStaff" Width="1.5" PointX="40.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentAssignmentGrade" Width="1.5" PointX="40.75" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentContact368" Width="1.5" PointX="40.75" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentDayAttendance_02042016" Width="1.5" PointX="41.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentDayAttendance_TEMP" Width="1.5" PointX="41.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.studentgrade" Width="1.5" PointX="23.75" PointY="247.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.studentgrade0406" Width="1.5" PointX="41.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentHomeroom" Width="1.5" PointX="41.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentHomeroomBAK_06102016" Width="1.5" PointX="41.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentNextYear_0603" Width="1.5" PointX="22.75" PointY="41.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentNextYear_0603_9rows" Width="1.5" PointX="41.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentNextYear_06152016" Width="1.5" PointX="16.75" PointY="42.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentScheduleBack" Width="1.5" PointX="42.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.StudentTime1" Width="1.5" PointX="42.75" PointY="37.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.TDAStudentActivity" Width="1.5" PointX="42.75" PointY="42.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.TDAStudentActivityTime" Width="1.5" PointX="43.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.TMP_SCA" Width="1.5" PointX="43.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.UserMenuPrivilage" Width="1.5" PointX="4.75" PointY="43.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGSISModel.Versions_QA" Width="1.5" PointX="6.75" PointY="43.75" IsExpanded="true" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_Accommodation_AccommodationTypePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentAccommodation_AccommodationID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_DistrictAddress_AddressID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_Address_AddressTypePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentContacts_AddressID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentAlert_AlertLookupID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_AssessmentAreaAccommodations_AssessmentAssessmentAreaID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_AssessmentAreaAccommodations_AccommodationPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentAssessmentAccommodation_AssessmentAreaAccommodationsID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_AssessmentAssessmentArea_AssessmentAreaCodePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_AssessmentAssessmentArea_AssessmentPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_AttendanceSettings_DefaultAttendanceCodePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_AttendanceSettings_SchoolID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_AttendancceSettin_AttendanceDayTypePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_AttendanceSetting_AttendanceCalcTypePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_BellSchedule_SchoolID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_BellSchedule_SchoolYearID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_BellScheduleDay_BellScheduleID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_BellScheduleGrade_BellScheduleID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_BellSchedulePeriod_BellScheduleID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_BellSchedule_GradePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_BellScheduleGrade_GenderPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_BuildingAssignment_SchoolID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_BulletinRead_BulletinID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_SchoolBulletin_BulletinID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_BulletinRead_PersonID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_DistrictAddress_DistrictID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_DistrictApplicationSetup_DistrictID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_DistrictArea_DistrictD" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_DistrictAssessment_DistrictID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_DistrictAttendancePattern_DistrictID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_DistrictCourse_DistrictID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_DistrictGPASetup_DistrictID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_DistrictGradeScale_DistrictID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_DistrictOrganizational_DistrictID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_DistrictPhone_DistrictID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_DistrictRegion_DistrictID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_EMISReportPeriodDistrict_DistrictID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLC_District_PickListCategoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_District_DistrictTypePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_School_DistricID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StaffDistrictMapping_DistrictID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentAssessment_DistrictID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_DistrictArea_StaffID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_DistrictAttendancePatternEvents_DistrictAttendancePatternID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_SchoolAttendancePattern_DistrictAttendancePatternID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_DistrictAttandancePatternEvents_CalendarEventPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_DistrictCourseHistory_DistrictCourseID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_DistrictCourse_CourseLevelPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_DistrictCourse_CreditFlexPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_DistrictCourse_CTECollegeCreditPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_DistrictCourse_CurriculumTypePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_DistrictCourse_DeliveryMethodsPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_DistrictCourse_EducationOptionPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_DistrictCourse_LanguageUsedPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_DistrictCourse_SchoolYearPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_DistrictCourse_SemesterCodePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_DistrictCourse_StateSubjectCodePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_DistrictCourse_StudentPopulationPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_SchoolCourseID_DostrictCourseID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.Fk_DistrictGradeScaleDetaill_DistrictGradeScaleID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_SchoolGradeScale_DistrictGradeScaleID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_DistrictOrganizational_AttributeNamePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_DistrictOrganizational_AttributeTypePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_DistrictOrganizational_SchoolYearPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_DistrictPhone_PhoneTypePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_EMISReportPeriod_ReportPeriodID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_EMISReportPeriodDistrict_EMISReportPeriodID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_EMISReports_ReportPeriodID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_EMISReports_EMISReportFields" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_GiftedStudentsInfo_StudentID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_MenuItems_MenuTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_MenuItems_MenuTypeID2" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_Orientation_OrientationScheduleID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_Orientation_SchoolID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_OrientationSchedule_OrientationID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_Orientation_OrientationTypePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_OrientationSchedule_StaffID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_OrientationSchedule_OrientationRegionPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PersonDisability_PersonID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_Person_MaritalStatusPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_Staff_PersonID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.Fk_PLD_PersonAddress_AddressTypePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.Fk_PLC_PersonDisability_PickListCategoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_Room_RoomTypePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_SchoolAttendancePatternEvents_CalendarEventPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_SchoolContact_ContactTypePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_SchoolContact_SchoolContactPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_SchoolCourse_CreditFlexPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_SchoolCourse_CTECollegeCreditPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_SchoolCourse_CurriculumTypePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_SchoolCourse_EducationaOptionPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_SchoolCourse_LanguageUsedPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_SchoolCourse_SchoolYearPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_SchoolCourse_StudentPopulationPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_SchoolCourse_SubjectCodePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_SchoolCourseSection_CreditFlexPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_SchoolCourseSection_CTECollegeCreditPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_SchoolCourseSection_CurriculumTypePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_SchoolCourseSection_LanguageUsedPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_SchoolCourseSection_StaffRolePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_SchoolCourseSection_StudentPopulationPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_SchoolGradeLevel_GradeLevelPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_SchoolGradeLevel_NextGradeLevelPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_SchoolTerm_SchoolYearTermPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_SchoolYear_SchoolYearPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_SchoolYearTermType_TypeOfTermPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_SectionStaffMapping_StaffRolePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_Staff_StaffTypePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_Student_HomeLessPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_Student_LimitedEnglishProficiencyPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentApplication_FirstLanguageTalkPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentApplication_GenderPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentApplication_HomeLessTyepPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentApplication_LanguageMostAftenSpokenAtHomePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentApplication_LanguageSpokenAtTheStudentHomePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentApplicationContact_PrimaryContactRelationshipWithStudentPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentApplicationPhone_PhoneTypePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentAssessment_AssessmentAreaPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentAssessment_AssessmentPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentAssessment_StudentGradeLevelPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentAssessment_TestGradeLevelPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentAssessmentAccommodations_AccommodationPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentAttendance_AttendanceCodePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentAttendance_ReasonPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentDayAttendance_AttendanceCodePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentETR_ETRDisabilityConditionPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentETR_ETREventTypePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentETR_ETRNonCompliancePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentETR_ETROutComePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentETR_SpecialEducationTypePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentExcessiveHabitualAbs_AbsenceEventPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentExcessiveHabitualAbs_AbsenceTypePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentExcessiveHabitualAbs_CategoryOfHoursPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentExcessiveHabitualAbs_HoursOfAbsencePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentExcessiveHabitualAbs_TypeofNoticePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentIEP_IEPEventTypePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentIEP_IEPNonCompliancePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentIEP_IEPOutcomePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentIEP_IEPTestTypePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentNote_CategoryPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentNote_MethodPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentNote_SubjectPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentOrientation_OrientationStatusPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentOrientation_OrientationTypePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentOrientationSchedule_OrientationRegionPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentProgram_ProgramTypePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentSchedule_StudentCourseStatusPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentStandingRecod_TuitionStatusPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentStandingRecord_HowReceivedCodePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentStandingRecord_SentToDistrictReason1PL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentStandingRecord_SentToDistrictReason2PL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_SchoolTerm_TypeOftermPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentSchedule_SchoolYearPL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_WithDrawal_WithDrawlCodePL" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.Fk_ProgramCodes_SchoolID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.Fk_ProgramCodes_StudentID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.Fk_RequiredDocuments_StudentID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.Fk_RoleMenuAccess_RoleID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_Room_SchoolID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.Fk_SchoolAttendancePattern_SchoolID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_SchoolContact_SchoolID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_SchoolCourse_SchoolID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_SchoolCourseSection_SchoolID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_SchoolDay_SchoolID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_SchoolEvent_SchoolID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_SchoolGPASetup_SchoolID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_SchoolGradeLevel_SchoolID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.Fk_SchoolGradeScale_SchoolID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_SchoolTerm_SchoolID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_SchoolYear_SchoolID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_Staff_SchoolID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StaffSchoolMapping_SchoolID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_Student_SchoolID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentApplication_SchoolID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentAssessment_SchoolID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentOrientation_SchoolID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentProgram_SchoolID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentSchedule_SchoolID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.Fk_SchoolAttendancePatternEvents_SchoolAttendancePatternID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentCourseRequest_SchoolCourseID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_SchoolCourseSection_SchoolDayID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_SchoolCourseSection_SchooltermID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_SchoolCourseSectionStaffHistory_SchoolCourseSectionID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_SectionPeriodMapping_SchoolCourseSectionID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_SectionStaffMapping_SchoolCourseSectionID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentAttendance_SchoolCourseSectionID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentSchedule_SchoolCourseSectionID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_SchoolGradeScaleDetail_SchoolGradeScaleID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_SchoolTerm_SchoolYearTermTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_SchoolYearTermType_SchoolYearID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentAttendance_SchoolYearID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_SectionStaffMapping_StaffID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentInterventionStaff_StaffID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentOrientationSchedule_CounsellorID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentOrientationSchedule_StaffID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentProgram_StaffID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentAccommodation_StudentID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentAlert_StudentID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentAssessment_StudentID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentAssessmentAccommodations_StudentID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentAttendance_StudentID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentCourseRequest_StudentID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentExcessiveHabitualAbs_StudentID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentGPA_StudentID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentGrade_StudentID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentNextYear_StudentID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentOrientation_StudentID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentProgram_StudentID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentSchedule_StudentID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentStandingRecord_StudentID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentTransferOfRights_StudentID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentApplicationPhone_StudentApplicationID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentInterventionStaff_StudentScheduleID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_PLD_StudentOrientationSchedule_StudentOrientationID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.FK_StudentProgramHistory_StudentProgramID" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.SchoolAddress" ManuallyRouted="false" />
+        <AssociationConnector Association="NGSISModel.StudentAddress" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
