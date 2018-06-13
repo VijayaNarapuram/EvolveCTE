@@ -16,5 +16,6 @@ namespace EvolveCTE.DataRepository
     {
         IList<uspSelectCTEProgramOptionsPL_Result> SelectCTEProgramOptionsPL();
         IList<uspSelectStudentCTEProgramStatusPL_Result> SelectStudentCTEProgramStatusPL();
+        //IList<uspCheckStudentQualifiedForCTE> uspCheckStudentCTELogin();
     }
 }

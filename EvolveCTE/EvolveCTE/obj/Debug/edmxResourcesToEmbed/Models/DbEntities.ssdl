@@ -34,29 +34,6 @@
     <Property Name="ModifiedBy" Type="int" />
     <Property Name="ModifiedDate" Type="datetime" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'EvolveGoLivePROD11012017.dbo.ActiveStudentsWithNullRegions$' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ActiveStudentsWithNullRegions$">
-          <Property Name="F1" Type="float" />
-          <Property Name="F2" Type="nvarchar" MaxLength="255" />
-          <Property Name="F3" Type="nvarchar" MaxLength="255" />
-          <Property Name="F4" Type="nvarchar" MaxLength="255" />
-          <Property Name="Based on County" Type="nvarchar" MaxLength="255" />
-          <Property Name="F6" Type="float" />
-        </EntityType>-->
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'EvolveGoLivePROD11012017.dbo.ActivityTest' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ActivityTest">
-          <Property Name="StudentID" Type="nvarchar" MaxLength="4000" />
-          <Property Name="ActivityType" Type="varchar" MaxLength="50" />
-          <Property Name="ActivityName" Type="varchar" MaxLength="50" />
-          <Property Name="Description" Type="varchar" MaxLength="50" />
-          <Property Name="StartDate" Type="varchar" MaxLength="50" />
-          <Property Name="EndDate" Type="varchar" MaxLength="50" />
-          <Property Name="TotalMinutes" Type="varchar" MaxLength="50" />
-          <Property Name="SessionID" Type="varchar" MaxLength="50" />
-          <Property Name="SchoolYear" Type="varchar" MaxLength="50" />
-        </EntityType>-->
   <EntityType Name="Address">
     <Key>
       <PropertyRef Name="AddressID" />
@@ -531,48 +508,6 @@ warning 6002: The table/view 'EvolveGoLivePROD11012017.dbo.AssessmentValidScores
     <Property Name="ModifiedDate" Type="datetime" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6013: The table/view 'EvolveGoLivePROD11012017.dbo.BrightspaceSessions' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="BrightspaceSessions">
-          <Property Name="SessionID" Type="int" />
-          <Property Name="OrgDefinedID" Type="varchar" MaxLength="50" />
-          <Property Name="RoleName" Type="varchar" MaxLength="50" />
-          <Property Name="SessionStart" Type="datetime" />
-          <Property Name="SessionEnd" Type="datetime" />
-          <Property Name="ActiveSessionDuration" Type="int" />
-          <Property Name="TotalSessionDuration" Type="int" />
-          <Property Name="IsImpersonation" Type="varchar" MaxLength="50" />
-          <Property Name="IsActive" Type="varchar" MaxLength="50" />
-          <Property Name="LastActivityTime" Type="datetime" />
-          <Property Name="UserLastActivityTime" Type="datetime" />
-          <Property Name="TimedOut" Type="varchar" MaxLength="50" />
-          <Property Name="SessionStartUTC" Type="datetime" />
-          <Property Name="SessionEndUTC" Type="datetime" />
-          <Property Name="LastActivityTimeUTC" Type="datetime" />
-          <Property Name="UserLastActivityTimeUTC" Type="datetime" />
-          <Property Name="Duplicate" Type="varchar" MaxLength="50" />
-        </EntityType>-->
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'EvolveGoLivePROD11012017.dbo.BrightspaceSessions_TEMP' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="BrightspaceSessions_TEMP">
-          <Property Name="SessionID" Type="int" />
-          <Property Name="OrgDefinedID" Type="varchar" MaxLength="50" />
-          <Property Name="RoleName" Type="varchar" MaxLength="50" />
-          <Property Name="SessionStart" Type="datetime" />
-          <Property Name="SessionEnd" Type="datetime" />
-          <Property Name="ActiveSessionDuration" Type="int" />
-          <Property Name="TotalSessionDuration" Type="int" />
-          <Property Name="IsImpersonation" Type="varchar" MaxLength="50" />
-          <Property Name="IsActive" Type="varchar" MaxLength="50" />
-          <Property Name="LastActivityTime" Type="datetime" />
-          <Property Name="UserLastActivityTime" Type="datetime" />
-          <Property Name="TimedOut" Type="varchar" MaxLength="50" />
-          <Property Name="SessionStartUTC" Type="datetime" />
-          <Property Name="SessionEndUTC" Type="datetime" />
-          <Property Name="LastActivityTimeUTC" Type="datetime" />
-          <Property Name="UserLastActivityTimeUTC" Type="datetime" />
-          <Property Name="Duplicate" Type="varchar" MaxLength="50" />
-        </EntityType>-->
-  <!--Errors Found During Generation:
 warning 6002: The table/view 'EvolveGoLivePROD11012017.dbo.BrightspaceSessions_Test' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="BrightspaceSessions_Test">
     <Key>
@@ -881,12 +816,6 @@ warning 6002: The table/view 'EvolveGoLivePROD11012017.dbo.BrightspaceStaffSessi
     <Property Name="ModifiedBy" Type="int" />
     <Property Name="ModifiedDate" Type="datetime" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'EvolveGoLivePROD11012017.dbo.CounselorsByAlphaRange' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="CounselorsByAlphaRange">
-          <Property Name="CounselorID" Type="nvarchar" MaxLength="255" />
-          <Property Name="Last Name Alphabet Range" Type="nvarchar" MaxLength="255" />
-        </EntityType>-->
   <EntityType Name="CourseGradeLevel">
     <Key>
       <PropertyRef Name="SchoolID" />
@@ -1539,36 +1468,6 @@ warning 6002: The table/view 'EvolveGoLivePROD11012017.dbo.DistrictRegionBackup'
     <Property Name="ModifiedBy" Type="int" />
     <Property Name="ModifiedDate" Type="datetime" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'EvolveGoLivePROD11012017.dbo.Elements' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Elements">
-          <Property Name="TableName" Type="varchar" MaxLength="128" />
-          <Property Name="ColumnName" Type="varchar" MaxLength="256" />
-        </EntityType>-->
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'EvolveGoLivePROD11012017.dbo.EMISExtract' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="EMISExtract">
-          <Property Name="PositionFrom" Type="float" />
-          <Property Name="PositionTo" Type="float" />
-          <Property Name="Size" Type="float" />
-          <Property Name="ExtractName" Type="nvarchar" MaxLength="255" />
-          <Property Name="Reporting Name" Type="nvarchar" MaxLength="255" />
-          <Property Name="Number" Type="nvarchar" MaxLength="255" />
-          <Property Name="Field Name" Type="nvarchar" MaxLength="255" />
-          <Property Name="Default" Type="nvarchar" MaxLength="255" />
-          <Property Name="Number1" Type="nvarchar" MaxLength="255" />
-          <Property Name="Student(S) - Opening" Type="nvarchar" MaxLength="255" />
-          <Property Name="Student(S) - Middle" Type="nvarchar" MaxLength="255" />
-          <Property Name="Student(S) - Year End" Type="nvarchar" MaxLength="255" />
-          <Property Name="Assessment(A)" Type="nvarchar" MaxLength="255" />
-          <Property Name="Calendar(C)" Type="nvarchar" MaxLength="255" />
-          <Property Name="Graduate(G)" Type="nvarchar" MaxLength="255" />
-          <Property Name="Staff/Course(L) " Type="nvarchar" MaxLength="255" />
-          <Property Name="March(D)" Type="nvarchar" MaxLength="255" />
-          <Property Name="Graduate(R)" Type="nvarchar" MaxLength="255" />
-          <Property Name="E-Transcript(E)" Type="nvarchar" MaxLength="255" />
-          <Property Name="Exchange(X)" Type="nvarchar" MaxLength="255" />
-        </EntityType>-->
   <EntityType Name="EMISMasterLookup">
     <Key>
       <PropertyRef Name="ReportFieldCode" />
@@ -1800,48 +1699,6 @@ warning 6002: The table/view 'EvolveGoLivePROD11012017.dbo.EnrollmentByYear_0816
     <Property Name="ModifiedBy" Type="int" />
     <Property Name="ModifiedDate" Type="datetime" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'EvolveGoLivePROD11012017.dbo.Everest_Contact_Person' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Everest_Contact_Person">
-          <Property Name="FirstName" Type="varchar" MaxLength="50" />
-          <Property Name="LastName" Type="varchar" MaxLength="50" />
-          <Property Name="MiddleName" Type="varchar" MaxLength="50" />
-          <Property Name="PrefixID" Type="varchar" MaxLength="50" />
-          <Property Name="SuffixID" Type="varchar" MaxLength="50" />
-          <Property Name="IsActive" Type="bit" />
-          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
-          <Property Name="CreatedDate" Type="datetime" />
-          <Property Name="LegacyStudentID" Type="varchar" MaxLength="50" />
-        </EntityType>-->
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'EvolveGoLivePROD11012017.dbo.Everest_Withdrawals_PROD' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Everest_Withdrawals_PROD">
-          <Property Name="StudentID" Type="varchar" MaxLength="50" />
-          <Property Name="WithdrawlCodePL" Type="varchar" MaxLength="50" />
-          <Property Name="WithdrawlDate" Type="varchar" MaxLength="50" />
-          <Property Name="IsActive" Type="varchar" MaxLength="50" />
-          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
-          <Property Name="CreatedDate" Type="varchar" MaxLength="50" />
-          <Property Name="LegacyStudentID" Type="varchar" MaxLength="50" />
-          <Property Name="WithdrawalSchoolID" Type="varchar" MaxLength="50" />
-        </EntityType>-->
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'EvolveGoLivePROD11012017.dbo.Evolve_AttendancePattern$' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Evolve_AttendancePattern$">
-          <Property Name="AttendancePatternID" Type="nvarchar" MaxLength="255" />
-          <Property Name="PatternName" Type="nvarchar" MaxLength="255" />
-          <Property Name="PatternDescription" Type="nvarchar" MaxLength="255" />
-          <Property Name="ScheduledDates" Type="nvarchar" MaxLength="255" />
-          <Property Name="ScheduledGradeLevels" Type="nvarchar" MaxLength="255" />
-          <Property Name="HoursPerDay" Type="nvarchar" MaxLength="255" />
-          <Property Name="PatternStartDate" Type="datetime" />
-          <Property Name="PatternEndDate" Type="datetime" />
-          <Property Name="ScheduledSchool" Type="nvarchar" MaxLength="255" />
-          <Property Name="TotalHours" Type="nvarchar" MaxLength="255" />
-          <Property Name="TotalDays" Type="nvarchar" MaxLength="255" />
-          <Property Name="LegacyPatternID" Type="nvarchar" MaxLength="255" />
-          <Property Name="LegacyDistrictID" Type="nvarchar" MaxLength="255" />
-        </EntityType>-->
   <EntityType Name="ExceptionLog">
     <Key>
       <PropertyRef Name="ExceptionLogID" />
@@ -2275,31 +2132,6 @@ warning 6002: The table/view 'EvolveGoLivePROD11012017.dbo.HomeroomStaffBAK_0610
     <Property Name="ModifiedBy" Type="int" />
     <Property Name="ModifiedDate" Type="datetime" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'EvolveGoLivePROD11012017.dbo.Import Please' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Import Please">
-          <Property Name="StudentAssessmentID" Type="varchar" MaxLength="50" />
-          <Property Name="StudentID" Type="varchar" MaxLength="50" />
-          <Property Name="AssessmentPL" Type="varchar" MaxLength="50" />
-          <Property Name="AssessmentAreaPL" Type="varchar" MaxLength="50" />
-          <Property Name="DistrictID" Type="varchar" MaxLength="50" />
-          <Property Name="SchoolID" Type="varchar" MaxLength="50" />
-          <Property Name="AssessmentDate" Type="varchar" MaxLength="50" />
-          <Property Name="Score" Type="varchar" MaxLength="50" />
-          <Property Name="RequiredTestTypePL" Type="varchar" MaxLength="50" />
-          <Property Name="TypeOfAccommodationPL" Type="varchar" MaxLength="50" />
-          <Property Name="ScoreNotReportedPL" Type="varchar" MaxLength="50" />
-          <Property Name="TestGradeLevelPL" Type="varchar" MaxLength="50" />
-          <Property Name="StudentGradeLevelPL" Type="varchar" MaxLength="50" />
-          <Property Name="IsActive" Type="varchar" MaxLength="50" />
-          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
-          <Property Name="CreatedDate" Type="varchar" MaxLength="50" />
-          <Property Name="ModifiedBy" Type="varchar" MaxLength="50" />
-          <Property Name="ModifiedDate" Type="varchar" MaxLength="50" />
-          <Property Name="DiagnosticsResultPL" Type="varchar" MaxLength="50" />
-          <Property Name="ValidScoreTypePL" Type="varchar" MaxLength="50" />
-          <Property Name="GradPerformance" Type="varchar" MaxLength="50" />
-        </EntityType>-->
   <EntityType Name="Incident">
     <Key>
       <PropertyRef Name="IncidentID" />
@@ -2316,24 +2148,6 @@ warning 6013: The table/view 'EvolveGoLivePROD11012017.dbo.Import Please' does n
     <Property Name="IncidentSchoolID" Type="int" />
     <Property Name="IsActive" Type="bit" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'EvolveGoLivePROD11012017.dbo.iReadySection' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="iReadySection">
-          <Property Name="SectionID" Type="varchar" MaxLength="50" />
-          <Property Name="Name" Type="varchar" MaxLength="50" />
-          <Property Name="CourseName" Type="varchar" MaxLength="50" />
-          <Property Name="Subject" Type="varchar" MaxLength="50" />
-        </EntityType>-->
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'EvolveGoLivePROD11012017.dbo.iReadyStaff' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="iReadyStaff">
-          <Property Name="Staff_Member_SIS_ID" Type="varchar" MaxLength="50" />
-          <Property Name="FirstName" Type="varchar" MaxLength="50" />
-          <Property Name="LastName" Type="varchar" MaxLength="50" />
-          <Property Name="Role" Type="varchar" MaxLength="50" />
-          <Property Name="Email" Type="varchar" MaxLength="50" />
-          <Property Name="Username" Type="varchar" MaxLength="50" />
-        </EntityType>-->
   <EntityType Name="LoginDetails">
     <Key>
       <PropertyRef Name="LoginID" />
@@ -4253,19 +4067,6 @@ warning 6002: The table/view 'EvolveGoLivePROD11012017.dbo.SectionStaff' does no
     <Property Name="StateReporting" Type="bit" />
     <Property Name="ActiveStatus" Type="bit" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'EvolveGoLivePROD11012017.dbo.'Staff Sessionis-10-15-2017_5-12$'' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="'Staff Sessionis-10-15-2017_5-12$'">
-          <Property Name="StudentID" Type="float" />
-          <Property Name="ActivityType" Type="nvarchar" MaxLength="255" />
-          <Property Name="ActivityName" Type="nvarchar" MaxLength="255" />
-          <Property Name="Description" Type="nvarchar" MaxLength="255" />
-          <Property Name="StartDate" Type="datetime" />
-          <Property Name="EndDate" Type="datetime" />
-          <Property Name="TotalMinutes" Type="float" />
-          <Property Name="SessionID" Type="float" />
-          <Property Name="SchoolYear" Type="nvarchar" MaxLength="255" />
-        </EntityType>-->
   <EntityType Name="StaffCertification">
     <Key>
       <PropertyRef Name="StaffCertificationID" />
@@ -4451,19 +4252,6 @@ warning 6013: The table/view 'EvolveGoLivePROD11012017.dbo.'Staff Sessionis-10-1
     <Property Name="ModifiedBy" Type="int" />
     <Property Name="ModifiedDate" Type="datetime" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'EvolveGoLivePROD11012017.dbo.StudentActivity' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="StudentActivity">
-          <Property Name="StudentID" Type="varchar" MaxLength="50" />
-          <Property Name="ActivityType" Type="varchar" MaxLength="50" />
-          <Property Name="ActivityName" Type="varchar" MaxLength="50" />
-          <Property Name="Description" Type="nvarchar" MaxLength="4000" />
-          <Property Name="StartDate" Type="varchar" MaxLength="50" />
-          <Property Name="EndDate" Type="varchar" MaxLength="50" />
-          <Property Name="TotalMinutes" Type="varchar" MaxLength="50" />
-          <Property Name="SessionID" Type="varchar" MaxLength="50" />
-          <Property Name="SchoolYear" Type="varchar" MaxLength="50" />
-        </EntityType>-->
   <EntityType Name="StudentAddress">
     <Key>
       <PropertyRef Name="AddressID" />
@@ -4598,38 +4386,6 @@ warning 6013: The table/view 'EvolveGoLivePROD11012017.dbo.StudentActivity' does
     <Property Name="MailingOther" Type="varchar" MaxLength="32" />
     <Property Name="MilitaryPL" Type="int" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'EvolveGoLivePROD11012017.dbo.StudentApplicationAddress' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="StudentApplicationAddress">
-          <Property Name="StudentApplicationID" Type="int" />
-          <Property Name="PrimaryStreetNumber" Type="varchar" MaxLength="32" />
-          <Property Name="PrimaryStreetName" Type="varchar" MaxLength="32" />
-          <Property Name="PrimaryCity" Type="varchar" MaxLength="32" />
-          <Property Name="PrimaryStatePL" Type="varchar" MaxLength="64" />
-          <Property Name="PrimaryCountryPL" Type="varchar" MaxLength="64" />
-          <Property Name="PrimaryCountyPL" Type="varchar" MaxLength="64" />
-          <Property Name="PrimaryNeighborhood" Type="varchar" MaxLength="64" />
-          <Property Name="PrimaryPostalCode" Type="varchar" MaxLength="16" />
-          <Property Name="PrimaryApartment" Type="varchar" MaxLength="16" />
-          <Property Name="PrimaryLot" Type="varchar" MaxLength="16" />
-          <Property Name="PrimaryOther" Type="text" />
-          <Property Name="SecondaryStreetNumber" Type="varchar" MaxLength="32" />
-          <Property Name="SecondaryStreetName" Type="varchar" MaxLength="32" />
-          <Property Name="SecondaryCity" Type="varchar" MaxLength="32" />
-          <Property Name="SecondaryStatePL" Type="varchar" MaxLength="64" />
-          <Property Name="SecondaryCountryPL" Type="varchar" MaxLength="64" />
-          <Property Name="SecondaryCountyPL" Type="varchar" MaxLength="64" />
-          <Property Name="SecondaryNeighborhood" Type="varchar" MaxLength="64" />
-          <Property Name="SecondaryPostalCode" Type="varchar" MaxLength="16" />
-          <Property Name="SecondaryApartment" Type="varchar" MaxLength="16" />
-          <Property Name="SecondaryLot" Type="varchar" MaxLength="16" />
-          <Property Name="SecondaryOther" Type="text" />
-          <Property Name="isActive" Type="bit" />
-          <Property Name="CreatedBy" Type="int" />
-          <Property Name="CreatedDate" Type="datetime" />
-          <Property Name="ModifiedBy" Type="int" />
-          <Property Name="ModifiedDate" Type="datetime" />
-        </EntityType>-->
   <EntityType Name="StudentApplicationContact">
     <Key>
       <PropertyRef Name="StudentContactId" />
@@ -5511,14 +5267,6 @@ warning 6002: The table/view 'EvolveGoLivePROD11012017.dbo.StudentNextYear_06152
     <Property Name="LegacyCounselorID" Type="varchar" MaxLength="16" />
     <Property Name="StudentOrientationID" Type="int" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'EvolveGoLivePROD11012017.dbo.StudentPersonalAdvanced' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="StudentPersonalAdvanced">
-          <Property Name="LegacyStudentID" Type="nvarchar" MaxLength="255" />
-          <Property Name="GradeLevelPL" Type="float" />
-          <Property Name="StateGradeLevelPL" Type="float" />
-          <Property Name="StateGradeLevelNextYearPL" Type="float" />
-        </EntityType>-->
   <EntityType Name="StudentPhone">
     <Key>
       <PropertyRef Name="StudentPhoneID" />
@@ -5813,19 +5561,6 @@ warning 6002: The table/view 'EvolveGoLivePROD11012017.dbo.StudentTime1' does no
     <Property Name="CreatedBy" Type="varchar" MaxLength="255" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6013: The table/view 'EvolveGoLivePROD11012017.dbo.TDARegion' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TDARegion">
-          <Property Name="RegionID" Type="int" />
-          <Property Name="CountyPL" Type="int" />
-          <Property Name="CountyName" Type="varchar" MaxLength="50" />
-          <Property Name="RegionPL" Type="int" />
-          <Property Name="DistrictRegionId" Type="int" />
-          <Property Name="DistrictId" Type="int" />
-          <Property Name="CoordinatorID" Type="int" />
-          <Property Name="RegionName" Type="varchar" MaxLength="50" />
-          <Property Name="IsActive" Type="bit" />
-        </EntityType>-->
-  <!--Errors Found During Generation:
 warning 6002: The table/view 'EvolveGoLivePROD11012017.dbo.TDAStudentActivity' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="TDAStudentActivity">
     <Key>
@@ -5882,44 +5617,6 @@ warning 6002: The table/view 'EvolveGoLivePROD11012017.dbo.TDAStudentActivityTim
     <Property Name="ModifiedBy" Type="int" />
     <Property Name="ModifiedDate" Type="datetime" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'EvolveGoLivePROD11012017.dbo.TempResults' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TempResults">
-          <Property Name="District IRN" Type="nvarchar" MaxLength="512" />
-          <Property Name="EMIS_StudentId_Number" Type="nvarchar" MaxLength="512" />
-          <Property Name="Local Classroom Code1" Type="nvarchar" MaxLength="512" />
-          <Property Name="High School Credit Earned1" Type="nvarchar" MaxLength="512" />
-          <Property Name="Partial/Override Credit1" Type="nvarchar" MaxLength="512" />
-          <Property Name="Course Enrollment Start Date1" Type="nvarchar" MaxLength="512" />
-          <Property Name="Course Enrollment End Date1" Type="nvarchar" MaxLength="512" />
-          <Property Name="CourseStart Date1" Type="nvarchar" MaxLength="512" />
-          <Property Name="CourseEnd Date1" Type="nvarchar" MaxLength="512" />
-          <Property Name="Local Classroom Code2" Type="nvarchar" MaxLength="512" />
-          <Property Name="High School Credit Earned2" Type="nvarchar" MaxLength="512" />
-          <Property Name="Partial/Override Credit2" Type="nvarchar" MaxLength="512" />
-          <Property Name="Course Enrollment Start Date2" Type="nvarchar" MaxLength="512" />
-          <Property Name="Course Enrollment End Date2" Type="nvarchar" MaxLength="512" />
-          <Property Name="Local Classroom Code3" Type="nvarchar" MaxLength="512" />
-          <Property Name="High School Credit Earned3" Type="nvarchar" MaxLength="512" />
-          <Property Name="Partial/Override Credit3" Type="nvarchar" MaxLength="512" />
-          <Property Name="Course Enrollment Start Date3" Type="nvarchar" MaxLength="512" />
-          <Property Name="Course Enrollment End Date3" Type="nvarchar" MaxLength="512" />
-          <Property Name="STUDENTCOUNT" Type="nvarchar" MaxLength="512" />
-          <Property Name="SCHOOLID" Type="nvarchar" MaxLength="512" />
-          <Property Name="StudentID" Type="nvarchar" MaxLength="512" />
-          <Property Name="SSID" Type="nvarchar" MaxLength="512" />
-          <Property Name="StudentName" Type="nvarchar" MaxLength="512" />
-          <Property Name="StudentStatus" Type="nvarchar" MaxLength="512" />
-          <Property Name="UniqID" Type="nvarchar" MaxLength="512" />
-          <Property Name="StudentCourseStatusPL" Type="nvarchar" MaxLength="512" />
-          <Property Name="AttandancePatternStartDate" Type="nvarchar" MaxLength="512" />
-        </EntityType>-->
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'EvolveGoLivePROD11012017.dbo.TempUName' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TempUName">
-          <Property Name="PersonID" Type="int" />
-          <Property Name="UserName" Type="varchar" MaxLength="128" />
-        </EntityType>-->
   <EntityType Name="TestingRoom">
     <Key>
       <PropertyRef Name="TestingRoomID" />
@@ -5967,25 +5664,6 @@ warning 6013: The table/view 'EvolveGoLivePROD11012017.dbo.TempUName' does not h
     <Property Name="ModifiedDate" Type="datetime" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6013: The table/view 'EvolveGoLivePROD11012017.dbo.TGRG_Fall2015' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TGRG_Fall2015">
-          <Property Name="StudentID" Type="varchar" MaxLength="50" />
-          <Property Name="AssessmentPL" Type="varchar" MaxLength="50" />
-          <Property Name="AssessmentAreaPL" Type="varchar" MaxLength="50" />
-          <Property Name="DistrictID" Type="varchar" MaxLength="50" />
-          <Property Name="SchoolID" Type="varchar" MaxLength="50" />
-          <Property Name="AssessmentDate" Type="varchar" MaxLength="50" />
-          <Property Name="Score" Type="varchar" MaxLength="50" />
-          <Property Name="RequiredTesttypePL" Type="varchar" MaxLength="50" />
-          <Property Name="TypeOfAccommodationPL" Type="varchar" MaxLength="50" />
-          <Property Name="ScoreNotReportedPL" Type="varchar" MaxLength="50" />
-          <Property Name="TestGradeLevelPL" Type="varchar" MaxLength="50" />
-          <Property Name="StudentGradeLevelPL" Type="varchar" MaxLength="50" />
-          <Property Name="IsActive" Type="varchar" MaxLength="50" />
-          <Property Name="Createdby" Type="varchar" MaxLength="50" />
-          <Property Name="CreatedDate" Type="varchar" MaxLength="50" />
-        </EntityType>-->
-  <!--Errors Found During Generation:
 warning 6002: The table/view 'EvolveGoLivePROD11012017.dbo.TMP_SCA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="TMP_SCA">
     <Key>
@@ -6007,13 +5685,6 @@ warning 6002: The table/view 'EvolveGoLivePROD11012017.dbo.TMP_SCA' does not hav
     <Property Name="Neighborhood" Type="varchar" MaxLength="32" />
     <Property Name="LookupValue" Type="varchar" MaxLength="128" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'EvolveGoLivePROD11012017.dbo.TMP_STG_SAP' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TMP_STG_SAP">
-          <Property Name="LegacyStudentID" Type="nvarchar" MaxLength="255" />
-          <Property Name="Name" Type="nvarchar" MaxLength="255" />
-          <Property Name="Attendance Pattern" Type="nvarchar" MaxLength="255" />
-        </EntityType>-->
   <EntityType Name="Topic">
     <Key>
       <PropertyRef Name="TopicID" />
@@ -6046,14 +5717,6 @@ warning 6002: The table/view 'EvolveGoLivePROD11012017.dbo.UserMenuPrivilages' d
     <Property Name="ModifiedDate" Type="datetime" />
     <Property Name="IsActive" Type="bit" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'EvolveGoLivePROD11012017.dbo.UserRoleList' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="UserRoleList">
-          <Property Name="RoleID" Type="int" />
-          <Property Name="UserID" Type="int" />
-          <Property Name="AssignedBy" Type="int" />
-          <Property Name="AssignedDate" Type="datetime" />
-        </EntityType>-->
   <EntityType Name="Vehicles">
     <Key>
       <PropertyRef Name="VehicleID" />
@@ -9491,6 +9154,11 @@ warning 6002: The table/view 'EvolveGoLivePROD11012017.dbo.Versions_QA' does not
     <Parameter Name="SchoolID" Type="int" Mode="In" />
     <Parameter Name="SchoolYearID" Type="int" Mode="In" />
   </Function>
+  <Function Name="uspCheckStudentCTELogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+    <Parameter Name="CurrentDate" Type="date" Mode="In" />
+  </Function>
   <Function Name="uspCheckStudentLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="UserName" Type="varchar(max)" Mode="In" />
     <Parameter Name="Password" Type="varchar(max)" Mode="In" />
@@ -9503,6 +9171,9 @@ warning 6002: The table/view 'EvolveGoLivePROD11012017.dbo.Versions_QA' does not
     <Parameter Name="applicationid" Type="int" Mode="In" />
     <Parameter Name="createdby" Type="int" Mode="In" />
     <Parameter Name="createddate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="uspCheckStudentQualifiedForCTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StudentID" Type="int" Mode="In" />
   </Function>
   <Function Name="uspCheckTransferCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="StudentID" Type="int" Mode="In" />

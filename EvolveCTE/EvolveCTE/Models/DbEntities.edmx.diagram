@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="987c65f8224e477393d066b9c7da8942" Name="Diagram1">
+      <Diagram DiagramId="987c65f8224e477393d066b9c7da8942" Name="Diagram1" ZoomLevel="54">
         <EntityTypeShape EntityType="NGSISModel.AbsenceNotice" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="NGSISModel.Accommodation" Width="1.5" PointX="3" PointY="171.5" IsExpanded="true" />
         <EntityTypeShape EntityType="NGSISModel.Address" Width="1.5" PointX="3" PointY="175.25" IsExpanded="true" />

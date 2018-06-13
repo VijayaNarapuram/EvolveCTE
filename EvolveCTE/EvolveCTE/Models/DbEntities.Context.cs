@@ -31639,5 +31639,31 @@ namespace EvolveCTE.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspVerifyStudentPortalPhone", portalStudentPhoneIdParameter, currentPhoneIDParameter, studentIdParameter, isApprovedParameter, reviewerParameter, reviewerIdParameter, reviewedDateParameter, rejectedReasonPLParameter, currentPhoneEndDateParameter, newPhoneStartDateParameter);
         }
+    
+        public virtual ObjectResult<uspCheckStudentCTELogin_Result> uspCheckStudentCTELogin(string userName, string password, Nullable<System.DateTime> currentDate)
+        {
+            var userNameParameter = userName != null ?
+                new ObjectParameter("UserName", userName) :
+                new ObjectParameter("UserName", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("Password", password) :
+                new ObjectParameter("Password", typeof(string));
+    
+            var currentDateParameter = currentDate.HasValue ?
+                new ObjectParameter("CurrentDate", currentDate) :
+                new ObjectParameter("CurrentDate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<uspCheckStudentCTELogin_Result>("uspCheckStudentCTELogin", userNameParameter, passwordParameter, currentDateParameter);
+        }
+    
+        public virtual ObjectResult<uspCheckStudentQualifiedForCTE_Result> uspCheckStudentQualifiedForCTE(Nullable<int> studentID)
+        {
+            var studentIDParameter = studentID.HasValue ?
+                new ObjectParameter("StudentID", studentID) :
+                new ObjectParameter("StudentID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<uspCheckStudentQualifiedForCTE_Result>("uspCheckStudentQualifiedForCTE", studentIDParameter);
+        }
     }
 }

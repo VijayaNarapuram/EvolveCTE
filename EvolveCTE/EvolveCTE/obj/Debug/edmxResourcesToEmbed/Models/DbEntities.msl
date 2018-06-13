@@ -19455,5 +19455,27 @@
     <FunctionImportMapping FunctionImportName="uspVerifyStudentPortalAddress" FunctionName="NGSISModel.Store.uspVerifyStudentPortalAddress" />
     <FunctionImportMapping FunctionImportName="uspVerifyStudentPortalContactPhone" FunctionName="NGSISModel.Store.uspVerifyStudentPortalContactPhone" />
     <FunctionImportMapping FunctionImportName="uspVerifyStudentPortalPhone" FunctionName="NGSISModel.Store.uspVerifyStudentPortalPhone" />
+    <FunctionImportMapping FunctionImportName="uspCheckStudentCTELogin" FunctionName="NGSISModel.Store.uspCheckStudentCTELogin">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NGSISModel.uspCheckStudentCTELogin_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SchoolID" ColumnName="SchoolID" />
+          <ScalarProperty Name="SchoolYearID" ColumnName="SchoolYearID" />
+          <ScalarProperty Name="SchoolYearPL" ColumnName="SchoolYearPL" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="SchoolName" ColumnName="SchoolName" />
+          <ScalarProperty Name="GradePL" ColumnName="GradePL" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspCheckStudentQualifiedForCTE" FunctionName="NGSISModel.Store.uspCheckStudentQualifiedForCTE">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NGSISModel.uspCheckStudentQualifiedForCTE_Result">
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

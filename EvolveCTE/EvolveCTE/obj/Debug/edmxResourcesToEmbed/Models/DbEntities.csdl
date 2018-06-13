@@ -18516,6 +18516,14 @@
       <Parameter Name="CurrentPhoneEndDate" Mode="In" Type="String" />
       <Parameter Name="NewPhoneStartDate" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="uspCheckStudentCTELogin" ReturnType="Collection(NGSISModel.uspCheckStudentCTELogin_Result)">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="CurrentDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="uspCheckStudentQualifiedForCTE" ReturnType="Collection(NGSISModel.uspCheckStudentQualifiedForCTE_Result)">
+      <Parameter Name="StudentID" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="EmisExtract_AFA_Result">
     <Property Type="String" Name="Filler" Nullable="false" MaxLength="8" />
@@ -28603,5 +28611,19 @@
     <Property Type="String" Name="RoleName" Nullable="true" MaxLength="64" />
     <Property Type="Int32" Name="PersonID" Nullable="false" />
     <Property Type="Boolean" Name="IsActive" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="uspCheckStudentCTELogin_Result">
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="258" />
+    <Property Type="Int32" Name="SchoolID" Nullable="true" />
+    <Property Type="Int32" Name="SchoolYearID" Nullable="true" />
+    <Property Type="Int32" Name="SchoolYearPL" Nullable="true" />
+    <Property Type="Int32" Name="StudentId" Nullable="false" />
+    <Property Type="String" Name="SchoolName" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="GradePL" Nullable="true" />
+    <Property Type="String" Name="Grade" Nullable="true" MaxLength="256" />
+  </ComplexType>
+  <ComplexType Name="uspCheckStudentQualifiedForCTE_Result">
+    <Property Type="String" Name="Message" Nullable="true" MaxLength="64" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="16" />
   </ComplexType>
 </Schema>

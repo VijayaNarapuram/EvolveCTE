@@ -1250,7 +1250,13 @@
     <Compile Include="Models\uspCheckPortalUserName_Result.cs">
       <DependentUpon>DbEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\uspCheckStudentCTELogin_Result.cs">
+      <DependentUpon>DbEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\uspCheckStudentLogin_Result.cs">
+      <DependentUpon>DbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\uspCheckStudentQualifiedForCTE_Result.cs">
       <DependentUpon>DbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\uspClassStudentsGetForAttendance_Result.cs">
