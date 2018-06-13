@@ -120,13 +120,13 @@
             {
                 if (Session["LoggedIn"].ToString().ToLower() == "false") //for super admin
                 {
-                    Response.Redirect("~/Home/Index");
+                    //Response.Redirect("~/Home/Index");
                 }                
             }
         }
         else
         {
-            Response.Redirect("~/Home/Index");
+           // Response.Redirect("~/Home/Index");
         }
 
         <!--Dispaly Error details/ Alert Message start-->

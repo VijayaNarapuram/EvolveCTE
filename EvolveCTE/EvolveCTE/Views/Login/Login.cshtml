@@ -1,5 +1,181 @@
-﻿@{
-    ViewBag.Title = "Login";
-}
+﻿<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <title>Login | Evolve SIS</title>
 
-<h2>Login</h2>
+    <link rel="stylesheet" type="text/css" href="../assets/css/smart-forms.css">
+    <link href="../assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../assets/css/green.css">
+
+    <!-- BOOTSTRAP CSS (REQUIRED ALL PAGE)-->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <style type="text/css">
+        .ui-state-active {
+            background-color: rgb(0, 255, 197) !important;
+        }
+
+        .modal1 {
+            position: fixed;
+            z-index: 999;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            background-color: Black;
+            filter: alpha(opacity=60);
+            opacity: 0.6;
+            -moz-opacity: 0.8;
+        }
+
+        .center {
+            z-index: 1000;
+            margin: 300px auto;
+            padding: 10px;
+            width: 130px;
+            background-color: White;
+            border-radius: 10px;
+            filter: alpha(opacity=100);
+            opacity: 1;
+            -moz-opacity: 1;
+        }
+
+            .center img {
+                height: 110px;
+                width: 110px;
+            }
+
+        .ui-datepicker-month, .ui-datepicker-year {
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            padding: 2px 4px;
+            font-size: 12px !important;
+            color: #555;
+        }
+
+        #DateOfBirth {
+            z-index: 99999 !important;
+            width: 165px !important;
+        }
+
+        .dob {
+            padding-right: 0;
+            padding-top: 6px;
+        }
+
+        .padleft0 {
+            padding-left: 0px !important;
+        }
+
+        #txt_registrationnumber {
+            width: 202px !important;
+        }
+        .m_auto{
+            float:none;
+            margin:0 auto;
+        }
+        .bdr_new {
+            border:15px solid #4472c4;
+        }
+        .smart-forms .cte_login .theme-green .tagline span{
+                background: #4472c4;
+                padding: 5px 10px;
+                color: #fff;
+        }
+        .smart-forms .cte_login{
+            position:relative;
+        }
+        .smart-forms .cte_login .btn-green{
+            background: #4472c4;
+        }
+        .smart-forms .cte_login .gui-input{
+            background-color: rgba(255, 255, 255, 1) !important;
+        }
+        .smart-forms .cte_login input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+            background-color: rgba(255, 255, 255, 1) !important;
+        }
+      .smart-forms .cte_login .header-green{
+            border-bottom: 3px solid #4472c4;
+        }
+      .bdr_vertical{
+          width: 2px;
+    height: 300px;
+    margin: 0 0 0 0;
+    background: #e1e1e1;
+    position: absolute;
+    left: 1px;
+    top: 120px;
+      }
+      .m_t_20{
+              margin: 12px 15px 0 0;
+    display: inline-block;
+      }
+    </style>
+
+
+</head>
+
+<body class="metaBG">
+    <div class="smart-wrap">
+        <div class="smart-forms smart-container wrap-3">
+            <div class="cte_login">
+                <div class="form-header header-green">
+                    <img src="../assets/img/evolve.png" width="120px" class="logo" alt="Logo">
+                </div>
+                <!-- end .form-header section -->
+
+                <div class="form-body theme-green">
+                    <div class="frm-row">
+                        <div class="colm colm12">
+
+                            <div class="spacer-b30">
+                                <div class="tagline"><span>Student TRECA Tech Application</span></div>
+                                <!-- .tagline -->
+                            </div>
+                            <div id="divLoginStatus" class="error-msg"> </div>
+                            <form action="/" method="post">
+                                <div class="section">
+                                    <label for="username" class="field prepend-icon">
+                                        <input class="gui-input" data-val="true" data-val-required="User ID is required." id="ID" maxlength="64" name="ID" placeholder="Enter username" type="text" value="">
+                                        <span class="field-validation-valid" data-valmsg-for="ID" data-valmsg-replace="true"></span>
+                                        <label for="username" class="field-icon"><i class="fa fa-user"></i></label>
+                                    </label>
+                                </div>
+                                <!-- end section -->
+                                <div class="section">
+                                    <label for="password" class="field prepend-icon">
+                                        <input autocomplete="off" class="gui-input" data-val="true" data-val-required="Password is required." id="PWD" name="PWD" placeholder="Enter password" type="password" value="">
+
+                                        <span class="field-validation-valid" data-valmsg-for="PWD" data-valmsg-replace="true"></span>
+                                        <label for="password" class="field-icon"><i class="fa fa-lock"></i></label>
+                                    </label>
+                                </div>
+                                <!-- end section -->
+                                <!-- end section -->
+                                <div class="form-footer">
+                                    <input type="submit" class="btn button btn-green" value="Sign In" id="btnLoginSubmit">
+
+                                </div>
+                                <div><span style="color: red"></span></div>
+                                <!-- end .form-footer section -->
+                                <p style="font-size:13px;"><a class="m_t_20" href="/Home/ForgotUserId">Not a current TRECA student?</a><input type="submit" class="btn button btn-green" value="Enroll" id="btnCreateAccount"></p>
+                            </form>
+                        </div>
+                    </div><!-- end .frm-row section -->
+                </div>
+                <!-- end .form-body section -->
+
+            </div>
+        </div>
+        <!-- end .smart-forms section -->
+    </div>
+
+
+</body>
+
+</html>

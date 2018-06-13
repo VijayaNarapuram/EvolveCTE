@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "CTEOption";
+    Layout = "~/Views/Common-Master.cshtml";
+}
+<div class="page-content" style="margin:0;">
+    <!--render body-->
+    <div class="container-fluid">
+        <!-- Begin page heading -->
+        <div class="row">
+            <div class="col-sm-6">
+                <h1 class="page-heading" id="pageHeading">Parent/Student Portal</h1>
+            </div>
+            <!-- End page heading -->
+            <div class="col-sm-6 text-right">
+                <!-- Begin breadcrumb -->
+                <ol class="breadcrumb default square rsaquo sm pull-right">
+                    <li><a href="/PortalUser/Dashboard"><i class="fa fa-home"></i></a></li>
+                    <li><a href="/PortalUser/Dashboard">Student</a></li>
+                    <li class="active">Build/Update My Dashboard</li>
+                </ol>
+                <!-- End breadcrumb -->
+            </div>
+        </div>
+        <div class="the-box" style="min-height:450px;padding:140px 0 0 0;">
+            <div class="">
+                <div class="TRECA_Box">
+                    <p>Congratulations XXXXXXXXXXX, you qualify for the TRECA Tech program!</p>
+                    <p>
+                        Which pathway are you interested in?
+                        <select style="width:200px;">
+                            <option>Select</option>
+                        </select>
+                    </p>
+                    <button type="button" class="btn btn-warning">Cancel</button>
+                    <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#myModal">Submit</button>
+                </div>
+                <div class="TRECA_Box">
+                    <p>
+                        Sorry XXXXXXXXXXX, you do not qualify for the TRECA Tech program at this time!
+                    </p>
+                    <p>
+                        In order to qualify you must be in grade 09 - 11
+                        You must have a 2.0 GPA or higher
+                        You must have 90% or better attendance at TRECA
+                    </p>
+                    <p>
+                        Please reach out to your Advisor to see how you can qualify next semester
+
+                    </p>
+                    <button type="button" class="btn btn-warning">Cancel</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+
+
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Confirmation</h4>
+            </div>
+            <div class="modal-body" style="text-align:center;">
+                <p>Your application has been submitted!</p>
+                <p>Your counselor will be in contact with you before the program starts!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>                
+            </div>
+        </div>
+    </div>
+</div>

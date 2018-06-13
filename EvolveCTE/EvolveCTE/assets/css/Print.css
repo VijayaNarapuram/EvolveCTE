@@ -1,0 +1,42 @@
+﻿body {
+}
+@media print {
+  .top-navbar {
+        display:none
+    }
+    .sidebar-left {
+         display:none
+    }
+
+     /* Student Accommodations Summary */
+    .text-right {
+         display:none
+    }
+    #displayMessage {
+          display:none
+    }
+     #btnPrint {
+          display:none
+    }
+      #btnExit {
+          display:none
+    }
+       /* Assessment Area */
+
+    .ddlprintAssessments 
+     {
+         display:none
+    }
+
+    #btnCancel, #btnSaveaandNew, #btnSave {
+         display:none
+    }
+
+     /* Assessment Accommodations */
+     .ddlprintAsstAccoms 
+     {
+         display:none
+    }
+     
+
+}

@@ -1,0 +1,339 @@
+﻿/*Body  {background-color:#FFFFFF;margin:1px;FONT-FAMILY:verdana, arial, helvetica, sans-serif;COLOR:#000033;FONT-SIZE:10px;} 
+Table {padding:0px;margin:0px;border-collapse:collapse; } 
+P, TD, DIV {margin:0px;FONT-SIZE:11px;padding:0px;vertical-align:top;} 
+.TopGroup {background-color:#D9D9E6;border:solid 1px gray;cursor:default;}
+.MenuGroup {background-image:url(images/menu_group_background.gif);background-color:white;border:solid 1px #7E7E81;cursor:default;}
+.TopMenuItem {background-color:#D9D9E6;color:black;font-family:MS Sans Serif;font-size:10px;font-weight: bold;border:solid 1px #D9D9E6;cursor:default;}
+.TopMenuItemHover {background-image:url(images/top_group_background.gif);background-color:#E5E6EF;color:black;font-family:MS Sans Serif;font-size:10px;font-weight:bold;border:solid 1px #7C7C94;border-bottom-color:#BAB9CD;cursor:default;}
+.TopMenuLogoutItem {background-color:#F5F5FF;color:black;font-family:MS Sans Serif;font-size:10px;font-weight: bold;border:solid 1px #D9D9E6;cursor:default;}
+.TopMenuLogoutItemHover {background-image:url(images/top_group_logout_background.gif);background-color:#E5E6EF;color:black;font-family:MS Sans Serif;font-size:10px;font-weight:bold;border:solid 1px #7C7C94;border-bottom-color:#BAB9CD;cursor:default;}
+.MenuItem {color:black;font-family:MS Sans Serif;font-size:10px;margin:1px;cursor:default;}
+.MenuItemHover {background-color:#FFEEC2;color:black;font-family:MS Sans Serif;font-size:10px;border:solid 1px #4B4B6F;cursor:default;}
+.MenuBreak {background-image:url(images/break_bg.gif);width:100%;height:1px;}
+.MenuItemDisabled {color:#999999;font-family:MS Sans Serif;font-size:10px;margin:1px;cursor:default;}
+.TopGroup {z-index:99;position:relative;}
+.DefaultTab {color:black;background-image: url(images/tab_bg.gif);font-family:MS Sans Serif, Verdana;font-size:10px;cursor:default;}
+.DisabledTab {color:#999999;background-image: url(images/tab_bg.gif);font-family:MS Sans Serif, Verdana;font-size:10px;cursor:default;}
+.DefaultTabHover {color:black;background-image: url(images/hover_tab_bg.gif);font-family:MS Sans Serif, Verdana;font-size:10px;cursor:pointer;}
+.SelectedTab {color:black;background-image: url(images/selected_tab_bg.gif);font-family:MS Sans Serif, Verdana;font-size:10px;cursor:default;}
+.MultiPage {background-color:#EFEFEF;border: 1px solid #919B9C;width:100%;height:100%;padding: 20px;top:-3px;left:1px;}
+.wgMultiPage {width:100%;height:100%;}
+.PageContent {font-family:MS Sans Serif, Verdana; font-size:10px;}
+Select {FONT-FAMILY:verdana, arial, helvetica, sans-serif;FONT-SIZE:11px;COLOR:#000000;BACKGROUND-COLOR:#FFFFFF;} 
+Input {FONT-FAMILY:verdana, arial, helvetica, sans-serif;FONT-SIZE:11px;COLOR:#000000;} 
+Textarea {FONT-FAMILY:verdana, arial, helvetica, sans-serif;FONT-SIZE:11px;COLOR:#000000;BACKGROUND-COLOR:#FFFFFF;}
+.HeaderTD {background-color:#999999;font-weight:bold;color:#FFFFFF;font-size:11px;padding:2px;border:0px solid #FFFFFF;} 
+.HeaderFont {FONT-FAMILY:verdana, arial, helvetica, sans-serif;color:#FFFFFF;font-weight:500;letter-spacing:0px;} 
+.LabelTD {background-color:#DEDEDE;padding:1px;vertical-align:top;border:0px solid #000000;color: #000000;font-weight:bold;}
+.LabelTDLight {background-color:#EFEFEF;padding:1px;vertical-align:top;border:0px solid #000000;color: #000000;font-weight:bold;}
+.DataTD {background-color:#EFEFEF;padding:2px;} 
+.GridHeader { font-weight: bold; background-color:#88A4C8; }
+.GridRow0 { background-color: white; }
+.GridRow1 { background-color: #EEEEEE; }
+.Button {	color: #000000;	background-color: #DDDDDD;	border-top: #FFFFFF 1px solid;	border-left: #FFFFFF 1px solid;	border-bottom: #666666 1px solid;	border-right: #666666 1px solid;	font-size: xx-small;}
+.SmallButton {	color: #000000;	background-color: #DDDDDD;	border-top: #FFFFFF 1px solid;	border-left: #FFFFFF 1px solid;	border-bottom: #666666 1px solid;	border-right: #666666 1px solid;	font-size: 9px;}
+.VIPButton {color: black;background-color:red;font-size:xx-small;font-weight:bold;}
+.OverriddenGrade { BACKGROUND-COLOR: #8cf484 }
+.OverriddenGradeAsterisk { FONT-WEIGHT: bold; COLOR: #37a814 }
+.InvalidClassSetup { COLOR:red; }
+.tabsButtonDiv { PADDING-LEFT: 15px; PADDING-BOTTOM: 6px; PADDING-TOP: 2px }
+
+.FormLabelTD { BORDER: #999999 1px solid; PADDING-LEFT: 4px; FONT-WEIGHT: bold; VERTICAL-ALIGN: top; PADDING-TOP: 3px; BACKGROUND-COLOR: #dedede }
+.FormValueTD { BORDER: #999999 1px solid; PADDING-LEFT: 4px; VERTICAL-ALIGN: top; PADDING-TOP: 3px; background-color:#EFEFEF; }
+.FormValueNoLinesTD { BORDER: #EFEFEF 1px solid; PADDING-LEFT: 4px; VERTICAL-ALIGN: top; PADDING-TOP: 3px; background-color:#EFEFEF; }
+    */
+.wgPageHeader {
+	background-color:#999999;
+	font-weight: bold;
+	color:#FFFFFF;
+	font-size:11px;
+	text-align: left;
+	border:0px solid #FFFFFF;
+	height: 24px;
+} 
+.wgPageHeader td { padding:2px;vertical-align: middle;}
+
+/*A,A:active,A:visited,A:link
+{
+	FONT-FAMILY:verdana, arial, helvetica, sans-serif;
+	TEXT-DECORATION:underline;
+	COLOR:#000033;
+} 
+A:hover {TEXT-DECORATION:none;COLOR:#000066;cursor:pointer;} 
+A.blue,A.blue:active,A.blue:visited,A.blue:link{FONT-FAMILY:verdana, arial, helvetica, sans-serif;TEXT-DECORATION:none;COLOR:blue;cursor:pointer;} 
+A.blue:hover {TEXT-DECORATION:underline;COLOR:blue;} 
+A.blueU,A.blueU:active,A.blueU:visited,A.blueU:link{FONT-FAMILY:verdana, arial, helvetica, sans-serif;TEXT-DECORATION:underline;COLOR:blue;cursor:pointer;} 
+A.blueU:hover {TEXT-DECORATION:none;COLOR:#000099;}
+H3, A.H3, A.H3:link, A.H3:visited {FONT-FAMILY:verdana, arial, helvetica, sans-serif;COLOR:#111111;FONT-SIZE:14px;font-weight:900;TEXT-DECORATION:none;} 
+a.HeaderLink, a.HeaderLink:active, a.HeaderLink:link, a.HeaderLink:visited {font-weight: bold;color: white;TEXT-DECORATION:none;}
+a.HeaderLink:hover {font-weight: bold;color: white;TEXT-DECORATION:underline;}*/
+
+/*.wgGrid { }
+.wgGrid a, .wgGrid a:active, .wgGrid a:link, .wgGrid a:visited {color: #000099;TEXT-DECORATION:underline; }
+.wgGrid a:hover {color: #900099;TEXT-DECORATION:underline;}
+.wgGridHeadRow a, .wgGridHeadRow a:active, .wgGridHeadRow a:link, .wgGridHeadRow a:visited {
+	color: black;
+	font-weight: bold;
+	TEXT-DECORATION:underline;
+}
+.wgGridHeadRow a:hover {color: #900099;TEXT-DECORATION:underline;}
+.wgGridHeadRow {background-color: #BBD7FB; }
+.wgGridFooter {padding-top: 15px; }
+.wgGridHeadCell {
+	background-color: #BBD7FB; 
+	border-top: #88a4c8 1px solid;
+	border-bottom: #88a4c8 1px solid;
+	text-align: left;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-weight: bold; 
+	FONT-SIZE: 10px; 
+}
+.wgGridHeadCellCenter {
+	background-color: #BBD7FB; 
+	border-top: #88a4c8 1px solid;
+	border-bottom: #88a4c8 1px solid;
+	text-align: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-weight: bold; 
+	FONT-SIZE: 10px; 
+}
+.wgGridHeadText {font-weight: bold; FONT-SIZE: 10px; padding-left: 2px;}
+.wgGridCell {BORDER-BOTTOM: #999999 1px solid;padding:2px;}
+.wgGridRow {background-color: white;}
+.wgGridRowAlt { background-color: #DDDDDD;}
+.wgGridRowHighlight {background-color: #FDF5E6;font-weight: bold;}
+.wgGridRowHighlightSelected {background-color: #FDF5E6;	font-weight: bold;background-color: #FFFF88;}
+.wgGridRowSelected {background-color: #FFFF88;}
+.wgGridSelectorCell {background-color: #E2E2E2; border: 1px solid #B5B5B5; border-right-color: #B5B5B5; border-bottom-color: #B5B5B5; }*/
+
+.TableGridLines { border-left: solid 1px #557195; }
+.TableGridLines tr.odd  { background-color: #DDDDDD; }
+.TableGridLines tr.even  {background-color: white; }
+/*.TableGridLines tr td  {
+	border-right: solid 1px #999999; 
+	border-left: solid 1px #999999; 
+	border-bottom: solid 1px #999999; 
+	padding: 2px; 
+}
+.TableGridLines tr th  { 
+	background-color: #BBD7FB; 
+	border: solid 1px #88A4C8; 
+	text-align: left; 
+	font-size: 12px; 
+	padding-top: 2px; 
+	padding-bottom: 2px; 
+}
+table.wgResultsTable {
+	border: #88a4c8 1px solid;
+}
+table.wgResultsTable tr th {
+	BORDER-TOP: black 1px solid;  
+	FONT-WEIGHT: bold; 
+	FONT-SIZE: 10px; 
+	BACKGROUND-COLOR: #BBD7FB;
+	vertical-align: middle;	
+	text-align: left;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+table.wgResultsTable tr th.TopHeading {
+	padding-left: 4px;
+	FONT-SIZE: 14px; 
+	BORDER-bottom: black 1px dashed;
+}
+table.wgResultsTable tr.SubHeadingRow th {
+	BORDER-top: black 1px dashed;
+	BORDER-bottom: black 1px dashed;
+}
+table.wgResultsTable tr th.LrgHdng {
+	padding-left: 2px;
+	border-left: solid 1px #557195; 
+	vertical-align: top;
+	FONT-SIZE: 11px; 
+	border-bottom: solid 1px #557195; 
+	padding-bottom: 4px;
+}
+table.wgResultsTable tr th.LrgHdngCntr {
+	padding-left: 2px;
+	border-left: solid 1px #557195; 
+	vertical-align: top;
+	FONT-SIZE: 11px; 
+	border-bottom: solid 1px #557195; 
+	padding-bottom: 4px;
+	text-align: center;
+}
+table.wgResultsTable tr th span.LrgHdngSubText {FONT-SIZE: 9px;FONT-WEIGHT: normal; }
+table.wgResultsTable tr td.LrgHdng {FONT-SIZE: 14px;FONT-WEIGHT: bold; }
+table.wgResultsTable tr th.Rght {text-align: right;}
+table.wgResultsTable tr th.Top {vertical-align: top;}
+table.wgResultsTable tr th a, table.wgResultsTable tr th a:active, table.wgResultsTable tr th a:link, table.wgResultsTable tr th a:visited
+{ color: #000099; TEXT-DECORATION:none; }
+table.wgResultsTable tr th a:hover { color: #000099; TEXT-DECORATION:underline; }
+table.wgResultsTable tr td { BORDER-BOTTOM: #999999 1px solid; }
+table.wgResultsTable tr td.total { BORDER-top: black 2px dashed; padding-top: 4px; padding-bottom: 4px; }
+table.wgResultsTable tr td.lns { padding-left: 2px; border-left: solid 1px #999999;  }
+table.wgResultsTable tr td.nolns { border: solid 0px #999999;  }
+table.wgResultsTable tr td.CntrLines { text-align: center; BORDER-LEFT: #999999 1px solid; BORDER-RIGHT: #999999 1px solid;}
+table.wgResultsTable tr td.GrdLns { BORDER-LEFT: #999999 1px solid; BORDER-RIGHT: #999999 1px solid;}
+table.wgResultsTable tr.odd { background-color: #DDDDDD; }
+table.wgResultsTable tr.even { 	background-color: white; }
+table.wgResultsTable tr.hover { background-color: #FFFF88; cursor: pointer; }
+table.wgResultsTable tr.hover th { background-color: #FFFF88; }
+
+.wgFormLabel { font-weight: bold;vertical-align: top;}
+.wgFormTable {BACKGROUND-COLOR: #EEEEEE; border: #88a4c8 1px solid;}
+.wgTotalBox {border: #999999 1px solid;	font-weight: bold;}
+.wgTotalBoxInvalid {	border: #999999 1px solid;font-weight: bold;color: Red;}
+.Spacer {
+	padding: 0px;
+	margin: 0px;
+	font-size: 0em;
+}
+.wgButtonRow {
+	padding: 2px;
+	border: black 1px solid; 
+	background-color: #88a4c8;
+	margin-bottom: 4px;
+}
+.wgButtonRow tr td {
+	padding: 2px;
+	margin-bottom: 4px;
+	vertical-align: middle; 
+}
+.wgSmallText { font-size: 9px; }
+.wgError { color: red;	font-weight: bold; }
+.wgWarning { font-weight: bold; }
+.wgHidden { display: none; }
+.wgLoading {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+}
+.wgSpan { display: inline-block; display:-moz-inline-box; }
+.wgSmallDdl { font-size: 9px; }
+
+.CheckListDiv {
+	background-color: white;
+	border: black 1px solid;
+}
+.CheckListDiv table tr {
+	background-color: white;
+	cursor: pointer;
+}
+.CheckListDiv table tr.Selected {
+	background-color: #FFFF88;
+}
+.CheckListDiv table tr td {
+	border-bottom: #DDDDDD 1px solid; 
+	padding-bottom: 2px;
+	padding-top: 2px;
+	padding-left: 4px;
+	text-decoration: none;
+}
+.CheckListDiv table tr td.hover {
+	border-bottom: #DDDDDD 1px solid; 
+	padding-bottom: 2px;
+	padding-top: 2px;
+	padding-left: 4px;
+	text-decoration: underline;
+}
+.CheckListDiv table tr td input {
+	width : 1.2em ; 
+	height : 1.2em ; 
+}
+
+.msgStandard {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: #FFFF88;
+	border: #CCCC55 1px solid;
+	font-weight: bold;
+	text-align: center;
+	color: Black;
+}
+.msgWarning {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: white;
+	border: #FFF200 1px solid;
+	font-weight: bold;
+	text-align: center;
+	color: Black;
+}
+.msgError {padding-top: 2px;padding-bottom: 2px;padding-left: 4px;padding-right: 4px;
+	background-color: #FF6666;border: #FF0000 1px solid;font-weight: bold;text-align: center;
+	color: Black;display: inline-block;}
+.msgAjaxError {padding-top: 2px;padding-bottom: 2px;padding-left: 4px;
+	padding-right: 4px;
+	background-color: white;
+	border: #FF0000 1px solid;
+	font-weight: normal;
+	text-align: left;
+	color: Black;
+	display: inline-block;
+}
+select option.disabled {color: #999999;}
+
+.wgTabTable {margin-top: 2px;}
+.wgTabTable tr td {PADDING-RIGHT: 15px;PADDING-LEFT: 15px;PADDING-TOP: 5px; HEIGHT: 22px;text-align: center;}
+.wgTabTable td.sel { background-image: url(/CLI.WebGrader.Web/images/selected_tab_bg.gif); }
+.wgTabTable td.selR {
+	background-image: url(/CLI.WebGrader.Web/images/selected_tab_right_icon.gif);
+	PADDING-RIGHT: 0px;PADDING-LEFT: 0px;PADDING-TOP: 0px;font-size: 4px;}
+.wgTabTable td.selL {
+	background-image: url(/CLI.WebGrader.Web/images/selected_tab_left_icon.gif);
+	PADDING-RIGHT: 0px;PADDING-LEFT: 0px;PADDING-TOP: 0px;font-size: 4px;}
+.MessageTable{	border: #88a4c8 1px solid;	BACKGROUND-COLOR: #BBD7FB;}
+.MessageTable td.Lbl {	PADDING-LEFT: 6px;padding-right: 4px; font-weight: bold;padding-top: 2px;padding-bottom: 2px;text-align: left;}
+.MessageTable td.Vle { padding-top: 2px;}
+.MessageTable td.MsgBody {PADDING-RIGHT: 5px;PADDING-LEFT: 5px;PADDING-BOTTOM: 5px;PADDING-TOP: 5px;}
+.MessageTable td.MsgBodyView {}
+.MessageTable td.MsgBodyView .Msg {margin: 6px;background-color: white;}
+.MessageTable td.MsgBodyView .Msg span {padding: 0px;background-color: white;width: auto;display: inline;}
+.MessageTable td.MsgBodyView .Msg A,.MessageTable td.MsgBodyView .Msg A:active,.MessageTable td.MsgBodyView .Msg A:visited, .MessageTable td.MsgBodyView .MsgA:link
+{FONT-FAMILY:verdana, arial, helvetica, sans-serif;TEXT-DECORATION:none;COLOR:blue;} 
+.MessageTable td.MsgBodyView .Msg A:hover {TEXT-DECORATION:underline;COLOR:blue;} 
+.MessageTable td.MsgBodyView span {padding: 4px;background-color: white;width: 100%;display: inline-block;display:-moz-inline-box;}
+.TreeView  {background-color: white; border: 1px solid black; padding: 2px;} 
+.TreeNodeWithTable {margin-bottom: 2px; margin-left: 1px; PADDING-BOTTOM: 4px;  BORDER: gray 1px solid;}
+.TreeNodeHeader {
+	color: black;
+	background-color: #BBD7FB;
+	border-bottom: #88a4c8 1px solid;
+	PADDING-BOTTOM: 6px; 
+	PADDING-TOP: 4px; 
+	PADDING-left: 2px; 
+	PADDING-right: 8px; 
+}
+.TreeNodeHeaderInactive {
+	color: gray;
+	background-color: #EEEEEE;
+	border-bottom: #88a4c8 1px solid;
+	PADDING-BOTTOM: 6px; 
+	PADDING-TOP: 4px; 
+	PADDING-left: 2px; 
+	PADDING-right: 8px; }
+.TreeNodeFooter {PADDING-left: 6px; PADDING-TOP: 2px; PADDING-BOTTOM: 2px; }
+.TreeNode { 
+	BORDER: gray 1px solid; 
+	PADDING-RIGHT: 3px; 
+	PADDING-LEFT: 3px; 
+	FONT-SIZE: 11px; 
+	PADDING-BOTTOM: 4px; 
+	PADDING-TOP: 2px; 
+	FONT-FAMILY: tahoma;
+	margin-bottom: 2px;
+	margin-left: 1px;
+	width: 90px;
+	background-color: #BBD7FB;}
+.StudentScale2 {font-style: italic; font-weight: bold; color: #00008B;}
+.StudentInactive {font-weight: bold; font-style: italic;}
+.TrendValueSuperScript {font-size:8px;  vertical-align:top; font-weight: bold;}
+.Altered { BACKGROUND-COLOR: #8cf484 }
+.AlteredAsterisk { FONT-WEIGHT: bold; COLOR: #37a814 }*/

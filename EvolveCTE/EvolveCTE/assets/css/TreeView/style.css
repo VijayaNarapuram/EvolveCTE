@@ -1,0 +1,352 @@
+/*
+ * jsTree default theme 2.0.0
+ * Supported features: dots/no-dots, icons/no-icons, loading, clicked, hovered, checkbox, search
+  */
+
+.jstree-default li, 
+.jstree-default i { background-image:url("d.png"); background-repeat:no-repeat; background-color:transparent; }
+.jstree-default li { background-position:-90px 0; background-repeat:repeat-y; }
+.jstree-default li.jstree-last { background:transparent; }
+.jstree-default .jstree-open > .jstree-ocl { background-position:-72px 0; }
+.jstree-default .jstree-closed > .jstree-ocl { background-position:-54px 0; }
+.jstree-default .jstree-leaf > .jstree-ocl { background-position:-36px 0; }
+.jstree-default .jstree-loading > .jstree-ocl { background:url("throbber.gif") center center no-repeat !important; }
+
+.jstree-default .jstree-hovered { background:#e7f4f9; border:1px solid #d8f0fa; padding:0 2px 0 1px; border-radius:2px; }
+.jstree-default .jstree-clicked { background:#beebff; border:1px solid #99defd; padding:0 2px 0 1px; border-radius:2px; }
+
+.jstree-default .jstree-anchor > .jstree-themeicon { background-position:-56px -19px; }
+
+.jstree-default .jstree-no-dots li, 
+.jstree-default .jstree-no-dots .jstree-leaf > .jstree-ocl { background:transparent; }
+.jstree-default .jstree-no-dots .jstree-open > .jstree-ocl { background-position:-18px 0; }
+.jstree-default .jstree-no-dots .jstree-closed > .jstree-ocl { background-position:0 0; }
+
+.jstree-default > .jstree-wholerow-ul .jstree-hovered, 
+.jstree-default > .jstree-wholerow-ul .jstree-clicked { background:transparent; border:0; padding:1px 2px; border-radius:0; }
+
+.jstree-default > .jstree-wholerow-ul .jstree-wholerow-hovered { background:#e7f4f9; }
+.jstree-default > .jstree-wholerow-ul .jstree-wholerow-clicked { background:#beebff; }
+
+.jstree-default .jstree-no-icons .jstree-anchor > .jstree-themeicon { display:none; }
+
+.jstree-default .jstree-search { font-style:italic; color:aqua; }
+
+.jstree-default .jstree-no-checkboxes .jstree-checkbox { display:none !important; }
+
+.jstree-default .jstree-checkbox { background-position:-2px -19px; }
+.jstree-default .jstree-checkbox:hover { background-position:-2px -37px; }
+.jstree-default .jstree-clicked > .jstree-checkbox { background-position:-38px -19px; }
+.jstree-default .jstree-clicked > .jstree-checkbox:hover { background-position:-38px -37px; }
+.jstree-default.jstree-checkbox-no-clicked .jstree-clicked { background:transparent; border:0; padding:1px 2px; }
+.jstree-default.jstree-checkbox-no-clicked .jstree-clicked.jstree-hovered { background:#e7f4f9; border:1px solid #d8f0fa; padding:0 2px 0 1px; border-radius:2px; }
+.jstree-default.jstree-checkbox-no-clicked > .jstree-wholerow-ul .jstree-wholerow-clicked { background:transparent; }
+.jstree-default.jstree-checkbox-no-clicked > .jstree-wholerow-ul .jstree-wholerow-clicked.jstree-wholerow-hovered { background:#e7f4f9; }
+
+.jstree-default .jstree-anchor .jstree-undetermined { background-position:-20px -19px; }
+.jstree-default .jstree-anchor .jstree-undetermined:hover { background-position:-20px -37px; }
+
+#jstree-dnd.jstree-default i { background:transparent; }
+#jstree-dnd.jstree-default .jstree-ok { background:url("d.png") -2px -53px no-repeat; }
+#jstree-dnd.jstree-default .jstree-er { background:url("d.png") -18px -53px no-repeat; }
+
+#jstree-marker.jstree-default { background:url("d.png") -41px -57px no-repeat !important; text-indent:-100px; }
+
+/* RTL PART */
+.jstree-rtl.jstree-default .jstree-hovered,
+.jstree-rtl.jstree-default .jstree-clicked { padding:0 1px 0 2px; }
+.jstree-rtl.jstree-default li { background-image:url("dots_rtl.gif"); background-position: 100% 0px; }
+
+.jstree-rtl.jstree-default .jstree-checkbox { background-position:0px -19px; margin-left:2px; }
+.jstree-rtl.jstree-default .jstree-checkbox:hover { background-position:0px -37px; }
+.jstree-rtl.jstree-default .jstree-clicked > .jstree-checkbox { background-position:-36px -19px; }
+.jstree-rtl.jstree-default .jstree-clicked > .jstree-checkbox:hover { background-position:-36px -37px; }
+
+.jstree-rtl.jstree-default .jstree-anchor .jstree-undetermined { background-position:-18px -19px; }
+.jstree-rtl.jstree-default .jstree-anchor .jstree-undetermined:hover { background-position:-18px -37px; }
+
+/****Custom CSS****/
+/* portlet buttons */
+.portlet.box > .portlet-body {
+  background-color: #fff;
+  padding: 10px;
+}
+
+.portlet.box > .portlet-title {  
+  margin-bottom: 0px;
+}
+
+.portlet.box.blue > .portlet-title {
+  background-color: #4b8df8;
+} 
+
+.portlet.box.blue {  
+   border: 1px solid #b4cef8;
+   border-top: 0;
+}
+
+.portlet.box.red > .portlet-title {
+  background-color: #e02222;
+} 
+
+.portlet.box.red {  
+   border: 1px solid #ef8476;
+   border-top: 0;
+}
+
+.portlet.box.yellow > .portlet-title {
+  background-color: #ffb848;
+} 
+
+.portlet.box.yellow {  
+   border: 1px solid #fccb7e;
+   border-top: 0;
+}
+
+.portlet.box.green > .portlet-title {
+  background-color: #35aa47;
+} 
+
+.portlet.box.green {  
+   border: 1px solid #77e588;
+   border-top: 0;
+}
+
+.portlet.box.purple > .portlet-title {
+  background-color: #852b99;
+} 
+
+.portlet.box.purple {  
+   border: 1px solid #af5cc1;
+   border-top: 0;
+}
+
+.portlet.box.grey > .portlet-title {
+  background-color: #555555;
+} 
+
+.portlet.box.grey {  
+   border: 1px solid #9d9c9c;
+   border-top: 0;
+}
+
+.portlet.box.light-grey > .portlet-title {
+  background-color: #aaa;
+} 
+
+.portlet.box.light-grey {  
+   border: 1px solid #bbb;
+   border-top: 0;
+}
+/***
+Portlets
+***/
+.portlet  {
+  clear: both;
+  margin-top: 0px;
+  margin-bottom: 25px;
+  padding: 0px;
+}
+
+.portlet > .portlet-title {  
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.portlet > .portlet-title:after,
+.portlet > .portlet-title:before {
+  content: "";
+  display: table;
+  line-height: 0;
+}
+
+.portlet > .portlet-title:after {
+  clear: both;
+}
+
+.portlet > .portlet-title > .caption {
+  float: left;
+  display: inline-block;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 8px; 
+}
+
+.portlet > .portlet-title > .caption > i {
+  float: left;
+  margin-top: 4px;
+  display: inline-block !important;
+  font-size: 13px;
+  margin-right: 5px;
+  color: #666;
+}
+
+.portlet.blue > .portlet-title > .caption,
+.portlet.green > .portlet-title > .caption, 
+.portlet.yellow > .portlet-title > .caption,
+.portlet.red > .portlet-title > .caption, 
+.portlet.purple > .portlet-title > .caption, 
+.portlet.grey > .portlet-title > .caption {
+  color: #fff;
+}
+
+.portlet.box.blue > .portlet-title > .caption > i, 
+.portlet.box.green > .portlet-title > .caption > i,
+.portlet.box.grey > .portlet-title > .caption > i,
+.portlet.box.yellow > .portlet-title > .caption > i, 
+.portlet.box.red > .portlet-title > .caption > i,  
+.portlet.box.purple > .portlet-title > .caption > i, 
+.portlet.box.light-grey > .portlet-title > .caption > i{
+  color: #fff;
+}
+
+.sortable .portlet > .portlet-title {
+  cursor: move;
+}
+
+.portlet > .portlet-title > .tools,
+.portlet > .portlet-title > .actions
+ {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  margin-top: 6px;
+  float: right;
+}
+
+.portlet > .portlet-title > .tools > a {
+  display: inline-block;
+  height: 16px;
+  margin-left:5px;
+}
+
+.portlet > .portlet-title > .actions > .dropdown-menu i {
+  color: #000 !important;
+}
+
+.portlet > .portlet-title > .tools > a.remove {
+  margin-bottom: 2px;
+  background-image:url(../img/portlet-remove-icon.png);
+  background-repeat: no-repeat;
+  width: 11px;
+}
+
+.portlet > .portlet-title > .tools > a.config {
+  margin-bottom: 2px;
+  background-image:url(../img/portlet-config-icon.png);
+  background-repeat: no-repeat;
+  width: 12px;
+}
+
+.portlet > .portlet-title > .tools > a.reload {
+  margin-bottom: 2px;
+  background-image:url(../img/portlet-reload-icon.png);
+  width: 13px;
+}
+
+.portlet > .portlet-title > .tools > a.expand {
+  margin-bottom: 2px;
+  background-image:url(../img/portlet-expand-icon.png);
+  width: 14px;
+}
+
+.portlet > .portlet-title > .tools > a.collapse {
+  margin-bottom: 2px;
+  background-image:url(../img/portlet-collapse-icon.png);
+  width: 14px;
+}
+
+.portlet > .portlet-title > .tools > a:hover {
+  text-decoration: none;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  opacity:.6;  
+  filter:'alpha(opacity=60)';
+}
+
+.portlet > .portlet-title > .actions > .btn-group {
+  margin-top: -13px;
+}
+
+.portlet > .portlet-title > .actions > .btn {
+  padding: 4px 10px;
+  margin-top: -14px;
+}
+
+.portlet > .portlet-title > .actions > .btn-group > .btn {
+  padding: 4px 10px;
+  margin-top: -1px;
+}
+
+.portlet > .portlet-title > .actions > .btn.btn-sm {
+  padding: 3px 8px;
+  margin-top: -13px;
+}
+
+.portlet > .portlet-title > .actions > .btn-group > .btn-sm {
+  padding: 3px 8px;
+  margin-top: -1px;
+}
+
+.portlet > .portlet-title > .pagination.pagination-sm {
+  float: right !important;
+  display: inline-block !important;
+  margin: 0px;
+  margin-top: -4px;
+}
+
+@media (max-width: 767px) { 
+  .portlet > .portlet-title > .actions.btn-set > .btn-group,
+  .portlet > .portlet-title > .actions.btn-set > .btn {
+    margin-top: 0px;
+    margin-bottom: 5px;
+  }
+}
+
+.portlet > .portlet-body {
+  clear: both;  
+  padding: 0;  
+}
+
+.portlet > .portlet-empty {
+  min-height: 125px; 
+}
+
+.portlet > .portlet-body.light-blue, .portlet.light-blue {
+  background-color: #bfd5fa  !important;
+}
+
+.portlet > .portlet-body.blue, .portlet.blue {
+  background-color: #4b8df8 !important;
+}
+
+.portlet > .portlet-body.red, .portlet.red {
+  background-color: #e02222 !important;
+}
+
+.portlet > .portlet-body.yellow, .portlet.yellow {
+  background-color: #ffb848 !important;
+}
+
+.portlet > .portlet-body.green, .portlet.green {
+  background-color: #35aa47 !important;
+}
+
+.portlet > .portlet-body.purple, .portlet.purple {
+  background-color: #852b99 !important;
+}
+
+.portlet > .portlet-body.light-grey, .portlet.light-grey {
+  background-color: #fafafa !important;
+}
+
+.portlet > .portlet-body.grey, .portlet.grey {
+  background-color: #555555 !important;
+}
+

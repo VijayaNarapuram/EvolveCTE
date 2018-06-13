@@ -19,5 +19,10 @@ namespace EvolveCTE.Controllers
         {
             return View();
         }
+
+        public ActionResult CTEOption()
+        {
+            return View();
+        }
     }
 }
