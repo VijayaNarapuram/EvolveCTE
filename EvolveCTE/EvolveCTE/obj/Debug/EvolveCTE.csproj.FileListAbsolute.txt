@@ -26,9 +26,6 @@ E:\EvolveCTE\EvolveCTE\bin\System.Web.WebPages.Razor.xml
 E:\EvolveCTE\EvolveCTE\obj\Debug\EvolveCTE.csprojResolveAssemblyReference.cache
 E:\EvolveCTE\EvolveCTE\obj\Debug\EvolveCTE.dll
 E:\EvolveCTE\EvolveCTE\obj\Debug\EvolveCTE.pdb
-E:\CTE\EvolveCTE\EvolveCTE\EvolveCTE\bin\EvolveCTE.dll.config
-E:\CTE\EvolveCTE\EvolveCTE\EvolveCTE\bin\EvolveCTE.dll
-E:\CTE\EvolveCTE\EvolveCTE\EvolveCTE\bin\EvolveCTE.pdb
 E:\CTE\EvolveCTE\EvolveCTE\EvolveCTE\bin\CommonServiceLocator.dll
 E:\CTE\EvolveCTE\EvolveCTE\EvolveCTE\bin\EntityFramework.dll
 E:\CTE\EvolveCTE\EvolveCTE\EvolveCTE\bin\Microsoft.Practices.ServiceLocation.dll
@@ -66,5 +63,9 @@ E:\CTE\EvolveCTE\EvolveCTE\EvolveCTE\bin\Unity.Abstractions.pdb
 E:\CTE\EvolveCTE\EvolveCTE\EvolveCTE\bin\Unity.Container.pdb
 E:\CTE\EvolveCTE\EvolveCTE\EvolveCTE\bin\Unity.Interception.pdb
 E:\CTE\EvolveCTE\EvolveCTE\EvolveCTE\bin\Unity.ServiceLocation.pdb
-E:\CTE\EvolveCTE\EvolveCTE\EvolveCTE\obj\Debug\EvolveCTE.dll
-E:\CTE\EvolveCTE\EvolveCTE\EvolveCTE\obj\Debug\EvolveCTE.pdb
+E:\CTE\EvolveCTE\EvolveCTE\EvolveCTE\bin\+.dll.config
+E:\CTE\EvolveCTE\EvolveCTE\EvolveCTE\bin\+.dll
+E:\CTE\EvolveCTE\EvolveCTE\EvolveCTE\bin\+.pdb
+E:\CTE\EvolveCTE\EvolveCTE\EvolveCTE\obj\Debug\EvolveCTE.csprojResolveAssemblyReference.cache
+E:\CTE\EvolveCTE\EvolveCTE\EvolveCTE\obj\Debug\+.dll
+E:\CTE\EvolveCTE\EvolveCTE\EvolveCTE\obj\Debug\+.pdb

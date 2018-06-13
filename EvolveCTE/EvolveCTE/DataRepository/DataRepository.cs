@@ -40,6 +40,29 @@ namespace EvolveCTE.DataRepository
                 GC.SuppressFinalize(this);
             }
 
+            #region DASHBOARD
+            public IList<uspSelectCTEProgramOptionsPL_Result> SelectCTEProgramOptionsPL()
+            {
+                IList<uspSelectCTEProgramOptionsPL_Result> ResultItems = new List<uspSelectCTEProgramOptionsPL_Result>();
+                foreach (uspSelectCTEProgramOptionsPL_Result ResultItem in objEntities.uspSelectCTEProgramOptionsPL())
+                {
+                    ResultItems.Add(ResultItem);
+                }
+                return ResultItems;
+            }
+
+            public IList<uspSelectStudentCTEProgramStatusPL_Result> SelectStudentCTEProgramStatusPL()
+            {
+                IList<uspSelectStudentCTEProgramStatusPL_Result> ResultItems = new List<uspSelectStudentCTEProgramStatusPL_Result>();
+                foreach (uspSelectStudentCTEProgramStatusPL_Result ResultItem in objEntities.uspSelectStudentCTEProgramStatusPL())
+                {
+                    ResultItems.Add(ResultItem);
+                }
+                return ResultItems;
+            }
+            #endregion
+
+
         }
     }
 }
