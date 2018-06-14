@@ -23,20 +23,20 @@
         </div>
         <div class="the-box" style="min-height:450px;padding:140px 0 0 0;">
             <div class="">
-                <div class="TRECA_Box">
-                    <p>Congratulations XXXXXXXXXXX, you qualify for the TRECA Tech program!</p>
+                <div class="TRECA_Box Qualify">
+                    <p>Congratulations <b><span id="lblStudentName"></span></b>, you qualify for the TRECA Tech program!</p>
                     <p>
                         Which pathway are you interested in?
-                        <select style="width:200px;">
+                        <select style="width:200px;" id="ddlProgramOptions" class="form-control">
                             <option>Select</option>
                         </select>
                     </p>
                     <button type="button" class="btn btn-warning">Cancel</button>
-                    <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#myModal">Submit</button>
+                    <button type="button" class="btn btn-success pull-right" data-toggle="modal" id="btnSaveCTERequest">Submit</button> @*data-target="#myModal"*@
                 </div>
-                <div class="TRECA_Box">
+                <div class="TRECA_Box NotQualify">
                     <p>
-                        Sorry XXXXXXXXXXX, you do not qualify for the TRECA Tech program at this time!
+                        Sorry <span id="lblStudentName1"></span>, you do not qualify for the TRECA Tech program at this time!
                     </p>
                     <p>
                         In order to qualify you must be in grade 09 - 11
@@ -56,7 +56,7 @@
 </div>
 <!-- Modal -->
 
-
+<a id="ModelPopUp" class="btn btn-success" href="#myModal" data-toggle="modal" style="display: none"></a>
 <div id="myModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -69,8 +69,134 @@
                 <p>Your counselor will be in contact with you before the program starts!</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>                
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
 </div>
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="~/assets/js/common-scripts-dev.js"></script>
+
+<script src="~/assets/js/jquery-ui-1.10.4.custom.min.js"></script>
+<script>
+    var LoginUserId;
+    $(document).ready(function () {
+
+        var StudentName = window.localStorage.getItem('StudentName');
+        var StudentId = window.localStorage.getItem('StudentID');
+        var StudentGrade = window.localStorage.getItem('Grade');
+        
+        showLoader();
+        $('.NotQualify').hide();
+        $('.Qualify').hide();
+
+        var url = '/Login/SelectCTEProgramOptionsPL/';
+        $.getJSON(url,
+                  function (optionsData) {
+                      var select = $("#ddlProgramOptions");
+                      select.empty();
+                      //select.append($('<option/>', {
+                      //    value: 0,
+                      //    text: "Select"
+                      //}));
+                      $.each(optionsData, function (index, itemData) {
+                          select.append($('<option/>', {
+                              value: itemData.Value,
+                              text: itemData.Text
+                          }));
+                      });
+                  });
+
+        if (StudentGrade == 5730 || StudentGrade == 5740)//9th OR 10th
+        {
+            $('#lblStudentName').text(StudentName);
+
+            var Status;
+            var url = "/Login/CheckStudentQualifiedForCTE/?StudentId=" + StudentId;
+            var modelobj = {
+                data: 1
+            };
+            //Catch the result sent from Post Back call
+            var response = SendRequestJSON(url, modelobj);
+            console.log(response);
+
+            if (response.result == 'Found') {
+                Status = response.strStatus;
+            }
+
+            if (Status == 'S') {
+                $('.Qualify').show();
+                $('.NotQualify').hide();
+            }
+            else {
+                $('.NotQualify').show();
+                $('.Qualify').hide();
+            }
+        }
+        else {
+            $('#lblStudentName1').innerHTML(StudentName);
+            $('.NotQualify').show();
+            $('.Qualify').hide();
+
+        }
+
+        function showLoader() {
+            if ($('body').find('#loadingDiv').attr('id') != 'loadingDiv') {
+                var loadingString = '<div id="loadingDiv" class="modal1"><div id="loading-image" class="center"><img src="../assets/img/loader.gif" alt="Loading..." /></div></div>';
+                $('body').append(loadingString);
+                $('#loadingDiv .bg').height('100%');
+                $('#loadingDiv').fadeIn(300);
+                $('body').css('cursor', 'wait');
+                $("#DefaultModal").hide();
+            }
+        };
+
+        function hideLoader() {
+            $('#loadingDiv .bg').height('100%');
+            $('#loadingDiv').remove();
+            $('body').css('cursor', 'default');
+        }
+
+        hideLoader();
+
+        //SAVING SCHOOL CTE SETTINGS TO DATABASE...
+        $('#btnSaveCTERequest').click(function (e) {
+            //prevents the default action of the element
+            e.preventDefault();
+
+            if ($("#ddlProgramOptions").val() > 0)
+            {
+                var url = "/Login/InsertStudentCTESetupRequest";
+
+                var modelobj = {
+                    StudentId: StudentId,
+                    CTEProgramOptionPL: $('#ddlProgramOptions').val(),
+                    CreatedBy: StudentId
+                };
+                //Catch the result sent from Post Back call
+                var response = SendRequestJSON(url, modelobj);              
+                if (response.result == 'Inserted successfully') {
+                    $("#ModelPopUp").click();
+                    //document.getElementById("displayMessage").innerHTML = 'Request added successfully.';
+                    //ShowPopup();
+                }
+                if (response.result == 'Updated successfully') {
+                    document.getElementById("displayMessage").innerHTML = 'School CTE Program settings updated successfully.';
+                    ShowPopup();
+                }
+                else if (response.result == 'SessionNotFound') {
+                    window.location = response.url;
+                }
+            }
+            else {
+                document.getElementById("displayMessage").innerHTML = "Please select Program and click Submit...";
+                ShowPopup();
+            }
+         
+        });
+
+    });
+
+</script>

@@ -1,4 +1,8 @@
-﻿<html lang="en">
+﻿@model EvolveCTE.Models.LoginModel
+@{
+    ViewBag.Title = "Login";
+}
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -75,46 +79,56 @@
         #txt_registrationnumber {
             width: 202px !important;
         }
-        .m_auto{
-            float:none;
-            margin:0 auto;
+
+        .m_auto {
+            float: none;
+            margin: 0 auto;
         }
+
         .bdr_new {
-            border:15px solid #4472c4;
+            border: 15px solid #4472c4;
         }
-        .smart-forms .cte_login .theme-green .tagline span{
-                background: #4472c4;
-                padding: 5px 10px;
-                color: #fff;
-        }
-        .smart-forms .cte_login{
-            position:relative;
-        }
-        .smart-forms .cte_login .btn-green{
+
+        .smart-forms .cte_login .theme-green .tagline span {
             background: #4472c4;
+            padding: 5px 10px;
+            color: #fff;
         }
-        .smart-forms .cte_login .gui-input{
-            background-color: rgba(255, 255, 255, 1) !important;
+
+        .smart-forms .cte_login {
+            position: relative;
         }
-        .smart-forms .cte_login input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
-            background-color: rgba(255, 255, 255, 1) !important;
+
+            .smart-forms .cte_login .btn-green {
+                background: #4472c4;
+            }
+
+            .smart-forms .cte_login .gui-input {
+                background-color: rgba(255, 255, 255, 1) !important;
+            }
+
+            .smart-forms .cte_login input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+                background-color: rgba(255, 255, 255, 1) !important;
+            }
+
+            .smart-forms .cte_login .header-green {
+                border-bottom: 3px solid #4472c4;
+            }
+
+        .bdr_vertical {
+            width: 2px;
+            height: 300px;
+            margin: 0 0 0 0;
+            background: #e1e1e1;
+            position: absolute;
+            left: 1px;
+            top: 120px;
         }
-      .smart-forms .cte_login .header-green{
-            border-bottom: 3px solid #4472c4;
+
+        .m_t_20 {
+            margin: 12px 15px 0 0;
+            display: inline-block;
         }
-      .bdr_vertical{
-          width: 2px;
-    height: 300px;
-    margin: 0 0 0 0;
-    background: #e1e1e1;
-    position: absolute;
-    left: 1px;
-    top: 120px;
-      }
-      .m_t_20{
-              margin: 12px 15px 0 0;
-    display: inline-block;
-      }
     </style>
 
 
@@ -138,33 +152,41 @@
                                 <!-- .tagline -->
                             </div>
                             <div id="divLoginStatus" class="error-msg"> </div>
-                            <form action="/" method="post">
+
+                            @using (Html.BeginForm())
+                            {
+                                @Html.ValidationSummary(true)
+
                                 <div class="section">
                                     <label for="username" class="field prepend-icon">
-                                        <input class="gui-input" data-val="true" data-val-required="User ID is required." id="ID" maxlength="64" name="ID" placeholder="Enter username" type="text" value="">
-                                        <span class="field-validation-valid" data-valmsg-for="ID" data-valmsg-replace="true"></span>
+                                        @Html.TextBoxFor(model => model.ID, new { maxlength = 64, @class = "gui-input", placeholder = "Enter username" })
+                                        @Html.ValidationMessageFor(model => model.ID)
                                         <label for="username" class="field-icon"><i class="fa fa-user"></i></label>
                                     </label>
                                 </div>
-                                <!-- end section -->
+
                                 <div class="section">
                                     <label for="password" class="field prepend-icon">
-                                        <input autocomplete="off" class="gui-input" data-val="true" data-val-required="Password is required." id="PWD" name="PWD" placeholder="Enter password" type="password" value="">
-
-                                        <span class="field-validation-valid" data-valmsg-for="PWD" data-valmsg-replace="true"></span>
+                                        @Html.PasswordFor(model => model.PWD, new { @value = Model.PWD, @class = "gui-input", placeholder = "Enter password", autocomplete = "off" })
+                                        @*@Html.PasswordFor(model => model.PWD, new { @class = "gui-input", placeholder = "Enter password", autocomplete = "off" })*@
+                                        @Html.ValidationMessageFor(model => model.PWD)
                                         <label for="password" class="field-icon"><i class="fa fa-lock"></i></label>
                                     </label>
                                 </div>
-                                <!-- end section -->
-                                <!-- end section -->
+                                
                                 <div class="form-footer">
-                                    <input type="submit" class="btn button btn-green" value="Sign In" id="btnLoginSubmit">
-
+                                    <input type="submit" class="btn button btn-green" value="Sign In" id="btnLoginSubmit" />                                
                                 </div>
-                                <div><span style="color: red"></span></div>
-                                <!-- end .form-footer section -->
-                                <p style="font-size:13px;"><a class="m_t_20" href="/Home/ForgotUserId">Not a current TRECA student?</a><input type="submit" class="btn button btn-green" value="Enroll" id="btnCreateAccount"></p>
-                            </form>
+                                
+                                 <div><span style="color: red">@ViewBag.MSG</span></div>
+                    <!-- end .form-footer section -->
+
+                                <p style="font-size:13px;"><a class="m_t_20" href="~/Home/ForgotUserId">Not a current TRECA student?</a><input type="submit" class="btn button btn-green" value="Enroll" id="btnCreateAccount" /></p>                            
+
+                            }
+
+
+
                         </div>
                     </div><!-- end .frm-row section -->
                 </div>
@@ -175,7 +197,129 @@
         <!-- end .smart-forms section -->
     </div>
 
+    ===========================================================
+    BEGIN PAGE
+    ===========================================================
+    -->
+    <div id="loading" class="loader" style="display: none; opacity: 0.9; background-color: #fff;">
+        Please wait...
+    </div>
+    <!--
+    ===========================================================
+    END PAGE
+    ===========================================================
+    -->
+    ===========================================================
+    Placed at the end of the document so the pages load faster
+    ===========================================================
+    -->
+    <!-- MAIN JAVASRCIPT (REQUIRED ALL PAGE)-->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
 
+    <!-- MAIN APPS JS -->
+    @*<script src="../assets/js/apps.js"></script>
+    <script src="../assets/js/demo-panel-1.js"></script>*@
+    <script src="~/assets/js/common-scripts-dev.js"></script>
+
+    <script src="~/assets/js/jquery-ui-1.10.4.custom.min.js"></script>
+    <script>
+        var LoginUserId;
+        $(document).ready(function () {
+
+            window.localStorage.removeItem('BulletinPopup');
+
+            function showLoader() {
+                if ($('body').find('#loadingDiv').attr('id') != 'loadingDiv') {
+                    var loadingString = '<div id="loadingDiv" class="modal1"><div id="loading-image" class="center"><img src="../assets/img/loader.gif" alt="Loading..." /></div></div>';
+                    $('body').append(loadingString);
+                    $('#loadingDiv .bg').height('100%');
+                    $('#loadingDiv').fadeIn(300);
+                    $('body').css('cursor', 'wait');
+                    $("#DefaultModal").hide();
+                }
+            };
+
+            function hideLoader() {
+                $('#loadingDiv .bg').height('100%');
+                $('#loadingDiv').remove();
+                $('body').css('cursor', 'default');
+            }
+
+            hideLoader();
+
+            $('.form-control').keypress(function (e) {
+                if (e.which == 13) {
+                    $('#btnLoginSubmit').click();
+                    return false; //<---- Add this line
+                }
+            });
+          
+            //Validates the Login credentials
+            //btnLoginSubmit code starts here
+            $('#btnLoginSubmit').click(function (e) {
+
+                //prevents the default action of the element
+                e.preventDefault();
+                //Clear Old Menu objects here if it exists..
+                if (window.localStorage.getItem('StudentSchoolId') != null) {
+                    window.localStorage.removeItem('StudentSchoolId');
+                }
+                if (window.localStorage.getItem('SchoolCalendarId') != null) {
+                    window.localStorage.removeItem('SchoolCalendarId');
+                }
+                if (window.localStorage.getItem('StudentID') != null) {
+                    window.localStorage.removeItem('StudentID');
+                }
+                //check username is entered or not first
+                if ($("#ID").val() != '') {
+                    //check pwd is entered or not
+                    if ($("#PWD").val() != '') {
+                        var rememberMeStatus = $("#remember").prop("checked");
+
+                        var modelobj = {
+                            ID: $("#ID").val(),
+                            PWD: $("#PWD").val(),
+                            RememberMe: rememberMeStatus
+
+                        };
+                        var url = "/Login/CheckStudentCTELogin";
+                        var response = SendRequestJSON(url, modelobj);
+                        console.log(response);
+                        if (response.result == 'Success') {
+                            window.localStorage.setItem('SchoolCalendarId', response.schoolYearPL);
+                            window.localStorage.setItem('StudentID', response.studentId);                          
+                            window.localStorage.setItem('StudentName', response.studentName);                    
+                            window.localStorage.setItem('StudentSchoolId', response.schoolId);                          
+                            window.localStorage.setItem('StudentSchoolName', response.SchoolName); 
+                            window.localStorage.setItem('Grade', response.Grade);
+
+                            console.log('SN - ' + response.SchoolName);
+                            $("#schoolName").text(response.SchoolName);
+                            window.location.href = '/Login/CTEOption';
+                        }
+                        else if (response.result == 'InvalidLogin') {
+                            $("#divLoginStatus").text('The username or password you entered is incorrect.');
+                            //  $("#ID").val('');
+                            $("#PWD").val('');
+                            $("#remember").prop("checked", false);
+                        }
+                    }
+                    else {
+                        $("#divLoginStatus").text('Enter your password.');
+                    }
+
+                }
+                else {
+                    $("#divLoginStatus").text('Enter your username.');
+                }
+
+            });
+            //btnLoginSubmit code ends here          
+
+        });
+
+    </script>
 </body>
 
 </html>
