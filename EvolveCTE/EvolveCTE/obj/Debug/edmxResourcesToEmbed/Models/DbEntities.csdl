@@ -28623,7 +28623,8 @@
     <Property Type="String" Name="Grade" Nullable="true" MaxLength="256" />
   </ComplexType>
   <ComplexType Name="uspCheckStudentQualifiedForCTE_Result">
-    <Property Type="String" Name="Message" Nullable="true" MaxLength="64" />
-    <Property Type="String" Name="Status" Nullable="true" MaxLength="16" />
+    <Property Type="String" Name="FinalMessage" Nullable="true" MaxLength="64" />
+    <Property Type="String" Name="FinalStatus" Nullable="true" MaxLength="16" />
+    <Property Type="Int32" Name="RQStatus" Nullable="true" />
   </ComplexType>
 </Schema>

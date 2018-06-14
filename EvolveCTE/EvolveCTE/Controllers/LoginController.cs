@@ -245,15 +245,18 @@ namespace EvolveCTE.Controllers
             IList<uspCheckStudentQualifiedForCTE_Result> ResultList = _LoginRepository.CheckStudentQualifiedForCTE(StudentId);
 
             string strStatus = string.Empty;
+            string strRQStatus = string.Empty;
 
             if (ResultList.Count > 0)
             {
-                strStatus = (Convert.ToString(ResultList[0].Status));
+                strStatus = (Convert.ToString(ResultList[0].FinalStatus));
+                strRQStatus = (Convert.ToString(ResultList[0].RQStatus));
 
                 response = Json(new
                 {
                     result = "Found",
-                    strStatus = strStatus
+                    strStatus = strStatus,
+                    strRQStatus = strRQStatus
                 });
             }
             else
@@ -261,7 +264,8 @@ namespace EvolveCTE.Controllers
                 response = Json(new
                 {
                     result = "NotFound",
-                    strStatus = strStatus
+                    strStatus = strStatus,
+                    strRQStatus = strRQStatus
                 });
             }
             return response;

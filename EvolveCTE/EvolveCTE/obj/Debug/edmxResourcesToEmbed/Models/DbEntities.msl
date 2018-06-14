@@ -19472,8 +19472,9 @@
     <FunctionImportMapping FunctionImportName="uspCheckStudentQualifiedForCTE" FunctionName="NGSISModel.Store.uspCheckStudentQualifiedForCTE">
       <ResultMapping>
         <ComplexTypeMapping TypeName="NGSISModel.uspCheckStudentQualifiedForCTE_Result">
-          <ScalarProperty Name="Message" ColumnName="Message" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="FinalMessage" ColumnName="FinalMessage" />
+          <ScalarProperty Name="FinalStatus" ColumnName="FinalStatus" />
+          <ScalarProperty Name="RQStatus" ColumnName="RQStatus" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

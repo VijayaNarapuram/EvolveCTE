@@ -13,7 +13,8 @@ namespace EvolveCTE.Models
     
     public partial class uspCheckStudentQualifiedForCTE_Result
     {
-        public string Message { get; set; }
-        public string Status { get; set; }
+        public string FinalMessage { get; set; }
+        public string FinalStatus { get; set; }
+        public Nullable<int> RQStatus { get; set; }
     }
 }

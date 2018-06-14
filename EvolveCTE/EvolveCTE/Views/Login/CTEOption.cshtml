@@ -8,35 +8,37 @@
         <!-- Begin page heading -->
         <div class="row">
             <div class="col-sm-6">
-                <h1 class="page-heading" id="pageHeading">Parent/Student Portal</h1>
+                <h1 class="page-heading" id="pageHeading">STUDENT CTE PROGRAM</h1>
             </div>
             <!-- End page heading -->
-            <div class="col-sm-6 text-right">
+            @*<div class="col-sm-6 text-right">
                 <!-- Begin breadcrumb -->
                 <ol class="breadcrumb default square rsaquo sm pull-right">
-                    <li><a href="/PortalUser/Dashboard"><i class="fa fa-home"></i></a></li>
-                    <li><a href="/PortalUser/Dashboard">Student</a></li>
-                    <li class="active">Build/Update My Dashboard</li>
+                    <li><a href="/Login/Dashboard"><i class="fa fa-home"></i></a></li>                   
+                    <li class="active">Dashboard</li>
                 </ol>
                 <!-- End breadcrumb -->
-            </div>
+            </div>*@
         </div>
         <div class="the-box" style="min-height:450px;padding:140px 0 0 0;">
             <div class="">
-                <div class="TRECA_Box Qualify">
-                    <p>Congratulations <b><span id="lblStudentName"></span></b>, you qualify for the TRECA Tech program!</p>
+                <div class="TRECA_Box Qualify" style="display:none;">
                     <p>
-                        Which pathway are you interested in?
+                        Congratulations <b><span id="lblstudentname"></span></b>, you qualify for the TRECA Tech program!
+                    </p>
+                    <p>
+                        <span id="lblCTERequestStatus"></span>
+                        @*Which pathway are you interested in?*@
                         <select style="width:200px;" id="ddlProgramOptions" class="form-control">
                             <option>Select</option>
                         </select>
                     </p>
-                    <button type="button" class="btn btn-warning">Cancel</button>
+                    <button type="button" class="btn btn-warning btnCancel">Cancel</button>
                     <button type="button" class="btn btn-success pull-right" data-toggle="modal" id="btnSaveCTERequest">Submit</button> @*data-target="#myModal"*@
                 </div>
-                <div class="TRECA_Box NotQualify">
+                <div class="TRECA_Box NotQualify" style="display:none;">
                     <p>
-                        Sorry <span id="lblStudentName1"></span>, you do not qualify for the TRECA Tech program at this time!
+                        Sorry <b><span id="lblStudentName1"></span></b>, you do not qualify for the TRECA Tech program at this time!
                     </p>
                     <p>
                         In order to qualify you must be in grade 09 - 11
@@ -47,7 +49,7 @@
                         Please reach out to your Advisor to see how you can qualify next semester
 
                     </p>
-                    <button type="button" class="btn btn-warning">Cancel</button>
+                    <button type="button" class="btn btn-warning btnCancel">Cancel</button>
 
                 </div>
             </div>
@@ -87,7 +89,11 @@
         var StudentName = window.localStorage.getItem('StudentName');
         var StudentId = window.localStorage.getItem('StudentID');
         var StudentGrade = window.localStorage.getItem('Grade');
-        
+
+        console.log('StudentName - ' + StudentName);
+        console.log('StudentId - ' + StudentId);
+        console.log('StudentGrade - ' + StudentGrade);
+
         showLoader();
         $('.NotQualify').hide();
         $('.Qualify').hide();
@@ -108,12 +114,14 @@
                           }));
                       });
                   });
-
-        if (StudentGrade == 5730 || StudentGrade == 5740)//9th OR 10th
+       
+        if (StudentGrade == 5730 || StudentGrade == 5740 || StudentGrade == 5750)//9th OR 10th OR 11th
         {
-            $('#lblStudentName').text(StudentName);
+            $('#lblstudentname').text(StudentName);
 
             var Status;
+            var RQStatus;
+
             var url = "/Login/CheckStudentQualifiedForCTE/?StudentId=" + StudentId;
             var modelobj = {
                 data: 1
@@ -124,9 +132,21 @@
 
             if (response.result == 'Found') {
                 Status = response.strStatus;
+                RQStatus = response.strRQStatus;
             }
 
             if (Status == 'S') {
+               
+                if (RQStatus == 1) { //If the student is already submitted the request...
+                    $("#lblCTERequestStatus").text('Your request has already been submitted.');
+                    $("#ddlProgramOptions").hide();
+                    $("#btnSaveCTERequest").hide();
+                }
+                else {
+                    $("#lblCTERequestStatus").text(' Which pathway are you interested in?');
+                    $("#ddlProgramOptions").show();
+                    $("#btnSaveCTERequest").show();
+                }
                 $('.Qualify').show();
                 $('.NotQualify').hide();
             }
@@ -136,7 +156,7 @@
             }
         }
         else {
-            $('#lblStudentName1').innerHTML(StudentName);
+            $('#lblStudentName1').text(StudentName);
             $('.NotQualify').show();
             $('.Qualify').hide();
 
@@ -161,13 +181,23 @@
 
         hideLoader();
 
+        $(".btnCancel").click(function (e) {
+            window.localStorage.removeItem('SchoolCalendarId');
+            window.localStorage.removeItem('StudentID');
+            window.localStorage.removeItem('StudentName');
+            window.localStorage.removeItem('StudentSchoolId');
+            window.localStorage.removeItem('StudentSchoolName');
+            window.localStorage.removeItem('Grade');
+
+            window.location.href = '/Login/Index';
+        });
+
         //SAVING SCHOOL CTE SETTINGS TO DATABASE...
         $('#btnSaveCTERequest').click(function (e) {
             //prevents the default action of the element
             e.preventDefault();
 
-            if ($("#ddlProgramOptions").val() > 0)
-            {
+            if ($("#ddlProgramOptions").val() > 0) {
                 var url = "/Login/InsertStudentCTESetupRequest";
 
                 var modelobj = {
@@ -176,7 +206,7 @@
                     CreatedBy: StudentId
                 };
                 //Catch the result sent from Post Back call
-                var response = SendRequestJSON(url, modelobj);              
+                var response = SendRequestJSON(url, modelobj);
                 if (response.result == 'Inserted successfully') {
                     $("#ModelPopUp").click();
                     //document.getElementById("displayMessage").innerHTML = 'Request added successfully.';
@@ -194,7 +224,7 @@
                 document.getElementById("displayMessage").innerHTML = "Please select Program and click Submit...";
                 ShowPopup();
             }
-         
+
         });
 
     });

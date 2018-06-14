@@ -488,27 +488,14 @@
 
             //Clears the stored values from local storage
             $('#logout').click(function () {//Added By: Vishnu
-                window.localStorage.removeItem('SelectedSchoolId');
-                window.localStorage.removeItem('SelectedSchoolName');
-                window.localStorage.removeItem('SelectedSchoolCalendarId');
-                window.localStorage.removeItem('SelectedDistrictId');
-                window.localStorage.removeItem('SelectedDistrictName');
-                window.localStorage.removeItem('menuObject');
-                window.localStorage.removeItem('menuObjectNew');
-                window.localStorage.removeItem('versionObject');
-                window.localStorage.removeItem('SelectedStudentID'); //used for Student Address,contacts navigation from studentsInformation page
-                // window.localStorage.removeItem('SelectedClassId');
-                window.localStorage.removeItem('pagesObject');
-                window.localStorage.removeItem('SelectedSchoolCalendarText');
-                window.localStorage.removeItem('SelectedUserID'); //for stud assessment page
-                window.localStorage.removeItem('PortalAccountName');
+                window.localStorage.removeItem('SchoolCalendarId');
+                window.localStorage.removeItem('StudentID');
+                window.localStorage.removeItem('StudentName');
+                window.localStorage.removeItem('StudentSchoolId');
+                window.localStorage.removeItem('StudentSchoolName');
+                window.localStorage.removeItem('Grade');
 
-                var url = "/Home/UpdatePortalUserLoginDetails";
-                var modelobj = {
-                    LoginUserID: window.localStorage.getItem('PortalLoginID'),
-                    UserRole: window.localStorage.getItem('userRole')
-                };
-                var loginresponse = SendRequestJSON(url, modelobj);
+                window.location.href = '/Login/Index';
             });
 
             //GetPages
