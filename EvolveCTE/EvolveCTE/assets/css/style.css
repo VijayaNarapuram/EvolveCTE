@@ -3,7 +3,7 @@
     body {
     background:  #fff;
     font-family:  'Lato',  Calibri,  Arial,  sans-serif;
-    font-size:  13px;
+    font-size:  18px;
     color:  #5a5a5a;
     padding-top:  60px;
     overflow-x:  hidden;
@@ -7564,4 +7564,11 @@ margin: 25px 0 0 -40px;
     padding: 15px;
     margin: 0 auto;
     width: 600px;
+}
+#logOut {
+    margin: 14px 20px 0 0;
+    display: inline-block;
+}
+.studentFullname{
+    color:#8ec641;
 }
