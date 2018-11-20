@@ -27,5 +27,18 @@ namespace EvolveCTE.Models
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<int> Modifiedby { get; set; }
         public Nullable<System.DateTime> ModifiedDate { get; set; }
+        public int TestLocationId { get; set; }
+        public int SchoolId { get; set; }
+        public int AddressId { get; set; }
+        public int RegionId { get; set; }
+        public string LocationContact { get; set; }
+        public string LocationContactPhone { get; set; }
+        public string LocationContactEmail { get; set; }
+        public Nullable<bool> IsFee { get; set; }
+        public Nullable<decimal> FeeAmount { get; set; }
+        public string StartDate { get; set; }
+        public string EndDate { get; set; }
+        public Nullable<int> IsActive { get; set; }
+        public Nullable<int> ModifiedBy { get; set; }
     }
 }

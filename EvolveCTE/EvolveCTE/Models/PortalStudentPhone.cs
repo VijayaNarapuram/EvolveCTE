@@ -29,5 +29,7 @@ namespace EvolveCTE.Models
         public Nullable<int> Approved { get; set; }
         public Nullable<int> RejectedReasonPL { get; set; }
         public Nullable<System.DateTime> CurrentPhoneEndDate { get; set; }
+        public string EditOrRemovePhone { get; set; }
+        public Nullable<int> IsActive { get; set; }
     }
 }

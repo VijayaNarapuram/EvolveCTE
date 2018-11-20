@@ -37,5 +37,7 @@ namespace EvolveCTE.Models
         public Nullable<System.DateTime> ReviewedDate { get; set; }
         public Nullable<int> RejectedReasonPL { get; set; }
         public Nullable<System.DateTime> CurrentAddressEndDate { get; set; }
+        public string EditOrRemoveContactAddress { get; set; }
+        public Nullable<int> IsActive { get; set; }
     }
 }

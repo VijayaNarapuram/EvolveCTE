@@ -32,5 +32,7 @@ namespace EvolveCTE.Models
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<int> ModifiedBy { get; set; }
         public Nullable<System.DateTime> ModifiedDate { get; set; }
+        public string EditOrRemoveContactAddress { get; set; }
+        public Nullable<int> IsActive { get; set; }
     }
 }

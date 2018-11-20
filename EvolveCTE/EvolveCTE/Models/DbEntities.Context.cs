@@ -11959,7 +11959,7 @@ namespace EvolveCTE.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspInsertSchoolGradeLevel", schoolIDParameter, schoolYearIDParameter, gradeLevelPLParameter, isDefaultHoursParameter, defaultHoursParameter, hoursInSessionParameter, nextGradeLevelPLParameter, nextSchoolIDParameter, startDateParameter, endDateParameter, minimumCreditHoursParameter, createdByParameter, createdDateParameter);
         }
     
-        public virtual ObjectResult<Nullable<int>> uspInsertSchoolPortal(string sPortalString, Nullable<int> districtPortalID, Nullable<int> schoolID, Nullable<int> createdBy, Nullable<System.DateTime> createdDate)
+        public virtual ObjectResult<Nullable<int>> uspInsertSchoolPortal(string sPortalString, Nullable<int> districtPortalID, Nullable<int> schoolID, string attendanceSettingsValuesArray, Nullable<int> schoolYearPLForPatternSettings, Nullable<int> createdBy, Nullable<System.DateTime> createdDate)
         {
             var sPortalStringParameter = sPortalString != null ?
                 new ObjectParameter("SPortalString", sPortalString) :
@@ -11973,6 +11973,14 @@ namespace EvolveCTE.Models
                 new ObjectParameter("SchoolID", schoolID) :
                 new ObjectParameter("SchoolID", typeof(int));
     
+            var attendanceSettingsValuesArrayParameter = attendanceSettingsValuesArray != null ?
+                new ObjectParameter("AttendanceSettingsValuesArray", attendanceSettingsValuesArray) :
+                new ObjectParameter("AttendanceSettingsValuesArray", typeof(string));
+    
+            var schoolYearPLForPatternSettingsParameter = schoolYearPLForPatternSettings.HasValue ?
+                new ObjectParameter("SchoolYearPLForPatternSettings", schoolYearPLForPatternSettings) :
+                new ObjectParameter("SchoolYearPLForPatternSettings", typeof(int));
+    
             var createdByParameter = createdBy.HasValue ?
                 new ObjectParameter("CreatedBy", createdBy) :
                 new ObjectParameter("CreatedBy", typeof(int));
@@ -11981,7 +11989,7 @@ namespace EvolveCTE.Models
                 new ObjectParameter("CreatedDate", createdDate) :
                 new ObjectParameter("CreatedDate", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspInsertSchoolPortal", sPortalStringParameter, districtPortalIDParameter, schoolIDParameter, createdByParameter, createdDateParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspInsertSchoolPortal", sPortalStringParameter, districtPortalIDParameter, schoolIDParameter, attendanceSettingsValuesArrayParameter, schoolYearPLForPatternSettingsParameter, createdByParameter, createdDateParameter);
         }
     
         public virtual ObjectResult<Nullable<int>> uspInsertSchoolReportingPeriod(Nullable<int> schoolCourseTermID, string valuesArray, Nullable<int> createdBy, Nullable<System.DateTime> createdDate)
@@ -13528,7 +13536,7 @@ namespace EvolveCTE.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspInsertStudentEnrollments", studentIDParameter, enrollmentDateParameter, enrollmentCodeParameter, enrollmentDescriptionParameter, admittedFromDistrictParameter, districtOfResidenceParameter, districtResidenceIRNParameter, relationshipTypeCodeParameter, formerSchoolDistrictParameter, formerSchoolAttendedParameter, formerSchoolTypeParameter, enrolledSchoolIDParameter, createdbyParameter, createddateParameter);
         }
     
-        public virtual ObjectResult<Nullable<int>> uspInsertStudentExcessiveHabitualAbsDetails(Nullable<int> absenceEventPL, Nullable<int> hoursOfAbsencePL, Nullable<int> absenceTypePL, Nullable<int> categoryOfHoursPL, Nullable<int> typeofNoticePL, Nullable<System.DateTime> eventDate, Nullable<System.DateTime> noticeDate, Nullable<int> createdBy, Nullable<System.DateTime> createdDate, string studentID)
+        public virtual ObjectResult<Nullable<int>> uspInsertStudentExcessiveHabitualAbsDetails(Nullable<int> absenceEventPL, Nullable<int> hoursOfAbsencePL, Nullable<int> absenceTypePL, Nullable<int> categoryOfHoursPL, Nullable<int> typeofNoticePL, Nullable<System.DateTime> eventDate, Nullable<System.DateTime> noticeDate, Nullable<int> createdBy, Nullable<System.DateTime> createdDate, string studentID, byte[] documentData, string documentExtension, string documentSize, string documentType, string documentName, Nullable<int> schoolYearPL)
         {
             var absenceEventPLParameter = absenceEventPL.HasValue ?
                 new ObjectParameter("AbsenceEventPL", absenceEventPL) :
@@ -13570,7 +13578,31 @@ namespace EvolveCTE.Models
                 new ObjectParameter("StudentID", studentID) :
                 new ObjectParameter("StudentID", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspInsertStudentExcessiveHabitualAbsDetails", absenceEventPLParameter, hoursOfAbsencePLParameter, absenceTypePLParameter, categoryOfHoursPLParameter, typeofNoticePLParameter, eventDateParameter, noticeDateParameter, createdByParameter, createdDateParameter, studentIDParameter);
+            var documentDataParameter = documentData != null ?
+                new ObjectParameter("DocumentData", documentData) :
+                new ObjectParameter("DocumentData", typeof(byte[]));
+    
+            var documentExtensionParameter = documentExtension != null ?
+                new ObjectParameter("DocumentExtension", documentExtension) :
+                new ObjectParameter("DocumentExtension", typeof(string));
+    
+            var documentSizeParameter = documentSize != null ?
+                new ObjectParameter("DocumentSize", documentSize) :
+                new ObjectParameter("DocumentSize", typeof(string));
+    
+            var documentTypeParameter = documentType != null ?
+                new ObjectParameter("DocumentType", documentType) :
+                new ObjectParameter("DocumentType", typeof(string));
+    
+            var documentNameParameter = documentName != null ?
+                new ObjectParameter("DocumentName", documentName) :
+                new ObjectParameter("DocumentName", typeof(string));
+    
+            var schoolYearPLParameter = schoolYearPL.HasValue ?
+                new ObjectParameter("SchoolYearPL", schoolYearPL) :
+                new ObjectParameter("SchoolYearPL", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspInsertStudentExcessiveHabitualAbsDetails", absenceEventPLParameter, hoursOfAbsencePLParameter, absenceTypePLParameter, categoryOfHoursPLParameter, typeofNoticePLParameter, eventDateParameter, noticeDateParameter, createdByParameter, createdDateParameter, studentIDParameter, documentDataParameter, documentExtensionParameter, documentSizeParameter, documentTypeParameter, documentNameParameter, schoolYearPLParameter);
         }
     
         public virtual ObjectResult<Nullable<int>> uspInsertStudentGPA(Nullable<int> studentID, string valuesArray, Nullable<int> createdBy, Nullable<System.DateTime> createdDate)
@@ -14016,7 +14048,7 @@ namespace EvolveCTE.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspInsertStudentNextYearHomeRoomData", nextSchoolIDParameter, studentsParameter, homeRoomIDSParameter, createdByParameter, createdDateParameter);
         }
     
-        public virtual ObjectResult<string> uspInsertStudentNote(string studentIds, Nullable<System.DateTime> openDate, Nullable<int> categoryId, Nullable<int> subjectId, Nullable<int> methodId, Nullable<bool> followUp, string followUpDate, Nullable<int> staffId, string closedDate, string description, byte[] documentData, string documentExtension, string documentSize, string documentType, string documentName, Nullable<int> createdBy, Nullable<System.DateTime> createdDate)
+        public virtual ObjectResult<string> uspInsertStudentNote(string studentIds, Nullable<System.DateTime> openDate, Nullable<int> categoryId, Nullable<int> subjectId, Nullable<int> methodId, Nullable<bool> followUp, string followUpDate, Nullable<int> staffId, string closedDate, string description, byte[] documentData, string documentExtension, string documentSize, string documentType, string documentName, Nullable<int> createdBy, Nullable<System.DateTime> createdDate, Nullable<int> schoolYearPL)
         {
             var studentIdsParameter = studentIds != null ?
                 new ObjectParameter("StudentIds", studentIds) :
@@ -14086,7 +14118,11 @@ namespace EvolveCTE.Models
                 new ObjectParameter("CreatedDate", createdDate) :
                 new ObjectParameter("CreatedDate", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("uspInsertStudentNote", studentIdsParameter, openDateParameter, categoryIdParameter, subjectIdParameter, methodIdParameter, followUpParameter, followUpDateParameter, staffIdParameter, closedDateParameter, descriptionParameter, documentDataParameter, documentExtensionParameter, documentSizeParameter, documentTypeParameter, documentNameParameter, createdByParameter, createdDateParameter);
+            var schoolYearPLParameter = schoolYearPL.HasValue ?
+                new ObjectParameter("SchoolYearPL", schoolYearPL) :
+                new ObjectParameter("SchoolYearPL", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("uspInsertStudentNote", studentIdsParameter, openDateParameter, categoryIdParameter, subjectIdParameter, methodIdParameter, followUpParameter, followUpDateParameter, staffIdParameter, closedDateParameter, descriptionParameter, documentDataParameter, documentExtensionParameter, documentSizeParameter, documentTypeParameter, documentNameParameter, createdByParameter, createdDateParameter, schoolYearPLParameter);
         }
     
         public virtual ObjectResult<Nullable<int>> uspInsertStudentOrientationDetails(string orientationdate, string orientationtime, Nullable<int> orientationtypepl, Nullable<int> counselorid, Nullable<int> location, Nullable<int> room, Nullable<int> studentid, Nullable<int> schoolid, Nullable<int> applicationid, Nullable<int> createdby, Nullable<System.DateTime> createddate)
@@ -14609,7 +14645,7 @@ namespace EvolveCTE.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspInsertStudentsTransferOfRightsInformation", studentIdParameter, sentReightsOfStudentParameter, transferOfRightsParameter, createdByParameter, createdDateParameter, modifiedByParameter, modifiedDateParameter);
         }
     
-        public virtual ObjectResult<Nullable<int>> uspInsertStudentTime(Nullable<int> studentTimeId, Nullable<int> studentID, Nullable<int> schoolCourseID, Nullable<int> schoolCourseSectionID, Nullable<int> status, Nullable<int> activity, string description, Nullable<System.DateTime> date, Nullable<System.TimeSpan> startTime, Nullable<System.TimeSpan> endTime, string totalTime, Nullable<int> createdBy, Nullable<System.DateTime> createdDate)
+        public virtual ObjectResult<Nullable<int>> uspInsertStudentTime(Nullable<int> studentTimeId, Nullable<int> studentID, Nullable<int> schoolCourseID, Nullable<int> schoolCourseSectionID, Nullable<int> status, Nullable<int> activity, string description, Nullable<System.DateTime> date, Nullable<System.TimeSpan> startTime, Nullable<System.TimeSpan> endTime, string totalTime, Nullable<int> schoolYearPL, Nullable<int> createdBy, Nullable<System.DateTime> createdDate)
         {
             var studentTimeIdParameter = studentTimeId.HasValue ?
                 new ObjectParameter("StudentTimeId", studentTimeId) :
@@ -14655,6 +14691,10 @@ namespace EvolveCTE.Models
                 new ObjectParameter("TotalTime", totalTime) :
                 new ObjectParameter("TotalTime", typeof(string));
     
+            var schoolYearPLParameter = schoolYearPL.HasValue ?
+                new ObjectParameter("SchoolYearPL", schoolYearPL) :
+                new ObjectParameter("SchoolYearPL", typeof(int));
+    
             var createdByParameter = createdBy.HasValue ?
                 new ObjectParameter("CreatedBy", createdBy) :
                 new ObjectParameter("CreatedBy", typeof(int));
@@ -14663,14 +14703,18 @@ namespace EvolveCTE.Models
                 new ObjectParameter("CreatedDate", createdDate) :
                 new ObjectParameter("CreatedDate", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspInsertStudentTime", studentTimeIdParameter, studentIDParameter, schoolCourseIDParameter, schoolCourseSectionIDParameter, statusParameter, activityParameter, descriptionParameter, dateParameter, startTimeParameter, endTimeParameter, totalTimeParameter, createdByParameter, createdDateParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspInsertStudentTime", studentTimeIdParameter, studentIDParameter, schoolCourseIDParameter, schoolCourseSectionIDParameter, statusParameter, activityParameter, descriptionParameter, dateParameter, startTimeParameter, endTimeParameter, totalTimeParameter, schoolYearPLParameter, createdByParameter, createdDateParameter);
         }
     
-        public virtual ObjectResult<Nullable<int>> uspInsertStudentTimeByCourse(Nullable<int> schoolCourseID, string valuesArray, Nullable<int> createdBy, Nullable<System.DateTime> createdDate)
+        public virtual ObjectResult<Nullable<int>> uspInsertStudentTimeByCourse(Nullable<int> schoolCourseID, Nullable<int> schoolYearPL, string valuesArray, Nullable<int> createdBy, Nullable<System.DateTime> createdDate)
         {
             var schoolCourseIDParameter = schoolCourseID.HasValue ?
                 new ObjectParameter("SchoolCourseID", schoolCourseID) :
                 new ObjectParameter("SchoolCourseID", typeof(int));
+    
+            var schoolYearPLParameter = schoolYearPL.HasValue ?
+                new ObjectParameter("SchoolYearPL", schoolYearPL) :
+                new ObjectParameter("SchoolYearPL", typeof(int));
     
             var valuesArrayParameter = valuesArray != null ?
                 new ObjectParameter("ValuesArray", valuesArray) :
@@ -14684,7 +14728,7 @@ namespace EvolveCTE.Models
                 new ObjectParameter("CreatedDate", createdDate) :
                 new ObjectParameter("CreatedDate", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspInsertStudentTimeByCourse", schoolCourseIDParameter, valuesArrayParameter, createdByParameter, createdDateParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspInsertStudentTimeByCourse", schoolCourseIDParameter, schoolYearPLParameter, valuesArrayParameter, createdByParameter, createdDateParameter);
         }
     
         public virtual ObjectResult<Nullable<int>> uspInsertStudentTimeByCourseTest(Nullable<int> schoolCourseID, string studentString)
@@ -14700,11 +14744,15 @@ namespace EvolveCTE.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspInsertStudentTimeByCourseTest", schoolCourseIDParameter, studentStringParameter);
         }
     
-        public virtual ObjectResult<Nullable<int>> uspInsertStudentTimeByStudent(Nullable<int> studentID, string valuesArray, Nullable<int> createdBy, Nullable<System.DateTime> createdDate)
+        public virtual ObjectResult<Nullable<int>> uspInsertStudentTimeByStudent(Nullable<int> studentID, Nullable<int> schoolYearPL, string valuesArray, Nullable<int> createdBy, Nullable<System.DateTime> createdDate)
         {
             var studentIDParameter = studentID.HasValue ?
                 new ObjectParameter("StudentID", studentID) :
                 new ObjectParameter("StudentID", typeof(int));
+    
+            var schoolYearPLParameter = schoolYearPL.HasValue ?
+                new ObjectParameter("SchoolYearPL", schoolYearPL) :
+                new ObjectParameter("SchoolYearPL", typeof(int));
     
             var valuesArrayParameter = valuesArray != null ?
                 new ObjectParameter("ValuesArray", valuesArray) :
@@ -14718,10 +14766,10 @@ namespace EvolveCTE.Models
                 new ObjectParameter("CreatedDate", createdDate) :
                 new ObjectParameter("CreatedDate", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspInsertStudentTimeByStudent", studentIDParameter, valuesArrayParameter, createdByParameter, createdDateParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspInsertStudentTimeByStudent", studentIDParameter, schoolYearPLParameter, valuesArrayParameter, createdByParameter, createdDateParameter);
         }
     
-        public virtual ObjectResult<Nullable<int>> uspInsertStudentTimeDetailsForStudents(Nullable<int> schoolCourseID, Nullable<int> statusPL, Nullable<int> activityPL, string description, Nullable<System.DateTime> date, Nullable<System.TimeSpan> startTime, Nullable<System.TimeSpan> endTime, string totalTime, Nullable<int> createdBy, Nullable<System.DateTime> createdDate, string studentIDs)
+        public virtual ObjectResult<Nullable<int>> uspInsertStudentTimeDetailsForStudents(Nullable<int> schoolCourseID, Nullable<int> statusPL, Nullable<int> activityPL, string description, Nullable<System.DateTime> date, Nullable<System.TimeSpan> startTime, Nullable<System.TimeSpan> endTime, string totalTime, Nullable<int> createdBy, Nullable<System.DateTime> createdDate, string studentIDs, Nullable<int> schoolYearPL)
         {
             var schoolCourseIDParameter = schoolCourseID.HasValue ?
                 new ObjectParameter("SchoolCourseID", schoolCourseID) :
@@ -14767,7 +14815,11 @@ namespace EvolveCTE.Models
                 new ObjectParameter("StudentIDs", studentIDs) :
                 new ObjectParameter("StudentIDs", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspInsertStudentTimeDetailsForStudents", schoolCourseIDParameter, statusPLParameter, activityPLParameter, descriptionParameter, dateParameter, startTimeParameter, endTimeParameter, totalTimeParameter, createdByParameter, createdDateParameter, studentIDsParameter);
+            var schoolYearPLParameter = schoolYearPL.HasValue ?
+                new ObjectParameter("SchoolYearPL", schoolYearPL) :
+                new ObjectParameter("SchoolYearPL", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspInsertStudentTimeDetailsForStudents", schoolCourseIDParameter, statusPLParameter, activityPLParameter, descriptionParameter, dateParameter, startTimeParameter, endTimeParameter, totalTimeParameter, createdByParameter, createdDateParameter, studentIDsParameter, schoolYearPLParameter);
         }
     
         public virtual int uspInsertStudentWeekAttendanceInfo(string calendarYear, string studentAttendanceValuesArray, Nullable<long> attendanceTakenBy, string classIds, string attendanceDates)
@@ -15679,7 +15731,7 @@ namespace EvolveCTE.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("uspInsertUpdatePublicSchoolDistricts", idParameter, districtNameParameter, contactPersonParameter, contactEmailParameter, contactPhoneParameter, contactFaxParameter, countyParameter, irnParameter);
         }
     
-        public virtual ObjectResult<Nullable<int>> uspInsertUpdateRequiredDocuments(Nullable<int> studentID, string birthCertificate, string birthCertificationSubmitDate, string proofofResidence, string proofofResidenceSubmitDate, string immunization, string immuniaztionSubmitDate, string custody, string custodySubmitDate, string lastGradeCard, string lastGradeCardSubmitDate, string transcript, string transcriptSubmitDate, string testingOGT, string testingOGTSubmitDate, string testingOAA, string testingOAASubmitDate, string testingPARCC, string testingPARCCSubmitDate, string testingACT, string testingACTSubmitDate, string recordRequestSent, string schoolRequestSentDate, Nullable<int> schoolRequestSentTo, string recordReceived, string recordRequestReceivedDate, Nullable<int> schoolRequestReceivedFrom, string recordSent, string recordSentDate, string emergencyMedical, string emergencyMedicalSubmitDate, string enrollmentPolicy, string enrollmentPolicySubmitDate, string financialResponsibilityPolicy, string financialResponsibilityPolicySubmitDate, string acceptableUsePolicy, string acceptableUsePolicySubmitDate, string publicityPolicy, string publicityPolicySubmitDate, string studentParentContract, string studentParentContractSubmitDate, string incomeInformation, string incomeInformationSubmitDate, string medicaidContract, string medicaidContractSubmitDate, string releaseInformation, string releaseInformationSubmitDate, string eTR, string eTRSubmitDate, string iEP, string iEPSubmitDate, string fiveZeroFour, string fiveZeroFourSubmitDate, string districtNotifiedSent, string districtNotifiedSentSubmitDate, Nullable<int> districtNotified, Nullable<int> createdby, Nullable<System.DateTime> createddate)
+        public virtual ObjectResult<Nullable<int>> uspInsertUpdateRequiredDocuments(Nullable<int> studentID, string birthCertificate, string birthCertificationSubmitDate, string proofofResidence, string proofofResidenceSubmitDate, string immunization, string immuniaztionSubmitDate, string custody, string custodySubmitDate, string lastGradeCard, string lastGradeCardSubmitDate, string transcript, string transcriptSubmitDate, string testingOGT, string testingOGTSubmitDate, string testingOAA, string testingOAASubmitDate, string testingPARCC, string testingPARCCSubmitDate, string testingACT, string testingACTSubmitDate, string recordRequestSent, string schoolRequestSentDate, Nullable<int> schoolRequestSentTo, string recordReceived, string recordRequestReceivedDate, Nullable<int> schoolRequestReceivedFrom, string recordSent, string recordSentDate, string emergencyMedical, string emergencyMedicalSubmitDate, string enrollmentPolicy, string enrollmentPolicySubmitDate, string financialResponsibilityPolicy, string financialResponsibilityPolicySubmitDate, string acceptableUsePolicy, string acceptableUsePolicySubmitDate, string publicityPolicy, string publicityPolicySubmitDate, string studentParentContract, string studentParentContractSubmitDate, string incomeInformation, string incomeInformationSubmitDate, string medicaidContract, string medicaidContractSubmitDate, string releaseInformation, string releaseInformationSubmitDate, string eTR, string eTRSubmitDate, string iEP, string iEPSubmitDate, string fiveZeroFour, string fiveZeroFourSubmitDate, string districtNotifiedSent, string districtNotifiedSentSubmitDate, Nullable<int> districtNotified, string languageUsageSurvey, string languageUsageSurveySubmitDate, string twoYearNonTest, string twoYearNonTestSubmitDate, Nullable<int> createdby, Nullable<System.DateTime> createddate)
         {
             var studentIDParameter = studentID.HasValue ?
                 new ObjectParameter("StudentID", studentID) :
@@ -15905,6 +15957,22 @@ namespace EvolveCTE.Models
                 new ObjectParameter("DistrictNotified", districtNotified) :
                 new ObjectParameter("DistrictNotified", typeof(int));
     
+            var languageUsageSurveyParameter = languageUsageSurvey != null ?
+                new ObjectParameter("LanguageUsageSurvey", languageUsageSurvey) :
+                new ObjectParameter("LanguageUsageSurvey", typeof(string));
+    
+            var languageUsageSurveySubmitDateParameter = languageUsageSurveySubmitDate != null ?
+                new ObjectParameter("LanguageUsageSurveySubmitDate", languageUsageSurveySubmitDate) :
+                new ObjectParameter("LanguageUsageSurveySubmitDate", typeof(string));
+    
+            var twoYearNonTestParameter = twoYearNonTest != null ?
+                new ObjectParameter("TwoYearNonTest", twoYearNonTest) :
+                new ObjectParameter("TwoYearNonTest", typeof(string));
+    
+            var twoYearNonTestSubmitDateParameter = twoYearNonTestSubmitDate != null ?
+                new ObjectParameter("TwoYearNonTestSubmitDate", twoYearNonTestSubmitDate) :
+                new ObjectParameter("TwoYearNonTestSubmitDate", typeof(string));
+    
             var createdbyParameter = createdby.HasValue ?
                 new ObjectParameter("createdby", createdby) :
                 new ObjectParameter("createdby", typeof(int));
@@ -15913,7 +15981,7 @@ namespace EvolveCTE.Models
                 new ObjectParameter("createddate", createddate) :
                 new ObjectParameter("createddate", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspInsertUpdateRequiredDocuments", studentIDParameter, birthCertificateParameter, birthCertificationSubmitDateParameter, proofofResidenceParameter, proofofResidenceSubmitDateParameter, immunizationParameter, immuniaztionSubmitDateParameter, custodyParameter, custodySubmitDateParameter, lastGradeCardParameter, lastGradeCardSubmitDateParameter, transcriptParameter, transcriptSubmitDateParameter, testingOGTParameter, testingOGTSubmitDateParameter, testingOAAParameter, testingOAASubmitDateParameter, testingPARCCParameter, testingPARCCSubmitDateParameter, testingACTParameter, testingACTSubmitDateParameter, recordRequestSentParameter, schoolRequestSentDateParameter, schoolRequestSentToParameter, recordReceivedParameter, recordRequestReceivedDateParameter, schoolRequestReceivedFromParameter, recordSentParameter, recordSentDateParameter, emergencyMedicalParameter, emergencyMedicalSubmitDateParameter, enrollmentPolicyParameter, enrollmentPolicySubmitDateParameter, financialResponsibilityPolicyParameter, financialResponsibilityPolicySubmitDateParameter, acceptableUsePolicyParameter, acceptableUsePolicySubmitDateParameter, publicityPolicyParameter, publicityPolicySubmitDateParameter, studentParentContractParameter, studentParentContractSubmitDateParameter, incomeInformationParameter, incomeInformationSubmitDateParameter, medicaidContractParameter, medicaidContractSubmitDateParameter, releaseInformationParameter, releaseInformationSubmitDateParameter, eTRParameter, eTRSubmitDateParameter, iEPParameter, iEPSubmitDateParameter, fiveZeroFourParameter, fiveZeroFourSubmitDateParameter, districtNotifiedSentParameter, districtNotifiedSentSubmitDateParameter, districtNotifiedParameter, createdbyParameter, createddateParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspInsertUpdateRequiredDocuments", studentIDParameter, birthCertificateParameter, birthCertificationSubmitDateParameter, proofofResidenceParameter, proofofResidenceSubmitDateParameter, immunizationParameter, immuniaztionSubmitDateParameter, custodyParameter, custodySubmitDateParameter, lastGradeCardParameter, lastGradeCardSubmitDateParameter, transcriptParameter, transcriptSubmitDateParameter, testingOGTParameter, testingOGTSubmitDateParameter, testingOAAParameter, testingOAASubmitDateParameter, testingPARCCParameter, testingPARCCSubmitDateParameter, testingACTParameter, testingACTSubmitDateParameter, recordRequestSentParameter, schoolRequestSentDateParameter, schoolRequestSentToParameter, recordReceivedParameter, recordRequestReceivedDateParameter, schoolRequestReceivedFromParameter, recordSentParameter, recordSentDateParameter, emergencyMedicalParameter, emergencyMedicalSubmitDateParameter, enrollmentPolicyParameter, enrollmentPolicySubmitDateParameter, financialResponsibilityPolicyParameter, financialResponsibilityPolicySubmitDateParameter, acceptableUsePolicyParameter, acceptableUsePolicySubmitDateParameter, publicityPolicyParameter, publicityPolicySubmitDateParameter, studentParentContractParameter, studentParentContractSubmitDateParameter, incomeInformationParameter, incomeInformationSubmitDateParameter, medicaidContractParameter, medicaidContractSubmitDateParameter, releaseInformationParameter, releaseInformationSubmitDateParameter, eTRParameter, eTRSubmitDateParameter, iEPParameter, iEPSubmitDateParameter, fiveZeroFourParameter, fiveZeroFourSubmitDateParameter, districtNotifiedSentParameter, districtNotifiedSentSubmitDateParameter, districtNotifiedParameter, languageUsageSurveyParameter, languageUsageSurveySubmitDateParameter, twoYearNonTestParameter, twoYearNonTestSubmitDateParameter, createdbyParameter, createddateParameter);
         }
     
         public virtual int uspInsertUpdateSchoolInfo(Nullable<int> districtID, Nullable<int> schoolID, string alternateID, string schoolName, string shortName, string address1, string address2, string country, string state, string county, string city, string zIPCode, string phone, string fax, string email, string website, string logo, string facebookURL, string twitterURL, string principal, string principalContactNo, string principalEmail, string asstPrincipal, string asstPrincipalContactNo, string asstPrincipalEmail)
@@ -17578,7 +17646,7 @@ namespace EvolveCTE.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<uspSelectActionTypesPL_Result>("uspSelectActionTypesPL");
         }
     
-        public virtual ObjectResult<uspSelectActiveDistrictCoursesForNextYear_Result> uspSelectActiveDistrictCoursesForNextYear(Nullable<int> districtID, Nullable<int> schoolID, Nullable<int> schoolYearPL)
+        public virtual ObjectResult<uspSelectActiveDistrictCoursesForNextYear_Result> uspSelectActiveDistrictCoursesForNextYear(Nullable<int> districtID, Nullable<int> schoolID, Nullable<int> schoolYearPL, Nullable<int> type)
         {
             var districtIDParameter = districtID.HasValue ?
                 new ObjectParameter("DistrictID", districtID) :
@@ -17592,7 +17660,11 @@ namespace EvolveCTE.Models
                 new ObjectParameter("SchoolYearPL", schoolYearPL) :
                 new ObjectParameter("SchoolYearPL", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<uspSelectActiveDistrictCoursesForNextYear_Result>("uspSelectActiveDistrictCoursesForNextYear", districtIDParameter, schoolIDParameter, schoolYearPLParameter);
+            var typeParameter = type.HasValue ?
+                new ObjectParameter("Type", type) :
+                new ObjectParameter("Type", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<uspSelectActiveDistrictCoursesForNextYear_Result>("uspSelectActiveDistrictCoursesForNextYear", districtIDParameter, schoolIDParameter, schoolYearPLParameter, typeParameter);
         }
     
         public virtual ObjectResult<uspSelectActiveDistrictCourseTerms_Result> uspSelectActiveDistrictCourseTerms(Nullable<int> districtID, Nullable<int> schoolYearPL)
@@ -22527,11 +22599,15 @@ namespace EvolveCTE.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<uspSelectStudentAssignmentStatusAndComments_Result>("uspSelectStudentAssignmentStatusAndComments", studentIDParameter, assignmentIDParameter);
         }
     
-        public virtual ObjectResult<uspSelectStudentAttendanceDatesForCalendar_Result> uspSelectStudentAttendanceDatesForCalendar(Nullable<int> studentID, Nullable<System.DateTime> startDate, Nullable<System.DateTime> endDate)
+        public virtual ObjectResult<uspSelectStudentAttendanceDatesForCalendar_Result> uspSelectStudentAttendanceDatesForCalendar(Nullable<int> studentID, Nullable<int> studentAttendancePatternId, Nullable<System.DateTime> startDate, Nullable<System.DateTime> endDate, Nullable<int> schoolYearPL)
         {
             var studentIDParameter = studentID.HasValue ?
                 new ObjectParameter("StudentID", studentID) :
                 new ObjectParameter("StudentID", typeof(int));
+    
+            var studentAttendancePatternIdParameter = studentAttendancePatternId.HasValue ?
+                new ObjectParameter("StudentAttendancePatternId", studentAttendancePatternId) :
+                new ObjectParameter("StudentAttendancePatternId", typeof(int));
     
             var startDateParameter = startDate.HasValue ?
                 new ObjectParameter("StartDate", startDate) :
@@ -22541,14 +22617,22 @@ namespace EvolveCTE.Models
                 new ObjectParameter("EndDate", endDate) :
                 new ObjectParameter("EndDate", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<uspSelectStudentAttendanceDatesForCalendar_Result>("uspSelectStudentAttendanceDatesForCalendar", studentIDParameter, startDateParameter, endDateParameter);
+            var schoolYearPLParameter = schoolYearPL.HasValue ?
+                new ObjectParameter("SchoolYearPL", schoolYearPL) :
+                new ObjectParameter("SchoolYearPL", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<uspSelectStudentAttendanceDatesForCalendar_Result>("uspSelectStudentAttendanceDatesForCalendar", studentIDParameter, studentAttendancePatternIdParameter, startDateParameter, endDateParameter, schoolYearPLParameter);
         }
     
-        public virtual ObjectResult<uspSelectStudentAttendanceDatesForSummary_Result> uspSelectStudentAttendanceDatesForSummary(Nullable<int> studentID, Nullable<System.DateTime> startDate, Nullable<System.DateTime> endDate)
+        public virtual ObjectResult<uspSelectStudentAttendanceDatesForSummary_Result> uspSelectStudentAttendanceDatesForSummary(Nullable<int> studentID, Nullable<int> studentAttendancePatternID, Nullable<System.DateTime> startDate, Nullable<System.DateTime> endDate, Nullable<int> schoolYearPL)
         {
             var studentIDParameter = studentID.HasValue ?
                 new ObjectParameter("StudentID", studentID) :
                 new ObjectParameter("StudentID", typeof(int));
+    
+            var studentAttendancePatternIDParameter = studentAttendancePatternID.HasValue ?
+                new ObjectParameter("StudentAttendancePatternID", studentAttendancePatternID) :
+                new ObjectParameter("StudentAttendancePatternID", typeof(int));
     
             var startDateParameter = startDate.HasValue ?
                 new ObjectParameter("StartDate", startDate) :
@@ -22558,7 +22642,11 @@ namespace EvolveCTE.Models
                 new ObjectParameter("EndDate", endDate) :
                 new ObjectParameter("EndDate", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<uspSelectStudentAttendanceDatesForSummary_Result>("uspSelectStudentAttendanceDatesForSummary", studentIDParameter, startDateParameter, endDateParameter);
+            var schoolYearPLParameter = schoolYearPL.HasValue ?
+                new ObjectParameter("SchoolYearPL", schoolYearPL) :
+                new ObjectParameter("SchoolYearPL", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<uspSelectStudentAttendanceDatesForSummary_Result>("uspSelectStudentAttendanceDatesForSummary", studentIDParameter, studentAttendancePatternIDParameter, startDateParameter, endDateParameter, schoolYearPLParameter);
         }
     
         public virtual ObjectResult<uspSelectStudentAttendanceForTranscript_Result> uspSelectStudentAttendanceForTranscript(Nullable<int> studentID, Nullable<int> schoolYearID)
@@ -23161,13 +23249,17 @@ namespace EvolveCTE.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<uspSelectStudentExcessiveHabitualAbsBySEHAID_Result>("uspSelectStudentExcessiveHabitualAbsBySEHAID", sEHAIDParameter);
         }
     
-        public virtual ObjectResult<uspSelectStudentExcessiveHabitualAbsByStudentID_Result> uspSelectStudentExcessiveHabitualAbsByStudentID(Nullable<int> studentID)
+        public virtual ObjectResult<uspSelectStudentExcessiveHabitualAbsByStudentID_Result> uspSelectStudentExcessiveHabitualAbsByStudentID(Nullable<int> studentID, Nullable<int> schoolYearPL)
         {
             var studentIDParameter = studentID.HasValue ?
                 new ObjectParameter("StudentID", studentID) :
                 new ObjectParameter("StudentID", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<uspSelectStudentExcessiveHabitualAbsByStudentID_Result>("uspSelectStudentExcessiveHabitualAbsByStudentID", studentIDParameter);
+            var schoolYearPLParameter = schoolYearPL.HasValue ?
+                new ObjectParameter("SchoolYearPL", schoolYearPL) :
+                new ObjectParameter("SchoolYearPL", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<uspSelectStudentExcessiveHabitualAbsByStudentID_Result>("uspSelectStudentExcessiveHabitualAbsByStudentID", studentIDParameter, schoolYearPLParameter);
         }
     
         public virtual ObjectResult<uspSelectStudentGPAForTranscript_Result> uspSelectStudentGPAForTranscript(Nullable<int> studentID, Nullable<int> schoolYearPL)
@@ -23449,13 +23541,25 @@ namespace EvolveCTE.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<uspSelectStudentNextYearDataForEvolution_Result>("uspSelectStudentNextYearDataForEvolution", schoolIDParameter);
         }
     
-        public virtual ObjectResult<uspSelectStudentNextYearDataForValidate_Result> uspSelectStudentNextYearDataForValidate(Nullable<int> schoolID)
+        public virtual ObjectResult<uspSelectStudentNextYearDataForValidate_Result> uspSelectStudentNextYearDataForValidate(Nullable<int> schoolID, Nullable<int> counselorID, string gradeID, Nullable<int> homeroomAdvisorID)
         {
             var schoolIDParameter = schoolID.HasValue ?
                 new ObjectParameter("SchoolID", schoolID) :
                 new ObjectParameter("SchoolID", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<uspSelectStudentNextYearDataForValidate_Result>("uspSelectStudentNextYearDataForValidate", schoolIDParameter);
+            var counselorIDParameter = counselorID.HasValue ?
+                new ObjectParameter("CounselorID", counselorID) :
+                new ObjectParameter("CounselorID", typeof(int));
+    
+            var gradeIDParameter = gradeID != null ?
+                new ObjectParameter("GradeID", gradeID) :
+                new ObjectParameter("GradeID", typeof(string));
+    
+            var homeroomAdvisorIDParameter = homeroomAdvisorID.HasValue ?
+                new ObjectParameter("HomeroomAdvisorID", homeroomAdvisorID) :
+                new ObjectParameter("HomeroomAdvisorID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<uspSelectStudentNextYearDataForValidate_Result>("uspSelectStudentNextYearDataForValidate", schoolIDParameter, counselorIDParameter, gradeIDParameter, homeroomAdvisorIDParameter);
         }
     
         public virtual ObjectResult<uspSelectStudentNextYearHomeRoomData_Result> uspSelectStudentNextYearHomeRoomData(Nullable<int> nextSchoolID, Nullable<int> counselorID, string gradeIDs, Nullable<int> schoolYearID, string studentIDS, string pullStatus)
@@ -23518,17 +23622,13 @@ namespace EvolveCTE.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<uspSelectStudentNoteByNoteId_Result>("uspSelectStudentNoteByNoteId", studentNoteIdParameter);
         }
     
-        public virtual ObjectResult<uspSelectStudentNotesBySchoolID_Result> uspSelectStudentNotesBySchoolID(Nullable<int> schoolId, Nullable<int> schoolYearID)
+        public virtual ObjectResult<uspSelectStudentNotesBySchoolID_Result> uspSelectStudentNotesBySchoolID(Nullable<int> schoolId)
         {
             var schoolIdParameter = schoolId.HasValue ?
                 new ObjectParameter("SchoolId", schoolId) :
                 new ObjectParameter("SchoolId", typeof(int));
     
-            var schoolYearIDParameter = schoolYearID.HasValue ?
-                new ObjectParameter("SchoolYearID", schoolYearID) :
-                new ObjectParameter("SchoolYearID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<uspSelectStudentNotesBySchoolID_Result>("uspSelectStudentNotesBySchoolID", schoolIdParameter, schoolYearIDParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<uspSelectStudentNotesBySchoolID_Result>("uspSelectStudentNotesBySchoolID", schoolIdParameter);
         }
     
         public virtual ObjectResult<uspSelectStudentNotesByStudentId_Result> uspSelectStudentNotesByStudentId(Nullable<int> studentId)
@@ -24074,7 +24174,7 @@ namespace EvolveCTE.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<uspSelectStudentTimesForApproval_Result>("uspSelectStudentTimesForApproval", schoolIdParameter, schoolYearIdParameter, personIDParameter);
         }
     
-        public virtual ObjectResult<uspSelectStudentTimesForApprovalByStudentId_Result> uspSelectStudentTimesForApprovalByStudentId(Nullable<int> schoolId, Nullable<int> studentID)
+        public virtual ObjectResult<uspSelectStudentTimesForApprovalByStudentId_Result> uspSelectStudentTimesForApprovalByStudentId(Nullable<int> schoolId, Nullable<int> studentID, Nullable<int> schoolYearPL)
         {
             var schoolIdParameter = schoolId.HasValue ?
                 new ObjectParameter("SchoolId", schoolId) :
@@ -24084,7 +24184,11 @@ namespace EvolveCTE.Models
                 new ObjectParameter("StudentID", studentID) :
                 new ObjectParameter("StudentID", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<uspSelectStudentTimesForApprovalByStudentId_Result>("uspSelectStudentTimesForApprovalByStudentId", schoolIdParameter, studentIDParameter);
+            var schoolYearPLParameter = schoolYearPL.HasValue ?
+                new ObjectParameter("SchoolYearPL", schoolYearPL) :
+                new ObjectParameter("SchoolYearPL", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<uspSelectStudentTimesForApprovalByStudentId_Result>("uspSelectStudentTimesForApprovalByStudentId", schoolIdParameter, studentIDParameter, schoolYearPLParameter);
         }
     
         public virtual ObjectResult<uspSelectStudentTimesForApprovalByStudentId_04062018_Result> uspSelectStudentTimesForApprovalByStudentId_04062018(Nullable<int> schoolId, Nullable<int> studentID)
@@ -24553,7 +24657,7 @@ namespace EvolveCTE.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<uspSelectYearPL_Result>("uspSelectYearPL");
         }
     
-        public virtual ObjectResult<uspSelectYTDDetailsByStudentId_Result> uspSelectYTDDetailsByStudentId(Nullable<int> schoolId, Nullable<int> studentID)
+        public virtual ObjectResult<uspSelectYTDDetailsByStudentId_Result> uspSelectYTDDetailsByStudentId(Nullable<int> schoolId, Nullable<int> studentID, Nullable<int> schoolYearPL)
         {
             var schoolIdParameter = schoolId.HasValue ?
                 new ObjectParameter("SchoolId", schoolId) :
@@ -24563,7 +24667,11 @@ namespace EvolveCTE.Models
                 new ObjectParameter("StudentID", studentID) :
                 new ObjectParameter("StudentID", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<uspSelectYTDDetailsByStudentId_Result>("uspSelectYTDDetailsByStudentId", schoolIdParameter, studentIDParameter);
+            var schoolYearPLParameter = schoolYearPL.HasValue ?
+                new ObjectParameter("SchoolYearPL", schoolYearPL) :
+                new ObjectParameter("SchoolYearPL", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<uspSelectYTDDetailsByStudentId_Result>("uspSelectYTDDetailsByStudentId", schoolIdParameter, studentIDParameter, schoolYearPLParameter);
         }
     
         public virtual int uspSPEDAccommodationsGetFromPicklist()
@@ -30228,7 +30336,7 @@ namespace EvolveCTE.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspUpdateStudentEvolutionProcess", studentIDSParameter, schoolIDParameter, schoolYearIDParameter, createdByParameter, createdDateParameter);
         }
     
-        public virtual ObjectResult<Nullable<int>> uspUpdateStudentExcessiveHabitualAbsDetails(Nullable<int> sEHAID, Nullable<int> absenceEventPL, Nullable<int> hoursOfAbsencePL, Nullable<int> absenceTypePL, Nullable<int> categoryOfHoursPL, Nullable<int> typeofNoticePL, Nullable<System.DateTime> eventDate, Nullable<System.DateTime> noticeDate, Nullable<int> modifiedBy, Nullable<System.DateTime> modifiedDate)
+        public virtual ObjectResult<Nullable<int>> uspUpdateStudentExcessiveHabitualAbsDetails(Nullable<int> sEHAID, Nullable<int> absenceEventPL, Nullable<int> hoursOfAbsencePL, Nullable<int> absenceTypePL, Nullable<int> categoryOfHoursPL, Nullable<int> typeofNoticePL, Nullable<System.DateTime> eventDate, Nullable<System.DateTime> noticeDate, Nullable<int> modifiedBy, Nullable<System.DateTime> modifiedDate, byte[] documentData, string documentExtension, string documentSize, string documentType, string documentName)
         {
             var sEHAIDParameter = sEHAID.HasValue ?
                 new ObjectParameter("SEHAID", sEHAID) :
@@ -30270,10 +30378,30 @@ namespace EvolveCTE.Models
                 new ObjectParameter("ModifiedDate", modifiedDate) :
                 new ObjectParameter("ModifiedDate", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspUpdateStudentExcessiveHabitualAbsDetails", sEHAIDParameter, absenceEventPLParameter, hoursOfAbsencePLParameter, absenceTypePLParameter, categoryOfHoursPLParameter, typeofNoticePLParameter, eventDateParameter, noticeDateParameter, modifiedByParameter, modifiedDateParameter);
+            var documentDataParameter = documentData != null ?
+                new ObjectParameter("DocumentData", documentData) :
+                new ObjectParameter("DocumentData", typeof(byte[]));
+    
+            var documentExtensionParameter = documentExtension != null ?
+                new ObjectParameter("DocumentExtension", documentExtension) :
+                new ObjectParameter("DocumentExtension", typeof(string));
+    
+            var documentSizeParameter = documentSize != null ?
+                new ObjectParameter("DocumentSize", documentSize) :
+                new ObjectParameter("DocumentSize", typeof(string));
+    
+            var documentTypeParameter = documentType != null ?
+                new ObjectParameter("DocumentType", documentType) :
+                new ObjectParameter("DocumentType", typeof(string));
+    
+            var documentNameParameter = documentName != null ?
+                new ObjectParameter("DocumentName", documentName) :
+                new ObjectParameter("DocumentName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspUpdateStudentExcessiveHabitualAbsDetails", sEHAIDParameter, absenceEventPLParameter, hoursOfAbsencePLParameter, absenceTypePLParameter, categoryOfHoursPLParameter, typeofNoticePLParameter, eventDateParameter, noticeDateParameter, modifiedByParameter, modifiedDateParameter, documentDataParameter, documentExtensionParameter, documentSizeParameter, documentTypeParameter, documentNameParameter);
         }
     
-        public virtual ObjectResult<Nullable<int>> uspUpdateStudentGrade(Nullable<int> studentGradeID, Nullable<int> studentID, string courseNumber, string courseName, string sectionNumber, string termName, Nullable<int> finalGradePercentage, string finalGradeAlpha, Nullable<decimal> creditAttempted, Nullable<decimal> creditEarned, string districtName, string schoolName, string schoolYear, string teacherName, Nullable<int> studentGradeLevelId, Nullable<int> subjectAreaForCreditId, Nullable<System.DateTime> courseEndDate, string courseComments, Nullable<int> coreAreaCode, Nullable<bool> isHighSchoolCredit, Nullable<bool> iSGPA, Nullable<bool> isClassRank, Nullable<bool> isHonorRoll, Nullable<bool> isPrintOnTranscript, Nullable<bool> isPrintOnReportCard, Nullable<int> modifiedBy, Nullable<System.DateTime> modifiedDate, Nullable<int> schoolCourseSectionID, string schoolCourseEndYear, Nullable<int> gradReqDetailId)
+        public virtual ObjectResult<Nullable<int>> uspUpdateStudentGrade(Nullable<int> studentGradeID, Nullable<int> studentID, string courseNumber, string courseName, string sectionNumber, string termName, Nullable<int> finalGradePercentage, string finalGradeAlpha, Nullable<decimal> creditAttempted, Nullable<decimal> creditEarned, string districtName, string schoolName, string schoolYear, string teacherName, Nullable<int> studentGradeLevelId, Nullable<int> subjectAreaForCreditId, Nullable<System.DateTime> courseEndDate, string courseComments, Nullable<int> coreAreaCode, Nullable<bool> isHighSchoolCredit, Nullable<bool> iSGPA, Nullable<bool> isClassRank, Nullable<bool> isHonorRoll, Nullable<bool> isPrintOnTranscript, Nullable<bool> isPrintOnReportCard, Nullable<int> modifiedBy, Nullable<System.DateTime> modifiedDate, Nullable<int> schoolCourseSectionID, string schoolCourseEndYear, Nullable<int> gradReqDetailId, Nullable<int> studentScheduleId)
         {
             var studentGradeIDParameter = studentGradeID.HasValue ?
                 new ObjectParameter("StudentGradeID", studentGradeID) :
@@ -30395,7 +30523,11 @@ namespace EvolveCTE.Models
                 new ObjectParameter("GradReqDetailId", gradReqDetailId) :
                 new ObjectParameter("GradReqDetailId", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspUpdateStudentGrade", studentGradeIDParameter, studentIDParameter, courseNumberParameter, courseNameParameter, sectionNumberParameter, termNameParameter, finalGradePercentageParameter, finalGradeAlphaParameter, creditAttemptedParameter, creditEarnedParameter, districtNameParameter, schoolNameParameter, schoolYearParameter, teacherNameParameter, studentGradeLevelIdParameter, subjectAreaForCreditIdParameter, courseEndDateParameter, courseCommentsParameter, coreAreaCodeParameter, isHighSchoolCreditParameter, iSGPAParameter, isClassRankParameter, isHonorRollParameter, isPrintOnTranscriptParameter, isPrintOnReportCardParameter, modifiedByParameter, modifiedDateParameter, schoolCourseSectionIDParameter, schoolCourseEndYearParameter, gradReqDetailIdParameter);
+            var studentScheduleIdParameter = studentScheduleId.HasValue ?
+                new ObjectParameter("StudentScheduleId", studentScheduleId) :
+                new ObjectParameter("StudentScheduleId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspUpdateStudentGrade", studentGradeIDParameter, studentIDParameter, courseNumberParameter, courseNameParameter, sectionNumberParameter, termNameParameter, finalGradePercentageParameter, finalGradeAlphaParameter, creditAttemptedParameter, creditEarnedParameter, districtNameParameter, schoolNameParameter, schoolYearParameter, teacherNameParameter, studentGradeLevelIdParameter, subjectAreaForCreditIdParameter, courseEndDateParameter, courseCommentsParameter, coreAreaCodeParameter, isHighSchoolCreditParameter, iSGPAParameter, isClassRankParameter, isHonorRollParameter, isPrintOnTranscriptParameter, isPrintOnReportCardParameter, modifiedByParameter, modifiedDateParameter, schoolCourseSectionIDParameter, schoolCourseEndYearParameter, gradReqDetailIdParameter, studentScheduleIdParameter);
         }
     
         public virtual ObjectResult<Nullable<int>> uspUpdateStudentGradRequirements(Nullable<int> studentGradRequirementId, Nullable<int> studentID, Nullable<System.DateTime> oldIEPDate, Nullable<System.DateTime> newIEPDate, Nullable<int> iEPDateTypePL, Nullable<int> oldAssessmentTypePL, Nullable<int> newAssessmentTypePL, string assessmentAreaPL, Nullable<int> exemptionFlagPL, Nullable<bool> isActive, Nullable<int> modifiedBy, Nullable<System.DateTime> modifiedDate)
@@ -31440,7 +31572,7 @@ namespace EvolveCTE.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<uspUserRolesByUserIdGet_Result>("uspUserRolesByUserIdGet", userIDParameter);
         }
     
-        public virtual ObjectResult<Nullable<int>> uspVerifyStudentContactAddress(Nullable<int> portalContactAddressId, Nullable<int> currentContactAddressId, Nullable<int> addressTypePL, Nullable<int> studentId, Nullable<bool> isApproved, string reviewerName, Nullable<int> reviewerId, Nullable<System.DateTime> reviewedDate, Nullable<int> rejectedReasonPL, string currentContactAddressStartDate, string currentContactAddressEndDate, string newAddressStartDate, Nullable<int> primaryFlag)
+        public virtual ObjectResult<Nullable<int>> uspVerifyStudentContactAddress(Nullable<int> portalContactAddressId, Nullable<int> currentContactAddressId, Nullable<int> addressTypePL, Nullable<int> studentId, Nullable<bool> isApproved, string reviewerName, Nullable<int> reviewerId, Nullable<System.DateTime> reviewedDate, Nullable<int> rejectedReasonPL, string currentContactAddressStartDate, string currentContactAddressEndDate, string newAddressStartDate, Nullable<int> primaryFlag, string actionType)
         {
             var portalContactAddressIdParameter = portalContactAddressId.HasValue ?
                 new ObjectParameter("PortalContactAddressId", portalContactAddressId) :
@@ -31494,7 +31626,11 @@ namespace EvolveCTE.Models
                 new ObjectParameter("PrimaryFlag", primaryFlag) :
                 new ObjectParameter("PrimaryFlag", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspVerifyStudentContactAddress", portalContactAddressIdParameter, currentContactAddressIdParameter, addressTypePLParameter, studentIdParameter, isApprovedParameter, reviewerNameParameter, reviewerIdParameter, reviewedDateParameter, rejectedReasonPLParameter, currentContactAddressStartDateParameter, currentContactAddressEndDateParameter, newAddressStartDateParameter, primaryFlagParameter);
+            var actionTypeParameter = actionType != null ?
+                new ObjectParameter("ActionType", actionType) :
+                new ObjectParameter("ActionType", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspVerifyStudentContactAddress", portalContactAddressIdParameter, currentContactAddressIdParameter, addressTypePLParameter, studentIdParameter, isApprovedParameter, reviewerNameParameter, reviewerIdParameter, reviewedDateParameter, rejectedReasonPLParameter, currentContactAddressStartDateParameter, currentContactAddressEndDateParameter, newAddressStartDateParameter, primaryFlagParameter, actionTypeParameter);
         }
     
         public virtual ObjectResult<Nullable<int>> uspVerifyStudentPortalAddress(Nullable<int> portalStudentAddressId, Nullable<int> currentAddressId, Nullable<int> addressTypePL, Nullable<int> studentId, Nullable<bool> isApproved, string reviewerName, Nullable<int> reviewerId, Nullable<System.DateTime> reviewedDate, Nullable<int> rejectedReasonPL, string currentAddressStartDate, string currentAddressEndDate, string newAddressStartDate, Nullable<int> primaryFlag, string actionType)
@@ -31558,7 +31694,7 @@ namespace EvolveCTE.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspVerifyStudentPortalAddress", portalStudentAddressIdParameter, currentAddressIdParameter, addressTypePLParameter, studentIdParameter, isApprovedParameter, reviewerNameParameter, reviewerIdParameter, reviewedDateParameter, rejectedReasonPLParameter, currentAddressStartDateParameter, currentAddressEndDateParameter, newAddressStartDateParameter, primaryFlagParameter, actionTypeParameter);
         }
     
-        public virtual ObjectResult<Nullable<int>> uspVerifyStudentPortalContactPhone(Nullable<int> portalStudentContactPhoneId, Nullable<int> currentContactPhoneID, Nullable<int> studentId, Nullable<bool> isApproved, string reviewer, Nullable<int> reviewerId, Nullable<System.DateTime> reviewedDate, Nullable<int> rejectedReasonPL)
+        public virtual ObjectResult<Nullable<int>> uspVerifyStudentPortalContactPhone(Nullable<int> portalStudentContactPhoneId, Nullable<int> currentContactPhoneID, Nullable<int> studentId, Nullable<bool> isApproved, string reviewer, Nullable<int> reviewerId, Nullable<System.DateTime> reviewedDate, Nullable<int> rejectedReasonPL, string actionType)
         {
             var portalStudentContactPhoneIdParameter = portalStudentContactPhoneId.HasValue ?
                 new ObjectParameter("PortalStudentContactPhoneId", portalStudentContactPhoneId) :
@@ -31592,10 +31728,14 @@ namespace EvolveCTE.Models
                 new ObjectParameter("RejectedReasonPL", rejectedReasonPL) :
                 new ObjectParameter("RejectedReasonPL", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspVerifyStudentPortalContactPhone", portalStudentContactPhoneIdParameter, currentContactPhoneIDParameter, studentIdParameter, isApprovedParameter, reviewerParameter, reviewerIdParameter, reviewedDateParameter, rejectedReasonPLParameter);
+            var actionTypeParameter = actionType != null ?
+                new ObjectParameter("ActionType", actionType) :
+                new ObjectParameter("ActionType", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspVerifyStudentPortalContactPhone", portalStudentContactPhoneIdParameter, currentContactPhoneIDParameter, studentIdParameter, isApprovedParameter, reviewerParameter, reviewerIdParameter, reviewedDateParameter, rejectedReasonPLParameter, actionTypeParameter);
         }
     
-        public virtual ObjectResult<Nullable<int>> uspVerifyStudentPortalPhone(Nullable<int> portalStudentPhoneId, Nullable<int> currentPhoneID, Nullable<int> studentId, Nullable<bool> isApproved, string reviewer, Nullable<int> reviewerId, Nullable<System.DateTime> reviewedDate, Nullable<int> rejectedReasonPL, string currentPhoneEndDate, string newPhoneStartDate)
+        public virtual ObjectResult<Nullable<int>> uspVerifyStudentPortalPhone(Nullable<int> portalStudentPhoneId, Nullable<int> currentPhoneID, Nullable<int> studentId, Nullable<bool> isApproved, string reviewer, Nullable<int> reviewerId, Nullable<System.DateTime> reviewedDate, Nullable<int> rejectedReasonPL, string currentPhoneEndDate, string newPhoneStartDate, string actionType)
         {
             var portalStudentPhoneIdParameter = portalStudentPhoneId.HasValue ?
                 new ObjectParameter("PortalStudentPhoneId", portalStudentPhoneId) :
@@ -31637,7 +31777,11 @@ namespace EvolveCTE.Models
                 new ObjectParameter("NewPhoneStartDate", newPhoneStartDate) :
                 new ObjectParameter("NewPhoneStartDate", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspVerifyStudentPortalPhone", portalStudentPhoneIdParameter, currentPhoneIDParameter, studentIdParameter, isApprovedParameter, reviewerParameter, reviewerIdParameter, reviewedDateParameter, rejectedReasonPLParameter, currentPhoneEndDateParameter, newPhoneStartDateParameter);
+            var actionTypeParameter = actionType != null ?
+                new ObjectParameter("ActionType", actionType) :
+                new ObjectParameter("ActionType", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("uspVerifyStudentPortalPhone", portalStudentPhoneIdParameter, currentPhoneIDParameter, studentIdParameter, isApprovedParameter, reviewerParameter, reviewerIdParameter, reviewedDateParameter, rejectedReasonPLParameter, currentPhoneEndDateParameter, newPhoneStartDateParameter, actionTypeParameter);
         }
     
         public virtual ObjectResult<uspCheckStudentCTELogin_Result> uspCheckStudentCTELogin(string userName, string password, Nullable<System.DateTime> currentDate)

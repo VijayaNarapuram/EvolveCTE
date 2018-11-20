@@ -50,6 +50,8 @@ namespace EvolveCTE.Models
         public Nullable<bool> IsPrintOnReportCard { get; set; }
         public string SchoolYearEnd { get; set; }
         public Nullable<int> GradReqDetailId { get; set; }
+        public Nullable<int> SchoolCourseSectionID { get; set; }
+        public Nullable<int> StudentScheduleID { get; set; }
     
         public virtual Student Student { get; set; }
     }

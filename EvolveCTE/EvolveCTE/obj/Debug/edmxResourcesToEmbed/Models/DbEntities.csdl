@@ -2281,6 +2281,8 @@
     <Property Name="ReviewedDate" Type="DateTime" Precision="3" />
     <Property Name="RejectedReasonPL" Type="Int32" />
     <Property Name="CurrentAddressEndDate" Type="DateTime" Precision="3" />
+    <Property Name="EditOrRemoveContactAddress" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Int32" />
   </EntityType>
   <EntityType Name="PortalStudentAddress">
     <Key>
@@ -2315,6 +2317,7 @@
     <Property Name="RejectedReasonPL" Type="Int32" />
     <Property Name="CurrentAddressEndDate" Type="DateTime" Precision="3" />
     <Property Name="EditOrRemoveAddress" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Int32" />
   </EntityType>
   <EntityType Name="PortalStudentPhone">
     <Key>
@@ -2335,6 +2338,8 @@
     <Property Name="Approved" Type="Int32" />
     <Property Name="RejectedReasonPL" Type="Int32" />
     <Property Name="CurrentPhoneEndDate" Type="DateTime" Precision="3" />
+    <Property Name="EditOrRemovePhone" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Int32" />
   </EntityType>
   <EntityType Name="PortalVersion">
     <Key>
@@ -2437,6 +2442,10 @@
     <Property Name="RecordReceived" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
     <Property Name="RecordSent" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Student" Relationship="Self.Fk_RequiredDocuments_StudentID" FromRole="RequiredDocuments" ToRole="Student" />
+    <Property Name="LanguageUsageSurvey" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="LanguageUsageSurveySubmitDate" Type="DateTime" Precision="0" />
+    <Property Name="C2YearNonTest" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="C2YearNonTestSubmitDate" Type="DateTime" Precision="0" />
   </EntityType>
   <EntityType Name="Role">
     <Key>
@@ -3917,6 +3926,7 @@
     <Property Name="CreatedDate" Type="DateTime" Precision="3" />
     <Property Name="ModifiedBy" Type="Int32" />
     <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="SchoolCourseSectionId" Type="Int32" />
   </EntityType>
   <EntityType Name="StudentDayAttendance">
     <Key>
@@ -4043,6 +4053,13 @@
     <NavigationProperty Name="PickListDetails_Bak3" Relationship="Self.FK_PLD_StudentExcessiveHabitualAbs_HoursOfAbsencePL" FromRole="StudentExcessiveHabitualAbs" ToRole="PickListDetails_Bak" />
     <NavigationProperty Name="PickListDetails_Bak4" Relationship="Self.FK_PLD_StudentExcessiveHabitualAbs_TypeofNoticePL" FromRole="StudentExcessiveHabitualAbs" ToRole="PickListDetails_Bak" />
     <NavigationProperty Name="Student" Relationship="Self.FK_StudentExcessiveHabitualAbs_StudentID" FromRole="StudentExcessiveHabitualAbs" ToRole="Student" />
+    <Property Name="SchoolYearPL" Type="Int32" />
+    <Property Name="FilePath" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="DocumentExtension" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="DocumentSize" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="DocumentType" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="DocumentName" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="DocumentData" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="StudentGPA">
     <Key>
@@ -4251,6 +4268,7 @@
     <NavigationProperty Name="PickListDetails_Bak" Relationship="Self.FK_PLD_StudentNote_CategoryPL" FromRole="StudentNote" ToRole="PickListDetails_Bak" />
     <NavigationProperty Name="PickListDetails_Bak1" Relationship="Self.FK_PLD_StudentNote_MethodPL" FromRole="StudentNote" ToRole="PickListDetails_Bak" />
     <NavigationProperty Name="PickListDetails_Bak2" Relationship="Self.FK_PLD_StudentNote_SubjectPL" FromRole="StudentNote" ToRole="PickListDetails_Bak" />
+    <Property Name="SchoolYearPL" Type="Int32" />
   </EntityType>
   <EntityType Name="StudentOrientation">
     <Key>
@@ -4530,6 +4548,7 @@
     <Property Name="ModifiedBy" Type="Int32" />
     <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
     <Property Name="SchoolCourseSectionID" Type="Int32" />
+    <Property Name="SchoolYearPL" Type="Int32" />
   </EntityType>
   <EntityType Name="StudentTransferOfRight">
     <Key>
@@ -4580,15 +4599,27 @@
   <EntityType Name="TestingRoom">
     <Key>
       <PropertyRef Name="TestingRoomID" />
+      <PropertyRef Name="TestingRoomId" />
     </Key>
     <Property Name="TestingRoomID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="RoomName" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
-    <Property Name="RoomNumber" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="RoomName" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="RoomNumber" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
     <Property Name="MaxRoomCapacity" Type="Int16" />
     <Property Name="CreatedBy" Type="Int32" />
     <Property Name="CreatedDate" Type="DateTime" Precision="3" />
     <Property Name="ModifiedBy" Type="Int32" />
     <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="TestingRoomId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TestLocationId" Type="Int32" Nullable="false" />
+    <Property Name="Building" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="MultipleAssessments" Type="Boolean" />
+    <Property Name="MultipleAssessmentAreas" Type="Boolean" />
+    <Property Name="OneOnOne" Type="Boolean" />
+    <Property Name="SmallGroup" Type="Boolean" />
+    <Property Name="StartDate" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="EndDate" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Assessment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Int32" />
   </EntityType>
   <EntityType Name="TestingRoster">
     <Key>
@@ -4608,6 +4639,7 @@
   <EntityType Name="TestLocation">
     <Key>
       <PropertyRef Name="TestLocationID" />
+      <PropertyRef Name="TestLocationId" />
     </Key>
     <Property Name="TestLocationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="DistrictID" Type="Int32" />
@@ -4622,6 +4654,19 @@
     <Property Name="CreatedDate" Type="DateTime" Precision="3" />
     <Property Name="Modifiedby" Type="Int32" />
     <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="TestLocationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SchoolId" Type="Int32" Nullable="false" />
+    <Property Name="AddressId" Type="Int32" Nullable="false" />
+    <Property Name="RegionId" Type="Int32" Nullable="false" />
+    <Property Name="LocationContact" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="LocationContactPhone" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="LocationContactEmail" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="IsFee" Type="Boolean" />
+    <Property Name="FeeAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="StartDate" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="EndDate" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Int32" />
+    <Property Name="ModifiedBy" Type="Int32" />
   </EntityType>
   <EntityType Name="Topic">
     <Key>
@@ -5321,6 +5366,8 @@
     <Property Name="CreatedDate" Type="DateTime" Precision="3" />
     <Property Name="ModifiedBy" Type="Int32" />
     <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="EditOrRemoveContactAddress" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Int32" />
   </EntityType>
   <EntityType Name="RoleMenuPrivilage">
     <Key>
@@ -5832,6 +5879,8 @@
     <Property Name="SchoolYearEnd" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
     <Property Name="GradReqDetailId" Type="Int32" />
     <NavigationProperty Name="Student" Relationship="Self.FK_StudentGrade_StudentID" FromRole="studentgrade" ToRole="Student" />
+    <Property Name="SchoolCourseSectionID" Type="Int32" />
+    <Property Name="StudentScheduleID" Type="Int32" />
   </EntityType>
   <EntityType Name="studentgrade0406">
     <Key>
@@ -13061,6 +13110,8 @@
       <Parameter Name="SPortalString" Mode="In" Type="String" />
       <Parameter Name="DistrictPortalID" Mode="In" Type="Int32" />
       <Parameter Name="SchoolID" Mode="In" Type="Int32" />
+      <Parameter Name="AttendanceSettingsValuesArray" Mode="In" Type="String" />
+      <Parameter Name="SchoolYearPLForPatternSettings" Mode="In" Type="Int32" />
       <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
       <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
     </FunctionImport>
@@ -13485,6 +13536,12 @@
       <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
       <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
       <Parameter Name="StudentID" Mode="In" Type="String" />
+      <Parameter Name="DocumentData" Mode="In" Type="Binary" />
+      <Parameter Name="DocumentExtension" Mode="In" Type="String" />
+      <Parameter Name="DocumentSize" Mode="In" Type="String" />
+      <Parameter Name="DocumentType" Mode="In" Type="String" />
+      <Parameter Name="DocumentName" Mode="In" Type="String" />
+      <Parameter Name="SchoolYearPL" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="uspInsertStudentGPA" ReturnType="Collection(Int32)">
       <Parameter Name="StudentID" Mode="In" Type="Int32" />
@@ -13623,6 +13680,7 @@
       <Parameter Name="DocumentName" Mode="In" Type="String" />
       <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
       <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
+      <Parameter Name="SchoolYearPL" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="uspInsertStudentOrientationDetails" ReturnType="Collection(Int32)">
       <Parameter Name="orientationdate" Mode="In" Type="String" />
@@ -13775,11 +13833,13 @@
       <Parameter Name="StartTime" Mode="In" Type="Time" />
       <Parameter Name="EndTime" Mode="In" Type="Time" />
       <Parameter Name="TotalTime" Mode="In" Type="String" />
+      <Parameter Name="SchoolYearPL" Mode="In" Type="Int32" />
       <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
       <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
     </FunctionImport>
     <FunctionImport Name="uspInsertStudentTimeByCourse" ReturnType="Collection(Int32)">
       <Parameter Name="SchoolCourseID" Mode="In" Type="Int32" />
+      <Parameter Name="SchoolYearPL" Mode="In" Type="Int32" />
       <Parameter Name="ValuesArray" Mode="In" Type="String" />
       <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
       <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
@@ -13790,6 +13850,7 @@
     </FunctionImport>
     <FunctionImport Name="uspInsertStudentTimeByStudent" ReturnType="Collection(Int32)">
       <Parameter Name="StudentID" Mode="In" Type="Int32" />
+      <Parameter Name="SchoolYearPL" Mode="In" Type="Int32" />
       <Parameter Name="ValuesArray" Mode="In" Type="String" />
       <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
       <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
@@ -13806,6 +13867,7 @@
       <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
       <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
       <Parameter Name="StudentIDs" Mode="In" Type="String" />
+      <Parameter Name="SchoolYearPL" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="uspInsertStudentWeekAttendanceInfo">
       <Parameter Name="CalendarYear" Mode="In" Type="String" />
@@ -14098,6 +14160,10 @@
       <Parameter Name="DistrictNotifiedSent" Mode="In" Type="String" />
       <Parameter Name="DistrictNotifiedSentSubmitDate" Mode="In" Type="String" />
       <Parameter Name="DistrictNotified" Mode="In" Type="Int32" />
+      <Parameter Name="LanguageUsageSurvey" Mode="In" Type="String" />
+      <Parameter Name="LanguageUsageSurveySubmitDate" Mode="In" Type="String" />
+      <Parameter Name="TwoYearNonTest" Mode="In" Type="String" />
+      <Parameter Name="TwoYearNonTestSubmitDate" Mode="In" Type="String" />
       <Parameter Name="createdby" Mode="In" Type="Int32" />
       <Parameter Name="createddate" Mode="In" Type="DateTime" />
     </FunctionImport>
@@ -14558,6 +14624,7 @@
       <Parameter Name="DistrictID" Mode="In" Type="Int32" />
       <Parameter Name="SchoolID" Mode="In" Type="Int32" />
       <Parameter Name="SchoolYearPL" Mode="In" Type="Int32" />
+      <Parameter Name="Type" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="uspSelectActiveDistrictCourseTerms" ReturnType="Collection(NGSISModel.uspSelectActiveDistrictCourseTerms_Result)">
       <Parameter Name="DistrictID" Mode="In" Type="Int32" />
@@ -16027,13 +16094,17 @@
     </FunctionImport>
     <FunctionImport Name="uspSelectStudentAttendanceDatesForCalendar" ReturnType="Collection(NGSISModel.uspSelectStudentAttendanceDatesForCalendar_Result)">
       <Parameter Name="StudentID" Mode="In" Type="Int32" />
+      <Parameter Name="StudentAttendancePatternId" Mode="In" Type="Int32" />
       <Parameter Name="StartDate" Mode="In" Type="DateTime" />
       <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+      <Parameter Name="SchoolYearPL" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="uspSelectStudentAttendanceDatesForSummary" ReturnType="Collection(NGSISModel.uspSelectStudentAttendanceDatesForSummary_Result)">
       <Parameter Name="StudentID" Mode="In" Type="Int32" />
+      <Parameter Name="StudentAttendancePatternID" Mode="In" Type="Int32" />
       <Parameter Name="StartDate" Mode="In" Type="DateTime" />
       <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+      <Parameter Name="SchoolYearPL" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="uspSelectStudentAttendanceForTranscript" ReturnType="Collection(NGSISModel.uspSelectStudentAttendanceForTranscript_Result)">
       <Parameter Name="StudentID" Mode="In" Type="Int32" />
@@ -16225,6 +16296,7 @@
     </FunctionImport>
     <FunctionImport Name="uspSelectStudentExcessiveHabitualAbsByStudentID" ReturnType="Collection(NGSISModel.uspSelectStudentExcessiveHabitualAbsByStudentID_Result)">
       <Parameter Name="StudentID" Mode="In" Type="Int32" />
+      <Parameter Name="SchoolYearPL" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="uspSelectStudentGPAForTranscript" ReturnType="Collection(NGSISModel.uspSelectStudentGPAForTranscript_Result)">
       <Parameter Name="StudentID" Mode="In" Type="Int32" />
@@ -16315,6 +16387,9 @@
     </FunctionImport>
     <FunctionImport Name="uspSelectStudentNextYearDataForValidate" ReturnType="Collection(NGSISModel.uspSelectStudentNextYearDataForValidate_Result)">
       <Parameter Name="SchoolID" Mode="In" Type="Int32" />
+      <Parameter Name="CounselorID" Mode="In" Type="Int32" />
+      <Parameter Name="GradeID" Mode="In" Type="String" />
+      <Parameter Name="HomeroomAdvisorID" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="uspSelectStudentNextYearHomeRoomData" ReturnType="Collection(NGSISModel.uspSelectStudentNextYearHomeRoomData_Result)">
       <Parameter Name="NextSchoolID" Mode="In" Type="Int32" />
@@ -16336,7 +16411,6 @@
     </FunctionImport>
     <FunctionImport Name="uspSelectStudentNotesBySchoolID" ReturnType="Collection(NGSISModel.uspSelectStudentNotesBySchoolID_Result)">
       <Parameter Name="SchoolId" Mode="In" Type="Int32" />
-      <Parameter Name="SchoolYearID" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="uspSelectStudentNotesByStudentId" ReturnType="Collection(NGSISModel.uspSelectStudentNotesByStudentId_Result)">
       <Parameter Name="StudentId" Mode="In" Type="Int32" />
@@ -16501,6 +16575,7 @@
     <FunctionImport Name="uspSelectStudentTimesForApprovalByStudentId" ReturnType="Collection(NGSISModel.uspSelectStudentTimesForApprovalByStudentId_Result)">
       <Parameter Name="SchoolId" Mode="In" Type="Int32" />
       <Parameter Name="StudentID" Mode="In" Type="Int32" />
+      <Parameter Name="SchoolYearPL" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="uspSelectStudentTimesForApprovalByStudentId_04062018" ReturnType="Collection(NGSISModel.uspSelectStudentTimesForApprovalByStudentId_04062018_Result)">
       <Parameter Name="SchoolId" Mode="In" Type="Int32" />
@@ -16641,6 +16716,7 @@
     <FunctionImport Name="uspSelectYTDDetailsByStudentId" ReturnType="Collection(NGSISModel.uspSelectYTDDetailsByStudentId_Result)">
       <Parameter Name="SchoolId" Mode="In" Type="Int32" />
       <Parameter Name="StudentID" Mode="In" Type="Int32" />
+      <Parameter Name="SchoolYearPL" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="uspSPEDAccommodationsGetFromPicklist" />
     <FunctionImport Name="uspSPEDAccommodationsGetFromPicklistPL" ReturnType="Collection(NGSISModel.uspSPEDAccommodationsGetFromPicklistPL_Result)" />
@@ -18150,6 +18226,11 @@
       <Parameter Name="NoticeDate" Mode="In" Type="DateTime" />
       <Parameter Name="ModifiedBy" Mode="In" Type="Int32" />
       <Parameter Name="ModifiedDate" Mode="In" Type="DateTime" />
+      <Parameter Name="DocumentData" Mode="In" Type="Binary" />
+      <Parameter Name="DocumentExtension" Mode="In" Type="String" />
+      <Parameter Name="DocumentSize" Mode="In" Type="String" />
+      <Parameter Name="DocumentType" Mode="In" Type="String" />
+      <Parameter Name="DocumentName" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="uspUpdateStudentGrade" ReturnType="Collection(Int32)">
       <Parameter Name="StudentGradeID" Mode="In" Type="Int32" />
@@ -18182,6 +18263,7 @@
       <Parameter Name="SchoolCourseSectionID" Mode="In" Type="Int32" />
       <Parameter Name="SchoolCourseEndYear" Mode="In" Type="String" />
       <Parameter Name="GradReqDetailId" Mode="In" Type="Int32" />
+      <Parameter Name="StudentScheduleId" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="uspUpdateStudentGradRequirements" ReturnType="Collection(Int32)">
       <Parameter Name="StudentGradRequirementId" Mode="In" Type="Int32" />
@@ -18477,6 +18559,7 @@
       <Parameter Name="CurrentContactAddressEndDate" Mode="In" Type="String" />
       <Parameter Name="NewAddressStartDate" Mode="In" Type="String" />
       <Parameter Name="PrimaryFlag" Mode="In" Type="Int32" />
+      <Parameter Name="ActionType" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="uspVerifyStudentPortalAddress" ReturnType="Collection(Int32)">
       <Parameter Name="PortalStudentAddressId" Mode="In" Type="Int32" />
@@ -18503,6 +18586,7 @@
       <Parameter Name="ReviewerId" Mode="In" Type="Int32" />
       <Parameter Name="ReviewedDate" Mode="In" Type="DateTime" />
       <Parameter Name="RejectedReasonPL" Mode="In" Type="Int32" />
+      <Parameter Name="ActionType" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="uspVerifyStudentPortalPhone" ReturnType="Collection(Int32)">
       <Parameter Name="PortalStudentPhoneId" Mode="In" Type="Int32" />
@@ -18515,6 +18599,7 @@
       <Parameter Name="RejectedReasonPL" Mode="In" Type="Int32" />
       <Parameter Name="CurrentPhoneEndDate" Mode="In" Type="String" />
       <Parameter Name="NewPhoneStartDate" Mode="In" Type="String" />
+      <Parameter Name="ActionType" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="uspCheckStudentCTELogin" ReturnType="Collection(NGSISModel.uspCheckStudentCTELogin_Result)">
       <Parameter Name="UserName" Mode="In" Type="String" />
@@ -28626,5 +28711,6 @@
     <Property Type="String" Name="FinalMessage" Nullable="true" MaxLength="64" />
     <Property Type="String" Name="FinalStatus" Nullable="true" MaxLength="16" />
     <Property Type="Int32" Name="RQStatus" Nullable="true" />
+    <Property Type="DateTime" Name="ApplicationDate" Nullable="true" Precision="23" />
   </ComplexType>
 </Schema>

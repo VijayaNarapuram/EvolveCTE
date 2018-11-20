@@ -75,6 +75,10 @@ namespace EvolveCTE.Models
         public string RecordRequestSent { get; set; }
         public string RecordReceived { get; set; }
         public string RecordSent { get; set; }
+        public string LanguageUsageSurvey { get; set; }
+        public Nullable<System.DateTime> LanguageUsageSurveySubmitDate { get; set; }
+        public string C2YearNonTest { get; set; }
+        public Nullable<System.DateTime> C2YearNonTestSubmitDate { get; set; }
     
         public virtual Student Student { get; set; }
     }

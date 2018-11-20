@@ -2142,6 +2142,8 @@
     <EntitySetMapping Name="PortalContactAddresses">
       <EntityTypeMapping TypeName="NGSISModel.PortalContactAddress">
         <MappingFragment StoreEntitySet="PortalContactAddress">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="EditOrRemoveContactAddress" ColumnName="EditOrRemoveContactAddress" />
           <ScalarProperty Name="PortalContactAddressID" ColumnName="PortalContactAddressID" />
           <ScalarProperty Name="StudentID" ColumnName="StudentID" />
           <ScalarProperty Name="StudentContactID" ColumnName="StudentContactID" />
@@ -2171,6 +2173,7 @@
     <EntitySetMapping Name="PortalStudentAddresses">
       <EntityTypeMapping TypeName="NGSISModel.PortalStudentAddress">
         <MappingFragment StoreEntitySet="PortalStudentAddress">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
           <ScalarProperty Name="PortalStudentAddressID" ColumnName="PortalStudentAddressID" />
           <ScalarProperty Name="StudentID" ColumnName="StudentID" />
           <ScalarProperty Name="AddressTypePL" ColumnName="AddressTypePL" />
@@ -2206,6 +2209,8 @@
     <EntitySetMapping Name="PortalStudentPhones">
       <EntityTypeMapping TypeName="NGSISModel.PortalStudentPhone">
         <MappingFragment StoreEntitySet="PortalStudentPhone">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="EditOrRemovePhone" ColumnName="EditOrRemovePhone" />
           <ScalarProperty Name="PortalStudentPhoneID" ColumnName="PortalStudentPhoneID" />
           <ScalarProperty Name="StudentID" ColumnName="StudentID" />
           <ScalarProperty Name="CurrentPhoneID" ColumnName="CurrentPhoneID" />
@@ -2262,6 +2267,10 @@
     <EntitySetMapping Name="RequiredDocuments">
       <EntityTypeMapping TypeName="NGSISModel.RequiredDocument">
         <MappingFragment StoreEntitySet="RequiredDocuments">
+          <ScalarProperty Name="C2YearNonTestSubmitDate" ColumnName="2YearNonTestSubmitDate" />
+          <ScalarProperty Name="C2YearNonTest" ColumnName="2YearNonTest" />
+          <ScalarProperty Name="LanguageUsageSurveySubmitDate" ColumnName="LanguageUsageSurveySubmitDate" />
+          <ScalarProperty Name="LanguageUsageSurvey" ColumnName="LanguageUsageSurvey" />
           <ScalarProperty Name="RequiredDocumentID" ColumnName="RequiredDocumentID" />
           <ScalarProperty Name="StudentID" ColumnName="StudentID" />
           <ScalarProperty Name="BirthCertificate" ColumnName="BirthCertificate" />
@@ -3696,6 +3705,7 @@
     <EntitySetMapping Name="StudentCTEs">
       <EntityTypeMapping TypeName="NGSISModel.StudentCTE">
         <MappingFragment StoreEntitySet="StudentCTE">
+          <ScalarProperty Name="SchoolCourseSectionId" ColumnName="SchoolCourseSectionId" />
           <ScalarProperty Name="StudentCTEId" ColumnName="StudentCTEId" />
           <ScalarProperty Name="StudentId" ColumnName="StudentId" />
           <ScalarProperty Name="CTEProgramOptionPL" ColumnName="CTEProgramOptionPL" />
@@ -3809,6 +3819,13 @@
     <EntitySetMapping Name="StudentExcessiveHabitualAbs">
       <EntityTypeMapping TypeName="NGSISModel.StudentExcessiveHabitualAb">
         <MappingFragment StoreEntitySet="StudentExcessiveHabitualAbs">
+          <ScalarProperty Name="DocumentData" ColumnName="DocumentData" />
+          <ScalarProperty Name="DocumentName" ColumnName="DocumentName" />
+          <ScalarProperty Name="DocumentType" ColumnName="DocumentType" />
+          <ScalarProperty Name="DocumentSize" ColumnName="DocumentSize" />
+          <ScalarProperty Name="DocumentExtension" ColumnName="DocumentExtension" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="SchoolYearPL" ColumnName="SchoolYearPL" />
           <ScalarProperty Name="StudentExcessiveHabitualAbsID" ColumnName="StudentExcessiveHabitualAbsID" />
           <ScalarProperty Name="StudentID" ColumnName="StudentID" />
           <ScalarProperty Name="AbsenceEventPL" ColumnName="AbsenceEventPL" />
@@ -4008,6 +4025,7 @@
     <EntitySetMapping Name="StudentNotes">
       <EntityTypeMapping TypeName="NGSISModel.StudentNote">
         <MappingFragment StoreEntitySet="StudentNote">
+          <ScalarProperty Name="SchoolYearPL" ColumnName="SchoolYearPL" />
           <ScalarProperty Name="StudentNoteID" ColumnName="StudentNoteID" />
           <ScalarProperty Name="StaffID" ColumnName="StaffID" />
           <ScalarProperty Name="StudentID" ColumnName="StudentID" />
@@ -4278,6 +4296,7 @@
     <EntitySetMapping Name="StudentTimes">
       <EntityTypeMapping TypeName="NGSISModel.StudentTime">
         <MappingFragment StoreEntitySet="StudentTime">
+          <ScalarProperty Name="SchoolYearPL" ColumnName="SchoolYearPL" />
           <ScalarProperty Name="StudentTimeID" ColumnName="StudentTimeID" />
           <ScalarProperty Name="StudentID" ColumnName="StudentID" />
           <ScalarProperty Name="SchoolCourseID" ColumnName="SchoolCourseID" />
@@ -4348,7 +4367,17 @@
     <EntitySetMapping Name="TestingRooms">
       <EntityTypeMapping TypeName="NGSISModel.TestingRoom">
         <MappingFragment StoreEntitySet="TestingRoom">
-          <ScalarProperty Name="TestingRoomID" ColumnName="TestingRoomID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Assessment" ColumnName="Assessment" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="SmallGroup" ColumnName="SmallGroup" />
+          <ScalarProperty Name="OneOnOne" ColumnName="OneOnOne" />
+          <ScalarProperty Name="MultipleAssessmentAreas" ColumnName="MultipleAssessmentAreas" />
+          <ScalarProperty Name="MultipleAssessments" ColumnName="MultipleAssessments" />
+          <ScalarProperty Name="Building" ColumnName="Building" />
+          <ScalarProperty Name="TestLocationId" ColumnName="TestLocationId" />
+          <ScalarProperty Name="TestingRoomId" ColumnName="TestingRoomId" />
           <ScalarProperty Name="RoomName" ColumnName="RoomName" />
           <ScalarProperty Name="RoomNumber" ColumnName="RoomNumber" />
           <ScalarProperty Name="MaxRoomCapacity" ColumnName="MaxRoomCapacity" />
@@ -4378,18 +4407,22 @@
     <EntitySetMapping Name="TestLocations">
       <EntityTypeMapping TypeName="NGSISModel.TestLocation">
         <MappingFragment StoreEntitySet="TestLocation">
-          <ScalarProperty Name="TestLocationID" ColumnName="TestLocationID" />
-          <ScalarProperty Name="DistrictID" ColumnName="DistrictID" />
-          <ScalarProperty Name="AddressID" ColumnName="AddressID" />
-          <ScalarProperty Name="TestingRoomID" ColumnName="TestingRoomID" />
-          <ScalarProperty Name="AssessmentTypePL" ColumnName="AssessmentTypePL" />
-          <ScalarProperty Name="AssessmentAreaCodePL" ColumnName="AssessmentAreaCodePL" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="FeeAmount" ColumnName="FeeAmount" />
+          <ScalarProperty Name="IsFee" ColumnName="IsFee" />
+          <ScalarProperty Name="LocationContactEmail" ColumnName="LocationContactEmail" />
+          <ScalarProperty Name="LocationContactPhone" ColumnName="LocationContactPhone" />
+          <ScalarProperty Name="LocationContact" ColumnName="LocationContact" />
+          <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+          <ScalarProperty Name="AddressId" ColumnName="AddressId" />
+          <ScalarProperty Name="SchoolId" ColumnName="SchoolId" />
+          <ScalarProperty Name="TestLocationId" ColumnName="TestLocationId" />
           <ScalarProperty Name="LocationDescription" ColumnName="LocationDescription" />
-          <ScalarProperty Name="TestDate" ColumnName="TestDate" />
-          <ScalarProperty Name="TestTime" ColumnName="TestTime" />
           <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
           <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
           <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -5045,6 +5078,8 @@
     <EntitySetMapping Name="PortalStudentContactPhones">
       <EntityTypeMapping TypeName="NGSISModel.PortalStudentContactPhone">
         <MappingFragment StoreEntitySet="PortalStudentContactPhone">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="EditOrRemoveContactAddress" ColumnName="EditOrRemoveContactAddress" />
           <ScalarProperty Name="PortalStudentContactPhoneID" ColumnName="PortalStudentContactPhoneID" />
           <ScalarProperty Name="StudentID" ColumnName="StudentID" />
           <ScalarProperty Name="CurrentContactID" ColumnName="CurrentContactID" />
@@ -5524,6 +5559,8 @@
     <EntitySetMapping Name="studentgrades">
       <EntityTypeMapping TypeName="NGSISModel.studentgrade">
         <MappingFragment StoreEntitySet="studentgrade">
+          <ScalarProperty Name="StudentScheduleID" ColumnName="StudentScheduleID" />
+          <ScalarProperty Name="SchoolCourseSectionID" ColumnName="SchoolCourseSectionID" />
           <ScalarProperty Name="StudentGradeId" ColumnName="StudentGradeId" />
           <ScalarProperty Name="StudentId" ColumnName="StudentId" />
           <ScalarProperty Name="StudentGradeLevelId" ColumnName="StudentGradeLevelId" />
@@ -19475,6 +19512,7 @@
           <ScalarProperty Name="FinalMessage" ColumnName="FinalMessage" />
           <ScalarProperty Name="FinalStatus" ColumnName="FinalStatus" />
           <ScalarProperty Name="RQStatus" ColumnName="RQStatus" />
+          <ScalarProperty Name="ApplicationDate" ColumnName="ApplicationDate" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

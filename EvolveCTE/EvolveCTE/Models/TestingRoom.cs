@@ -22,5 +22,16 @@ namespace EvolveCTE.Models
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<int> ModifiedBy { get; set; }
         public Nullable<System.DateTime> ModifiedDate { get; set; }
+        public int TestingRoomId { get; set; }
+        public int TestLocationId { get; set; }
+        public string Building { get; set; }
+        public Nullable<bool> MultipleAssessments { get; set; }
+        public Nullable<bool> MultipleAssessmentAreas { get; set; }
+        public Nullable<bool> OneOnOne { get; set; }
+        public Nullable<bool> SmallGroup { get; set; }
+        public string StartDate { get; set; }
+        public string EndDate { get; set; }
+        public string Assessment { get; set; }
+        public Nullable<int> IsActive { get; set; }
     }
 }

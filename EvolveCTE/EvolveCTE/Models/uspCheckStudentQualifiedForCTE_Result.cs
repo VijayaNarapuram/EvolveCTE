@@ -16,5 +16,6 @@ namespace EvolveCTE.Models
         public string FinalMessage { get; set; }
         public string FinalStatus { get; set; }
         public Nullable<int> RQStatus { get; set; }
+        public Nullable<System.DateTime> ApplicationDate { get; set; }
     }
 }
