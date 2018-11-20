@@ -246,17 +246,20 @@ namespace EvolveCTE.Controllers
 
             string strStatus = string.Empty;
             string strRQStatus = string.Empty;
+            string strApplicationDate = string.Empty;
 
             if (ResultList.Count > 0)
             {
                 strStatus = (Convert.ToString(ResultList[0].FinalStatus));
                 strRQStatus = (Convert.ToString(ResultList[0].RQStatus));
+                strApplicationDate = (Convert.ToString(ResultList[0].ApplicationDate));
 
                 response = Json(new
                 {
                     result = "Found",
                     strStatus = strStatus,
-                    strRQStatus = strRQStatus
+                    strRQStatus = strRQStatus,
+                    strApplicationDate = strApplicationDate
                 });
             }
             else
@@ -265,7 +268,8 @@ namespace EvolveCTE.Controllers
                 {
                     result = "NotFound",
                     strStatus = strStatus,
-                    strRQStatus = strRQStatus
+                    strRQStatus = strRQStatus,
+                    strApplicationDate = strApplicationDate
                 });
             }
             return response;

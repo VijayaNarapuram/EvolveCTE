@@ -27,7 +27,7 @@
                         Congratulations <b><span class="studentFullname" id="lblstudentname"></span></b>, 
                         you qualify for the TRECA Tech program!
                     </p>
-                    <p>Application Date : <span id="lblCreatedDate"></span></p>
+                    <p id="PCreatedDate">Application Date : <span id="lblCreatedDate"></span></p>
                     <p>
                         <span id="lblCTERequestStatus"></span>
                         @*Which pathway are you interested in?*@
@@ -38,6 +38,7 @@
                     <button type="button" class="btn btn-warning btnCancel">Cancel</button>
                     <button type="button" class="btn btn-success pull-right" data-toggle="modal" id="btnSaveCTERequest">Submit</button> @*data-target="#myModal"*@
                 </div>
+
                 <div class="TRECA_Box NotQualify" style="display:none;">
                     <p>
                         Sorry <b><span class="studentFullname" id="lblStudentName1"></span></b>, </p>
@@ -127,6 +128,7 @@
 
             var Status;
             var RQStatus;
+            var ApplicationDate;
 
             var url = "/Login/CheckStudentQualifiedForCTE/?StudentId=" + StudentId;
             var modelobj = {
@@ -139,6 +141,7 @@
             if (response.result == 'Found') {
                 Status = response.strStatus;
                 RQStatus = response.strRQStatus;
+                ApplicationDate = response.strApplicationDate;
             }
 
             if (Status == 'S') {
@@ -147,11 +150,14 @@
                     $("#lblCTERequestStatus").text('Your request has already been submitted.');
                     $("#ddlProgramOptions").hide();
                     $("#btnSaveCTERequest").hide();
+                    $("#PCreatedDate").show();
+                    $("#lblCreatedDate").text(ApplicationDate);
                 }
                 else {
                     $("#lblCTERequestStatus").text(' Which pathway are you interested in?');
                     $("#ddlProgramOptions").show();
                     $("#btnSaveCTERequest").show();
+                    $("#PCreatedDate").hide();
                 }
                 $('.Qualify').show();
                 $('.NotQualify').hide();
