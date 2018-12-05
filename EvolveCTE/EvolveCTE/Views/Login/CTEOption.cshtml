@@ -12,22 +12,23 @@
             </div>
             <!-- End page heading -->
             @*<div class="col-sm-6 text-right">
-                <!-- Begin breadcrumb -->
-                <ol class="breadcrumb default square rsaquo sm pull-right">
-                    <li><a href="/Login/Dashboard"><i class="fa fa-home"></i></a></li>                   
-                    <li class="active">Dashboard</li>
-                </ol>
-                <!-- End breadcrumb -->
-            </div>*@
+                    <!-- Begin breadcrumb -->
+                    <ol class="breadcrumb default square rsaquo sm pull-right">
+                        <li><a href="/Login/Dashboard"><i class="fa fa-home"></i></a></li>
+                        <li class="active">Dashboard</li>
+                    </ol>
+                    <!-- End breadcrumb -->
+                </div>*@
         </div>
         <div class="the-box" style="min-height:450px;padding:90px 0 0 0;">
             <div class="">
-                <div class="TRECA_Box Qualify" style="display:none;">
+                <div class="TRECA_Box Qualify" style="display:none; width : 750px;">
                     <p>
-                        Congratulations <b><span class="studentFullname" id="lblstudentname"></span></b>, 
-                        you qualify for the TRECA Tech program!
+                        Thank you for your interest in TRECA Tech! <br/>
+                        Congratulations <b><span class="studentFullname" id="lblstudentname"></span></b>,
+                        you qualify to complete an application to the TRECA Tech program!
                     </p>
-                    <p id="PCreatedDate">Application Date : <span id="lblCreatedDate"></span></p>
+                    @*<p id="PCreatedDate">Application Date : <span id="lblCreatedDate"></span></p>*@
                     <p>
                         <span id="lblCTERequestStatus"></span>
                         @*Which pathway are you interested in?*@
@@ -41,21 +42,28 @@
 
                 <div class="TRECA_Box NotQualify" style="display:none;">
                     <p>
-                        Sorry <b><span class="studentFullname" id="lblStudentName1"></span></b>, </p>
-                    <p>you do not qualify for the TRECA Tech program at this time!                    </p>
+                        Thank you for your interest in TRECA Tech! <br/>
+                        We are unable to process your application at this time. <br />
+                        To continue the application process, please contact your advisor or send an email to careertech@treca.org. You can also call (888) 828-4798 extension 2772.
+                        @*Sorry <b><span class="studentFullname" id="lblStudentName1"></span></b>,*@
+                    </p>
+                    @*<p>you do not qualify for the TRECA Tech program at this time!</p>
                     <h4><strong>In order to qualify</strong></h4>
                     <ul>
                         <li>
-                        you must be in grade 09 - 11</li>
-                            <li>
-                        You must have a 2.0 GPA or higher</li>
-                                <li>
-                        You must have 90% or better attendance at TRECA</li>
+                            you must be in grade 09 - 11
+                        </li>
+                        <li>
+                            You must have a 2.0 GPA or higher
+                        </li>
+                        <li>
+                            You must have 90% or better attendance at TRECA
+                        </li>
                     </ul>
                     <p>
                         Please reach out to your Advisor to see how you can qualify next semester
 
-                    </p>
+                    </p>*@
                     <button type="button" class="btn btn-warning btnCancel">Cancel</button>
 
                 </div>
@@ -78,7 +86,7 @@
                 <p>Your counselor will be in contact with you before the program starts!</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default btnCancel" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
@@ -121,8 +129,8 @@
                           }));
                       });
                   });
-       
-        if (StudentGrade == 5730 || StudentGrade == 5740 || StudentGrade == 5750)//9th OR 10th OR 11th
+
+        if (StudentGrade == 5720 || StudentGrade == 5730 || StudentGrade == 5740 || StudentGrade == 5750 || StudentGrade == 5760)//8th OR 9th OR 10th OR 11th OR 12th
         {
             $('#lblstudentname').text(StudentName);
 
@@ -145,19 +153,19 @@
             }
 
             if (Status == 'S') {
-               
+
                 if (RQStatus == 1) { //If the student is already submitted the request...
                     $("#lblCTERequestStatus").text('Your request has already been submitted.');
                     $("#ddlProgramOptions").hide();
                     $("#btnSaveCTERequest").hide();
-                    $("#PCreatedDate").show();
+                    //$("#PCreatedDate").show();
                     $("#lblCreatedDate").text(ApplicationDate);
                 }
                 else {
                     $("#lblCTERequestStatus").text(' Which pathway are you interested in?');
                     $("#ddlProgramOptions").show();
                     $("#btnSaveCTERequest").show();
-                    $("#PCreatedDate").hide();
+                    //$("#PCreatedDate").hide();
                 }
                 $('.Qualify').show();
                 $('.NotQualify').hide();
@@ -171,7 +179,6 @@
             $('#lblStudentName1').text(StudentName);
             $('.NotQualify').show();
             $('.Qualify').hide();
-
         }
 
         function showLoader() {
